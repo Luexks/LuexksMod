@@ -1,4 +1,5 @@
 import math
+from os import remove
 
 VERTEX_ORIENTATION_MULTIPLIERS = [(-1, -1), (-1, 1), (1, 1), (1, -1)]
 SHAPE_ID_ROOT = "201923"
@@ -88,24 +89,24 @@ def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, 
 
         elif port_relative_to_option == 1:
             ports = [(side_index, mininum_port_to_vertex_distance / side_length + port_index * (port_spacing / side_length)) for port_index in range(int(port_count))]
-            # print(side_length % port_spacing)
             if side_length % port_spacing > 0:
                 ports.append((side_index, 1.0 - ((side_length % port_spacing) / side_length) / 2.0))
-            print(ports)
             return ports
 
         elif port_relative_to_option == 2:
             ports = [(side_index, 1.0 - (mininum_port_to_vertex_distance / side_length + port_index * (port_spacing / side_length))) for port_index in range(int(port_count))]
             if side_length % port_spacing > 0:
                 ports.append((side_index, 0.0 + ((side_length % port_spacing) / side_length) / 2.0))
-            print(ports)
             return ports
 
         else:
             raise InvalidPortRelativeToOptionValue
 
 
-with open("shapes.lua", "w") as shapes:
+with open("shapes.lua", "w") as shapes, open("blocks.lua", "w") as blocks:
+    with open("start_of_blocks.lua", "r") as start_of_blocks:
+        blocks.write(start_of_blocks.read())
+    
     shapes.write("{")
 
     # Squares
@@ -114,45 +115,35 @@ with open("shapes.lua", "w") as shapes:
         write_scale_format([(scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}")
 
-    # Right Triangles
-    triangle_count = 0
-    triangle_block_data = []
-    shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
-    for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
-        for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
-            new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
-            triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
-            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 0)]))
-            triangle_count += 1
-            # if new_vertices[1][1] >= new_vertices[2][0]:
-                # break
-    shapes.write("\n\t\t}\n\t}\n\t")
-
-    shapes.write(f"\n\t{{{shape_id(2)}{{}}mirror_of={shape_id(1)}}}")
-
-    shapes.write("\n}")
-
-with open("blocks.lua", "w") as blocks:
-    with open("start_of_blocks.lua", "r") as start_of_blocks:
-        blocks.write(start_of_blocks.read())
-
-    # Squares
     new_block_id()
     new_block_sort()
     for scale in range(SQUARE_SCALE_COUNT - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)}}}")
 
     # Right Triangles
-    new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(1)}}}")
-    for scale in range(triangle_count - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+    shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
+    with open("mirror_buffer.lua", "w") as mirror_buffer:
+        extend_right_angled_triangle_id = new_block_id()
+        blocks.write(f"\n\t{{{str(extend_right_angled_triangle_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(1)}}}")
 
-    # Mirrored Right Triangles
-    new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(2)}}}")
-    for scale in range(triangle_count - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+        extend_mirrored_right_angled_triangle_id = new_block_id()
+        mirror_buffer.write(f"\n\t{{{str(extend_mirrored_right_angled_triangle_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(2)}}}")
+
+        for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
+            for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
+                new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
+                write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2.0), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 2, TOTAL_SCALE / 2)]))
+
+                blocks.write(f"\n\t{{{str(new_block_id())},extends={str(extend_right_angled_triangle_id)},durability=2.00001,scale={str(scale + 2)}}}")
+                mirror_buffer.write(f"\n\t{{{str(new_block_id())},extends={str(extend_mirrored_right_angled_triangle_id)},durability=2.00001,scale={str(scale + 2)}}}")
+    with open("mirror_buffer.lua", "r") as mirror_buffer:
+        blocks.write(mirror_buffer.read())
+    remove("mirror_buffer.lua")
+    shapes.write("\n\t\t}\n\t}\n\t")
+
+    shapes.write(f"\n\t{{{shape_id(2)}{{}}mirror_of={shape_id(1)}}}")
+
+    shapes.write("\n}")
 
     with open("end_of_blocks.lua", "r") as end_of_blocks:
         blocks.write(end_of_blocks.read())
