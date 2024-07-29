@@ -8,13 +8,13 @@ TOTAL_SCALE = 10
 BLOCK_ID_BASE = 17000
 BLOCK_SORT_BASE = 100
 
-SQUARE_SCALE_COUNT = 4
+SQUARE_SCALE_COUNT = 3
 SQUARE_SCALE_FACTOR = TOTAL_SCALE // 2
 
-TRIANGLE_X_SCALE_COUNT = 4
-TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE
-TRIANGLE_Y_SCALE_COUNT = 4
-TRIANGLE_Y_SCALE_FACTOR = 5
+TRIANGLE_X_SCALE_COUNT = 3 * 2
+TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE // 2
+TRIANGLE_Y_SCALE_COUNT = 3 * 2
+TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE // 2
 
 def combine_list_of_lists(list_of_lists: list) -> list:
     output = []
@@ -54,17 +54,55 @@ def write_scale_format(verts: list[(float, float)], ports: list[(float, str)]) -
         shapes.write(f"{{{str(port[0])},{port[1]}}}")
     shapes.write("}\n\t\t\t}")
 
-def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, float], port_spacing: float, side_index: int) -> list[(int, float)]:
+class MininumPortToVertexDistanceParsedWhenUnneeded(Exception):
+    def __init__(self) -> None:
+        super().__init__("mininum_port_to_vertex_distance parsed when unneeded. If you were using Rust, then this wouldn't be an issue >:(")
+
+class MininumPortToVertexDistanceNotParsedWhenNeeded(Exception):
+    def __init__(self) -> None:
+        super().__init__("mininum_port_to_vertex_distance is not parsed when needed. If you were using Rust, then this wouldn't be an issue >:(")
+
+class InvalidPortRelativeToOptionValue(Exception):
+    def __init__(self) -> None:
+        super().__init__("Invalid port_relative_to_option value. It's sort of meant to be an enum, it should only ever be either 0, 1, or 2; if you were using Rust, then this wouldn't be an issue >:(")
+        
+# port_relative_to_option describes whether the ports should be positioned relative to the middle of the shape (0), or relative to vertex_1 (1), or relative to vertex_2 (2)
+# When port_relative_to_option != 0, mininum_port_to_vertex_distance is parsed as a float.
+def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, float], port_spacing: float, side_index: int, port_relative_to_option: int, mininum_port_to_vertex_distance: float = None) -> list[(int, float)]:
     side_length = math.sqrt((vertex_1[0] - vertex_2[0]) ** 2 + (vertex_1[1] - vertex_2[1]) ** 2)
     port_count = math.floor(side_length / port_spacing)
     
-    if port_count <= 1:
+    if port_count <= 1 and side_length <= port_spacing:
         return [(side_index, 0.5)]
 
     # if port_count % 2 == 0: # I guess it works without the code I thought it would need :P
         # return [(side_index, (0.5 - (port_spacing * (port_count / 2 - 0.5)) / side_length + port_index * port_spacing / side_length)) for port_index in range(int(port_count))]
     
-    return [(side_index, (0.5 - (port_spacing * (port_count / 2 - 0.5)) / side_length + port_index * port_spacing / side_length)) for port_index in range(int(port_count))]
+    if port_relative_to_option == 0:
+        if mininum_port_to_vertex_distance is not None:
+            raise MininumPortToVertexDistanceParsedWhenUnneeded
+        return [(side_index, (0.5 - (port_spacing * (port_count / 2 - 0.5)) / side_length + port_index * port_spacing / side_length)) for port_index in range(int(port_count))]
+    else:
+        if mininum_port_to_vertex_distance is None:
+            raise MininumPortToVertexDistanceNotParsedWhenNeeded
+
+        elif port_relative_to_option == 1:
+            ports = [(side_index, mininum_port_to_vertex_distance / side_length + port_index * (port_spacing / side_length)) for port_index in range(int(port_count))]
+            # print(side_length % port_spacing)
+            if side_length % port_spacing > 0:
+                ports.append((side_index, 1.0 - ((side_length % port_spacing) / side_length) / 2.0))
+            print(ports)
+            return ports
+
+        elif port_relative_to_option == 2:
+            ports = [(side_index, 1.0 - (mininum_port_to_vertex_distance / side_length + port_index * (port_spacing / side_length))) for port_index in range(int(port_count))]
+            if side_length % port_spacing > 0:
+                ports.append((side_index, 0.0 + ((side_length % port_spacing) / side_length) / 2.0))
+            print(ports)
+            return ports
+
+        else:
+            raise InvalidPortRelativeToOptionValue
 
 
 with open("shapes.lua", "w") as shapes:
@@ -81,10 +119,10 @@ with open("shapes.lua", "w") as shapes:
     triangle_block_data = []
     shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
-        for scale_x in range(1, TRIANGLE_X_SCALE_COUNT + 1):
+        for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
             new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
             triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
-            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2)]))
+            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 0)]))
             triangle_count += 1
             # if new_vertices[1][1] >= new_vertices[2][0]:
                 # break
