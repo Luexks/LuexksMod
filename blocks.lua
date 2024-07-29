@@ -33,18 +33,22 @@
 	{17015,extends=17004,durability=2.00001,scale=12}
 	{17016,extends=17004,durability=2.00001,scale=13}
 	{17017,extends=17004,durability=2.00001,scale=14}
-	{17018,extends=17000,durability=2.00001,shape=2019230002}
-	{17019,extends=17018,durability=2.00001,scale=2}
-	{17020,extends=17018,durability=2.00001,scale=3}
-	{17021,extends=17018,durability=2.00001,scale=4}
-	{17022,extends=17018,durability=2.00001,scale=5}
-	{17023,extends=17018,durability=2.00001,scale=6}
-	{17024,extends=17018,durability=2.00001,scale=7}
-	{17025,extends=17018,durability=2.00001,scale=8}
-	{17026,extends=17018,durability=2.00001,scale=9}
-	{17027,extends=17018,durability=2.00001,scale=10}
-	{17028,extends=17018,durability=2.00001,scale=11}
-	{17029,extends=17018,durability=2.00001,scale=12}
-	{17030,extends=17018,durability=2.00001,scale=13}
-	{17031,extends=17018,durability=2.00001,scale=14}
+	{17018,extends=17004,durability=2.00001,scale=15}
+	{17019,extends=17004,durability=2.00001,scale=16}
+	{17020,extends=17000,durability=2.00001,shape=2019230002}
+	{17021,extends=17020,durability=2.00001,scale=2}
+	{17022,extends=17020,durability=2.00001,scale=3}
+	{17023,extends=17020,durability=2.00001,scale=4}
+	{17024,extends=17020,durability=2.00001,scale=5}
+	{17025,extends=17020,durability=2.00001,scale=6}
+	{17026,extends=17020,durability=2.00001,scale=7}
+	{17027,extends=17020,durability=2.00001,scale=8}
+	{17028,extends=17020,durability=2.00001,scale=9}
+	{17029,extends=17020,durability=2.00001,scale=10}
+	{17030,extends=17020,durability=2.00001,scale=11}
+	{17031,extends=17020,durability=2.00001,scale=12}
+	{17032,extends=17020,durability=2.00001,scale=13}
+	{17033,extends=17020,durability=2.00001,scale=14}
+	{17034,extends=17020,durability=2.00001,scale=15}
+	{17035,extends=17020,durability=2.00001,scale=16}
 }

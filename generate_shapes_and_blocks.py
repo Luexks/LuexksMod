@@ -80,14 +80,14 @@ with open("shapes.lua", "w") as shapes:
     triangle_count = 0
     triangle_block_data = []
     shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
-    for scale_x in range(1, TRIANGLE_X_SCALE_COUNT + 1):
-        for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
+    for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
+        for scale_x in range(1, TRIANGLE_X_SCALE_COUNT + 1):
             new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
             triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
             write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2)]))
             triangle_count += 1
-            if new_vertices[1][1] >= new_vertices[2][0]:
-                break
+            # if new_vertices[1][1] >= new_vertices[2][0]:
+                # break
     shapes.write("\n\t\t}\n\t}\n\t")
 
     shapes.write(f"\n\t{{{shape_id(2)}{{}}mirror_of={shape_id(1)}}}")
