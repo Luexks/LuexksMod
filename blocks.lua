@@ -65,4 +65,13 @@
 	{17047,extends=17045,durability=2.00001,scale=3}
 	{17048,extends=17045,durability=2.00001,scale=4}
 	{17049,extends=17045,durability=2.00001,scale=5}
+	{17050,extends=17045,durability=2.00001,scale=6}
+	{17051,extends=17045,durability=2.00001,scale=7}
+	{17052,extends=17045,durability=2.00001,scale=8}
+	{17053,extends=17045,durability=2.00001,scale=9}
+	{17054,extends=17045,durability=2.00001,scale=10}
+	{17055,extends=17045,durability=2.00001,scale=11}
+	{17056,extends=17045,durability=2.00001,scale=12}
+	{17057,extends=17045,durability=2.00001,scale=13}
+	{17058,extends=17045,durability=2.00001,scale=14}
 }

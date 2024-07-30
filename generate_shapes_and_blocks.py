@@ -1,5 +1,11 @@
 import math
 
+def combine_list_of_lists(list_of_lists: list) -> list:
+    output = []
+    for list in list_of_lists:
+        output += list
+    return output
+
 VERTEX_ORIENTATION_MULTIPLIERS = [(-1, -1), (-1, 1), (1, 1), (1, -1)]
 SHAPE_ID_ROOT = "201923"
 SHAPE_ID_SERIAL_LENGTH = 4
@@ -16,19 +22,13 @@ TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE // 2
 TRIANGLE_Y_SCALE_COUNT = 3 * 2
 TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE // 2
 
-RECTANGLE_SCALE_FUNCTIONS = [
-    (lambda x: x, lambda y: y - y / math.sqrt(2)),
-    (lambda x: x, lambda y: y * 0.5),
-    (lambda x: x, lambda y: 0.5 * y * math.sqrt(2)),
-    (lambda x: x * 2.0, lambda y: 2.0 * (y - y / math.sqrt(2))),
-    (lambda x: x * 2.0, lambda y: 2.0 * (y / math.sqrt(2))),
-]
-
-def combine_list_of_lists(list_of_lists: list) -> list:
-    output = []
-    for list in list_of_lists:
-        output += list
-    return output
+RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
+    [
+        (lambda x: x * 0.5, lambda y: y * 0.5),
+        (lambda x: x, lambda y: y * 0.5)
+    ],
+    combine_list_of_lists([(lambda x, scale=scale: x * scale, lambda y, scale=scale: scale * (y - y / math.sqrt(2))) if i == 0 else (lambda x, scale=scale: x * scale, lambda y, scale=scale: scale * (y / math.sqrt(2))) for i in range(0, 2, 1)] for scale in range(1, 7, 1))
+])
 
 block_id = BLOCK_ID_BASE
 
@@ -140,7 +140,7 @@ with open("shapes.lua", "w") as shapes:
     shapes.write(f"\n\t{{{shape_id(3)}\n\t\t{{")
     for rectangle_scale_function in RECTANGLE_SCALE_FUNCTIONS:
         new_vertices = [(rectangle_scale_function[0](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0]), rectangle_scale_function[1](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1])) for vertex_orientation in range(4)]
-        write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[-side], new_vertices[-side - 1], TOTAL_SCALE, side + 1, 0) for side in range(0, 3, 2)] + [[(side, "0.5") for side in range(0, 3, 2)]]))
+        write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
     shapes.write("\n}")
