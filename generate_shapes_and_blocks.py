@@ -1,4 +1,3 @@
-# Remove this line of code thx
 import math
 
 VERTEX_ORIENTATION_MULTIPLIERS = [(-1, -1), (-1, 1), (1, 1), (1, -1)]
