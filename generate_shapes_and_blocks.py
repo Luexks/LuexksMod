@@ -183,7 +183,7 @@ with open("blocks.lua", "w", encoding="utf-8") as blocks:
 
     # Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())}durability=2.00001,shape={shape_id(1)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)}}}")
     for scale in range(triangle_count - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
