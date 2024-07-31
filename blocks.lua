@@ -74,4 +74,9 @@
 	{17056,extends=17045,durability=2.00001,scale=12}
 	{17057,extends=17045,durability=2.00001,scale=13}
 	{17058,extends=17045,durability=2.00001,scale=14}
+	{17059,extends=17000,durability=2.00001,shape=2019230004}
+	{17060,extends=17059,durability=2.00001,scale=2}
+	{17061,extends=17059,durability=2.00001,scale=3}
+	{17062,extends=17059,durability=2.00001,scale=4}
+	{17063,extends=17059,durability=2.00001,scale=5}
 }

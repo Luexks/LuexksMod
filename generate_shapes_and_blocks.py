@@ -15,12 +15,12 @@ BLOCK_ID_BASE = 17000
 BLOCK_SORT_BASE = 100
 
 SQUARE_SCALE_COUNT = 3
-SQUARE_SCALE_FACTOR = TOTAL_SCALE // 2
+SQUARE_SCALE_FACTOR = TOTAL_SCALE / 2
 
 TRIANGLE_X_SCALE_COUNT = 3 * 2
-TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE // 2
+TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE / 2
 TRIANGLE_Y_SCALE_COUNT = 3 * 2
-TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE // 2
+TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE / 2
 
 RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
     [
@@ -29,6 +29,12 @@ RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
     ],
     combine_list_of_lists([(lambda x, scale=scale: x * scale, lambda y, scale=scale: scale * (y - y / math.sqrt(2))) if i == 0 else (lambda x, scale=scale: x * scale, lambda y, scale=scale: scale * (y / math.sqrt(2))) for i in range(0, 2, 1)] for scale in range(1, 7, 1))
 ])
+
+ADAPTER_SCALE_COUNT = 5
+
+ISOTRI_MIN_ANGLE = 5
+ISOTRI_MAX_ANGLE = 85
+ISOTRI_SCALE_INTERVAL_ANGLE = 5
 
 block_id = BLOCK_ID_BASE
 
@@ -143,6 +149,14 @@ with open("shapes.lua", "w") as shapes:
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
+    # Adapters
+    shapes.write(f"\n\t{{{shape_id(4)}\n\t\t{{")
+    write_scale_format([(SQUARE_SCALE_FACTOR / -2, SQUARE_SCALE_FACTOR * -1), (SQUARE_SCALE_FACTOR / -2, SQUARE_SCALE_FACTOR), (SQUARE_SCALE_FACTOR / 2, 0)], [(0, 0.5), (1, 0.5), (2, 0.5)])
+    for scale in range(1, ADAPTER_SCALE_COUNT + 1 - 1):
+        new_vertices = [((SQUARE_SCALE_FACTOR / 2) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], (scale * SQUARE_SCALE_FACTOR + SQUARE_SCALE_FACTOR / 2 - SQUARE_SCALE_FACTOR * (0.5 if vertex_orientation in [0, 2] else -0.5) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
+        write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
+    shapes.write("\n\t\t}\n\t}")
+
     shapes.write("\n}")
 
 with open("blocks.lua", "w") as blocks:
@@ -167,10 +181,16 @@ with open("blocks.lua", "w") as blocks:
     for scale in range(triangle_count - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
-    # Rects
+    # Rectangles
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(3)}}}")
     for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
+        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+
+    # Adapter
+    new_extend_parent_id = new_block_id()
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(4)}}}")
+    for scale in range(ADAPTER_SCALE_COUNT - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
     with open("end_of_blocks.lua", "r") as end_of_blocks:
