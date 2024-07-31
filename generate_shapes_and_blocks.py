@@ -32,9 +32,13 @@ RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
 
 ADAPTER_SCALE_COUNT = 5
 
-ISOTRI_MIN_ANGLE = 5
-ISOTRI_MAX_ANGLE = 85
-ISOTRI_SCALE_INTERVAL_ANGLE = 5
+ISOTRI_MIN_ANGLE = 10 # Anything below roughly 10 can cause corruption through the mirroring test and is thus not advisable.
+ISOTRI_MAX_ANGLE = 90
+ISOTRI_SCALE_INTERVAL_ANGLE = 1
+ISOTRI_SCALE_COUNT = 3
+
+if (ISOTRI_MAX_ANGLE - ISOTRI_MIN_ANGLE) % ISOTRI_SCALE_INTERVAL_ANGLE != 0:
+    print("Isotri fuckup, pls revise.")
 
 block_id = BLOCK_ID_BASE
 
@@ -117,7 +121,7 @@ def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, 
             raise InvalidPortRelativeToOptionValue
 
 
-with open("shapes.lua", "w") as shapes:
+with open("shapes.lua", "w", encoding="utf-8") as shapes:
     shapes.write("{")
 
     # Squares
@@ -134,7 +138,7 @@ with open("shapes.lua", "w") as shapes:
         for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
             new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
             triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
-            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 0)]))
+            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 2, TOTAL_SCALE / 2)]))
             triangle_count += 1
             # if new_vertices[1][1] >= new_vertices[2][0]:
                 # break
@@ -157,9 +161,17 @@ with open("shapes.lua", "w") as shapes:
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
+    # ISOTRIS
+    shapes.write(f"\n\t{{{shape_id(5)}\n\t\t{{")
+    for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
+        for scale in range(1, ISOTRI_SCALE_COUNT + 1):
+            new_vertices = [(-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, -math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (0, 0)]
+            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[(1)], TOTAL_SCALE, 0, 0)] + [[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(1, 3)]))
+    shapes.write("\n\t\t}\n\t}")
+
     shapes.write("\n}")
 
-with open("blocks.lua", "w") as blocks:
+with open("blocks.lua", "w", encoding="utf-8") as blocks:
     with open("start_of_blocks.lua", "r") as start_of_blocks:
         blocks.write(start_of_blocks.read())
 
@@ -171,27 +183,36 @@ with open("blocks.lua", "w") as blocks:
 
     # Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(1)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())}durability=2.00001,shape={shape_id(1)}}}")
     for scale in range(triangle_count - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
     # Mirrored Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(2)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(2)}}}")
     for scale in range(triangle_count - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
     # Rectangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(3)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)}}}")
     for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
     # Adapter
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},durability=2.00001,shape={shape_id(4)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(4)}}}")
     for scale in range(ADAPTER_SCALE_COUNT - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+
+    # Isotris
+    new_extend_parent_id = new_block_id()
+    for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
+        for scale in range(ISOTRI_SCALE_COUNT):
+            if angle == ISOTRI_MIN_ANGLE and scale == 0:
+                blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
+            else:
+                blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
 
     with open("end_of_blocks.lua", "r") as end_of_blocks:
         blocks.write(end_of_blocks.read())
