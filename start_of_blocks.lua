@@ -8,9 +8,9 @@
 		durability=2
 		density=0.05
 		growRate=10
-		fillColor=0x000A17
-		fillColor1=0x000A17
-		lineColor=0x7F797CFD
+		fillColor=0xff99ee
+		fillColor1=0xffffff
+		lineColor=0x0a0529
 
 		sort=100
 		shape=2019230000
