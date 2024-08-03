@@ -11,6 +11,14 @@ SHAPE_ID_ROOT = "201923"
 SHAPE_ID_SERIAL_LENGTH = 4
 TOTAL_SCALE = 10
 
+SHROUD_SCALE_X_OFFSET = 2.5
+SHROUD_OUTLINE_MULTIPLIER = 0.5
+SHROUD_BACKGROUND_MULTIPLIER = 8
+
+SHROUD_Z_OFFSET_FILL = "-0.02"
+SHROUD_Z_OFFSET_OUTLINE = "-0.06"
+SHROUD_Z_OFFSET_BACKGROUND = "-0.1"
+
 BLOCK_ID_BASE = 17000
 BLOCK_SORT_BASE = 100
 
@@ -61,6 +69,9 @@ def shape_id(serial: int) -> str:
     shape_id += str(serial)
 
     return shape_id
+
+def unison_shroud_colors(color_id: int) -> str:
+    return f"tri_color_id={str(color_id)}tri_color1_id={str(color_id)}line_color_id={str(color_id)}"
 
 def write_scale_format(verts: list[(float, float)], ports: list[(int, str)]) -> None:
     global shapes
@@ -121,7 +132,7 @@ def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, 
             raise InvalidPortRelativeToOptionValue
 
 
-with open("shapes.lua", "w", encoding="utf-8") as shapes:
+with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w", encoding="utf-8") as blocks:
     shapes.write("{")
 
     # Squares
@@ -171,21 +182,24 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes:
 
     shapes.write("\n}")
 
-with open("blocks.lua", "w", encoding="utf-8") as blocks:
     with open("start_of_blocks.lua", "r") as start_of_blocks:
         blocks.write(start_of_blocks.read())
 
     # Squares
+    blocks.write(f"\t\n\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
     new_block_id()
     new_block_sort()
     for scale in range(SQUARE_SCALE_COUNT - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)}}}")
+        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)},shroud={{{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str((scale + 2) * TOTAL_SCALE)},{str((scale + 2) * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
 
     # Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)}}}")
-    for scale in range(triangle_count - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE * 0.5)},{str(TOTAL_SCALE * 0.5)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER * 1.5)},{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER * 1.5)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
+    scale = 0
+    for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
+        for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
+            blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25)},{str((scale_y + 2) * TOTAL_SCALE * 0.25)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str((scale_y + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str((scale_y + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
+            scale += 1
 
     # Mirrored Right Triangles
     new_extend_parent_id = new_block_id()
