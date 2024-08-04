@@ -99,10 +99,10 @@ class InvalidPortRelativeToOptionValue(Exception):
     def __init__(self) -> None:
         super().__init__("Invalid port_relative_to_option value. It's sort of meant to be an enum, it should only ever be either 0, 1, or 2; if you were using Rust, then this wouldn't be an issue >:(")
 
-def write_shroud_outline(vertices: list[(float, float)], offset_x: float) -> None:
+def write_shroud_outline(vertices: list[(float, float)], offset: (float, float)) -> None:
     global blocks
     for vertex_index in range(len(vertices)):
-        blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertices[vertex_index][0] + offset_x)},{str(vertices[vertex_index][1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_CIRCLE_DIAMETER},{SHROUD_OUTLINE_CIRCLE_DIAMETER}}},tri_color_id=2,tri_color1_id=2,line_color_id=2}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_index][0] + vertices[(vertex_index + 1) % len(vertices)][0]) + offset_x)},{str(0.5 * (vertices[vertex_index][1] + vertices[(vertex_index + 1) % len(vertices)][1]))},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]) ** 2 + (vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1], vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]))},tri_color_id=2,tri_color1_id=2,line_color_id=2}}")
+        blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertices[vertex_index][0] + offset[0])},{str(vertices[vertex_index][1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_CIRCLE_DIAMETER},{SHROUD_OUTLINE_CIRCLE_DIAMETER}}},tri_color_id=2,tri_color1_id=2,line_color_id=2}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_index][0] + vertices[(vertex_index + 1) % len(vertices)][0]) + offset[0])},{str(0.5 * (vertices[vertex_index][1] + vertices[(vertex_index + 1) % len(vertices)][1]) + offset[1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]) ** 2 + (vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1], vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]))},tri_color_id=2,tri_color1_id=2,line_color_id=2}}")
 
 # port_relative_to_option describes whether the ports should be positioned relative to the middle of the shape (0), or relative to vertex_1 (1), or relative to vertex_2 (2)
 # When port_relative_to_option != 0, mininum_port_to_vertex_distance is parsed as a float.
@@ -225,17 +225,20 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
     # Squares
     blocks.write(f"\t\n\t\tshroud={{")
-    write_shroud_outline(vertices_square[0], 2.5)
+    write_shroud_outline(vertices_square[0], (2.5, 0.0))
     blocks.write("}\n\t}")
     # blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
     for scale in range(SQUARE_SCALE_COUNT - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)},shroud={{")
-        write_shroud_outline(vertices_square[scale + 1], 2.5 * (scale + 2))
+        write_shroud_outline(vertices_square[scale + 1], (2.5 * (scale + 2), 0.0))
         blocks.write("}}")
 
     # Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE * 0.5)},{str(TOTAL_SCALE * 0.5)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER * 1.5)},{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER * 1.5)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(1)},offset={{{str(SHROUD_SCALE_X_OFFSET * 0.24)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE * 0.5 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
+    # write_shroud_outline(vertices_right_triangle[0], (math.cos(45) * (1 / 3), math.sin(45) * (1 / 3)))
+    write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
+    blocks.write("}}")
     scale = 0
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
         for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
