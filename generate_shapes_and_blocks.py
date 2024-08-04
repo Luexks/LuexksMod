@@ -11,6 +11,8 @@ SHAPE_ID_ROOT = "201923"
 SHAPE_ID_SERIAL_LENGTH = 4
 TOTAL_SCALE = 10
 
+SHROUD_CIRLCE_SIDE_COUNT = 32
+
 SHROUD_SCALE_X_OFFSET = 2.5
 SHROUD_OUTLINE_MULTIPLIER = 0.5
 SHROUD_BACKGROUND_MULTIPLIER = 8
@@ -133,6 +135,7 @@ def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, 
 
 
 with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w", encoding="utf-8") as blocks:
+    ### HULL SHAPES ###
     shapes.write("{")
 
     # Squares
@@ -178,6 +181,23 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         for scale in range(1, ISOTRI_SCALE_COUNT + 1):
             new_vertices = [(-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, -math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (0, 0)]
             write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[(1)], TOTAL_SCALE, 0, 0)] + [[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(1, 3)]))
+    shapes.write("\n\t\t}\n\t}")
+
+
+    ### SHROUD SHAPES ###
+
+    shapes.write(f"\n\t{{{shape_id(9000)}\n\t\t{{")
+
+    radius = TOTAL_SCALE / (2 * math.sin(math.pi / SHROUD_CIRLCE_SIDE_COUNT))
+    new_vertices = []
+    angle_between_vertices = 2 * math.pi / SHROUD_CIRLCE_SIDE_COUNT
+
+    for side_index in range(SHROUD_CIRLCE_SIDE_COUNT):
+        angle_from_origin = side_index * angle_between_vertices
+        new_vertices.append((radius * math.cos(angle_from_origin), radius * math.sin(angle_from_origin)))
+    
+    write_scale_format(new_vertices, [(0, 0)])
+
     shapes.write("\n\t\t}\n\t}")
 
     shapes.write("\n}")
