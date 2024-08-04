@@ -3,23 +3,23 @@
 	{17000
 		name="Hull Alpha"
 		blurb="Structural definition"
-		features=PALETTE|INVISIBLE
+		features=PALETTE
 		group=99
 		durability=2
 		density=0.05
 		growRate=10
 		fillColor=0xff99ee
-		fillColor1=0xffffff
+		fillColor1=0xff99ee
 		lineColor=0x0a0529
 
 		sort=100
 		shape=2019230000
 		scale=1
 		
-		shroud={{shape=2019230000,offset={2.5,0.0,-0.02},size={10,10},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230000,offset={2.5,0.0,-0.06},size={15.0,15.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230000,offset={2.5,0.0,-0.1},size={90,90},tri_color_id=1,tri_color1_id=1,line_color_id=1}}
+		shroud={{shape=2019239000,offset={-2.5,-5.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-2.5,0.0,-0.06},size={2.5,5.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-2.5,5.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,5.0,-0.06},size={2.5,5.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,5.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,0.0,-0.06},size={2.5,5.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,-5.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,-5.0,-0.06},size={2.5,5.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}
 	}
-	{17001,extends=17000,durability=2.00001,scale=2,shroud={{shape=2019230000,offset={5.0,0.0,-0.02},size={20,20},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230000,offset={5.0,0.0,-0.06},size={25.0,25.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230000,offset={5.0,0.0,-0.1},size={100,100},tri_color_id=1,tri_color1_id=1,line_color_id=1}}}
-	{17002,extends=17000,durability=2.00001,scale=3,shroud={{shape=2019230000,offset={7.5,0.0,-0.02},size={30,30},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230000,offset={7.5,0.0,-0.06},size={35.0,35.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230000,offset={7.5,0.0,-0.1},size={110,110},tri_color_id=1,tri_color1_id=1,line_color_id=1}}}
+	{17001,extends=17000,durability=2.00001,scale=2,shroud={{shape=2019239000,offset={-5.0,-10.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-5.0,0.0,-0.06},size={2.5,10.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-5.0,10.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={5.0,10.0,-0.06},size={2.5,10.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={15.0,10.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={15.0,0.0,-0.06},size={2.5,10.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={15.0,-10.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={5.0,-10.0,-0.06},size={2.5,10.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
+	{17002,extends=17000,durability=2.00001,scale=3,shroud={{shape=2019239000,offset={-7.5,-15.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-7.5,0.0,-0.06},size={2.5,15.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-7.5,15.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,15.0,-0.06},size={2.5,15.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={22.5,15.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={22.5,0.0,-0.06},size={2.5,15.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={22.5,-15.0,-0.06},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,-15.0,-0.06},size={2.5,15.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17003,extends=17000,sort=101,durability=2.00001,shape=2019230001,shroud={{shape=2019230001,offset={0.6,0.0,-0.02},size={5.0,5.0},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230001,offset={0.6,0.0,-0.06},size={12.5,12.5},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230001,offset={0.6,0.0,-0.1},size={85.0,85.0},tri_color_id=1,tri_color1_id=1,line_color_id=1}}}
 	{17004,extends=17003,durability=2.00001,scale=2,shroud={{shape=2019230001,offset={5.0,0.0,-0.02},size={10.0,7.5},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230001,offset={5.0,0.0,-0.06},size={15.0,12.5},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230001,offset={5.0,0.0,-0.1},size={90.0,87.5},tri_color_id=1,tri_color1_id=1,line_color_id=1}}}
 	{17005,extends=17003,durability=2.00001,scale=3,shroud={{shape=2019230001,offset={7.5,0.0,-0.02},size={12.5,7.5},tri_color_id=0,tri_color1_id=0,line_color_id=0}{shape=2019230001,offset={7.5,0.0,-0.06},size={17.5,12.5},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019230001,offset={7.5,0.0,-0.1},size={92.5,87.5},tri_color_id=1,tri_color1_id=1,line_color_id=1}}}

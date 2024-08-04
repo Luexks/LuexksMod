@@ -20,6 +20,8 @@ SHROUD_BACKGROUND_MULTIPLIER = 8
 SHROUD_Z_OFFSET_FILL = "-0.02"
 SHROUD_Z_OFFSET_OUTLINE = "-0.06"
 SHROUD_Z_OFFSET_BACKGROUND = "-0.1"
+SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
+SHROUD_OUTLINE_THICKNESS = SHROUD_OUTLINE_CIRCLE_DIAMETER / 2
 
 BLOCK_ID_BASE = 17000
 BLOCK_SORT_BASE = 100
@@ -96,7 +98,12 @@ class MininumPortToVertexDistanceNotParsedWhenNeeded(Exception):
 class InvalidPortRelativeToOptionValue(Exception):
     def __init__(self) -> None:
         super().__init__("Invalid port_relative_to_option value. It's sort of meant to be an enum, it should only ever be either 0, 1, or 2; if you were using Rust, then this wouldn't be an issue >:(")
-        
+
+def write_shroud_outline(vertices: list[(float, float)], offset_x: float) -> None:
+    global blocks
+    for vertex_index in range(len(vertices)):
+        blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertices[vertex_index][0] + offset_x)},{str(vertices[vertex_index][1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_CIRCLE_DIAMETER},{SHROUD_OUTLINE_CIRCLE_DIAMETER}}},tri_color_id=2,tri_color1_id=2,line_color_id=2}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_index][0] + vertices[(vertex_index + 1) % len(vertices)][0]) + offset_x)},{str(0.5 * (vertices[vertex_index][1] + vertices[(vertex_index + 1) % len(vertices)][1]))},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]) ** 2 + (vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1], vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]))},tri_color_id=2,tri_color1_id=2,line_color_id=2}}")
+
 # port_relative_to_option describes whether the ports should be positioned relative to the middle of the shape (0), or relative to vertex_1 (1), or relative to vertex_2 (2)
 # When port_relative_to_option != 0, mininum_port_to_vertex_distance is parsed as a float.
 def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, float], port_spacing: float, side_index: int, port_relative_to_option: int, mininum_port_to_vertex_distance: float = None) -> list[(int, float)]:
@@ -139,18 +146,23 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     shapes.write("{")
 
     # Squares
+    vertices_square = []
     shapes.write(f"\n\t{{{shape_id(0)}\n\t\t{{")
     for scale in range(1, SQUARE_SCALE_COUNT + 1):
-        write_scale_format([(scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(4)]))
+        new_vertices = [(scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
+        vertices_square.append(new_vertices)
+        write_scale_format(new_vertices, combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}")
 
     # Right Triangles
+    vertices_right_triangle = []
     triangle_count = 0
     triangle_block_data = []
     shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
         for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
             new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
+            vertices_right_triangle.append(new_vertices)
             triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
             write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 2, TOTAL_SCALE / 2)]))
             triangle_count += 1
@@ -161,9 +173,11 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     shapes.write(f"\n\t{{{shape_id(2)}{{}}mirror_of={shape_id(1)}}}")
 
     # Rectangles
+    vertices_rectangle = []
     shapes.write(f"\n\t{{{shape_id(3)}\n\t\t{{")
     for rectangle_scale_function in RECTANGLE_SCALE_FUNCTIONS:
         new_vertices = [(rectangle_scale_function[0](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0]), rectangle_scale_function[1](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1])) for vertex_orientation in range(4)]
+        vertices_rectangle = []
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
@@ -210,9 +224,14 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     blocks.write(f"\n\n\t\tsort={str(new_block_sort())}\n\t\tshape={shape_id(0)}\n\t\tscale=1\n\t")
 
     # Squares
-    blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
+    blocks.write(f"\t\n\t\tshroud={{")
+    write_shroud_outline(vertices_square[0], 2.5)
+    blocks.write("}\n\t}")
+    # blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
     for scale in range(SQUARE_SCALE_COUNT - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)},shroud={{{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str((scale + 2) * TOTAL_SCALE)},{str((scale + 2) * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str((scale + 2) * TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
+        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(BLOCK_ID_BASE)},durability=2.00001,scale={str(scale + 2)},shroud={{")
+        write_shroud_outline(vertices_square[scale + 1], 2.5 * (scale + 2))
+        blocks.write("}}")
 
     # Right Triangles
     new_extend_parent_id = new_block_id()
