@@ -18,9 +18,11 @@ SHROUD_OUTLINE_MULTIPLIER = 0.5
 SHROUD_BACKGROUND_MULTIPLIER = 8
 
 SHROUD_Z_OFFSET_FILL = "-0.02"
-SHROUD_Z_OFFSET_OUTLINE = "-0.06"
+# SHROUD_Z_OFFSET_OUTLINE = "-0.06"
+SHROUD_Z_OFFSET_OUTLINE = "-0.01"
 SHROUD_Z_OFFSET_BACKGROUND = "-0.1"
-SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
+SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
+# SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
 SHROUD_OUTLINE_THICKNESS = SHROUD_OUTLINE_CIRCLE_DIAMETER / 2
 
 BLOCK_ID_BASE = 17000
@@ -236,8 +238,10 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     # Right Triangles
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
+    pwoomee = 0.5 * (1 / 3)
+    write_shroud_outline(vertices_right_triangle[0], (0.6 - pwoomee, 0.0 - pwoomee))
     # write_shroud_outline(vertices_right_triangle[0], (math.cos(45) * (1 / 3), math.sin(45) * (1 / 3)))
-    write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
+    # write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
     blocks.write("}}")
     scale = 0
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):

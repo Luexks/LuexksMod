@@ -1,6 +1,6 @@
 		name="Hull Alpha"
 		blurb="Structural definition"
-		features=PALETTE
+		features=PALETTE|INVISIBLE
 		group=99
 		durability=2
 		density=0.05
