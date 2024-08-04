@@ -1,6 +1,3 @@
-
-{
-	{17000
 		name="Hull Alpha"
 		blurb="Structural definition"
 		features=PALETTE|INVISIBLE
@@ -11,7 +8,3 @@
 		fillColor=0xff99ee
 		fillColor1=0xffffff
 		lineColor=0x0a0529
-
-		sort=100
-		shape=2019230000
-		scale=1
