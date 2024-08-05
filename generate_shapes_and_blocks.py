@@ -17,12 +17,18 @@ SHROUD_SCALE_X_OFFSET = 2.5
 SHROUD_OUTLINE_MULTIPLIER = 0.5
 SHROUD_BACKGROUND_MULTIPLIER = 8
 
+SHROUD_BACKGROUND_COLOR = "FFFFFF"
+SHROUD_BACKGROUND_X_SCALE_COUNT = 16
+SHROUD_BACKGROUND_X_SCALE_FACTOR = TOTAL_SCALE * 16
+SHROUD_BACKGROUND_Y_SCALE_COUNT = 16
+SHROUD_BACKGROUND_Y_SCALE_FACTOR = TOTAL_SCALE * 16
+
 SHROUD_Z_OFFSET_FILL = "-0.02"
 # SHROUD_Z_OFFSET_OUTLINE = "-0.06"
 SHROUD_Z_OFFSET_OUTLINE = "-0.01"
 SHROUD_Z_OFFSET_BACKGROUND = "-0.1"
-SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
-# SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
+# SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
+SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
 SHROUD_OUTLINE_THICKNESS = SHROUD_OUTLINE_CIRCLE_DIAMETER / 2
 
 BLOCK_ID_BASE = 17000
@@ -204,6 +210,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
     shapes.write(f"\n\t{{{shape_id(9000)}\n\t\t{{")
 
+    # Shroud Circle
     radius = TOTAL_SCALE / (2 * math.sin(math.pi / SHROUD_CIRLCE_SIDE_COUNT))
     new_vertices = []
     angle_between_vertices = 2 * math.pi / SHROUD_CIRLCE_SIDE_COUNT
@@ -215,6 +222,14 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     write_scale_format(new_vertices, [(0, 0)])
 
     shapes.write("\n\t\t}\n\t}")
+
+    # Shroud Background
+    shroud_background_block_data = []
+    shapes.write(f"\n\t{{{shape_id(9001)}\n\t\t{{")
+    for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT + 1):
+        for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
+            write_scale_format(vertices_square[0], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((1) * 2)}") for port in range(1)] for side in range(4)]))
+    shapes.write("\n\t\t}\n\t}\n\t")
 
     shapes.write("\n}")
 
@@ -238,8 +253,8 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     # Right Triangles
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
-    pwoomee = 0.5 * (1 / 3)
-    write_shroud_outline(vertices_right_triangle[0], (0.6 - pwoomee, 0.0 - pwoomee))
+    pwoomee = 5.0 * (1 / 3)
+    write_shroud_outline(vertices_right_triangle[0], (0.59 - pwoomee, 0.0 - pwoomee))
     # write_shroud_outline(vertices_right_triangle[0], (math.cos(45) * (1 / 3), math.sin(45) * (1 / 3)))
     # write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
     blocks.write("}}")
@@ -275,6 +290,15 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
                 blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
             else:
                 blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
+
+    # Shroud Background
+    new_extend_parent_id = new_block_id()
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"Background Component\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
+    scale = 2
+    for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT + 1):
+        for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
+            blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
+            scale += 1
 
     with open("end_of_blocks.lua", "r") as end_of_blocks:
         blocks.write(end_of_blocks.read())
