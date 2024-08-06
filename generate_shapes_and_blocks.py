@@ -26,9 +26,11 @@ SHROUD_BACKGROUND_Y_SCALE_FACTOR = TOTAL_SCALE * 16
 SHROUD_Z_OFFSET_FILL = "-0.02"
 # SHROUD_Z_OFFSET_OUTLINE = "-0.06"
 SHROUD_Z_OFFSET_OUTLINE = "-0.01"
-SHROUD_Z_OFFSET_BACKGROUND = "-0.1"
-# SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
-SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
+SHROUD_Z_OFFSET_BACKGROUND = "-1"
+if 1 == 1:
+    SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
+else:
+    SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
 SHROUD_OUTLINE_THICKNESS = SHROUD_OUTLINE_CIRCLE_DIAMETER / 2
 
 BLOCK_ID_BASE = 17000
@@ -84,6 +86,14 @@ def shape_id(serial: int) -> str:
 
 def unison_shroud_colors(color_id: int) -> str:
     return f"tri_color_id={str(color_id)},tri_color1_id={str(color_id)},line_color_id={str(color_id)}"
+
+def mirror_vertices(vertices: [(float, float)]) -> [(float, float)]:
+    mirrored_vertices = vertices
+    for vertex_index in range(len(vertices)):
+        mirrored_vertices[vertex_index] = (vertices[vertex_index][0], vertices[vertex_index][1] * -1)
+    mirrored_vertices.reverse()
+    return mirrored_vertices
+
 
 def write_scale_format(verts: list[(float, float)], ports: list[(int, str)]) -> None:
     global shapes
@@ -185,7 +195,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     shapes.write(f"\n\t{{{shape_id(3)}\n\t\t{{")
     for rectangle_scale_function in RECTANGLE_SCALE_FUNCTIONS:
         new_vertices = [(rectangle_scale_function[0](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0]), rectangle_scale_function[1](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1])) for vertex_orientation in range(4)]
-        vertices_rectangle = []
+        vertices_rectangle.append(new_vertices)
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
@@ -254,6 +264,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
     pwoomee = 5.0 * (1 / 3)
+    # write_shroud_outline(vertices_right_triangle[0], (0.0, 0.0))
     write_shroud_outline(vertices_right_triangle[0], (0.59 - pwoomee, 0.0 - pwoomee))
     # write_shroud_outline(vertices_right_triangle[0], (math.cos(45) * (1 / 3), math.sin(45) * (1 / 3)))
     # write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
@@ -266,15 +277,23 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
     # Mirrored Right Triangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(2)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(2)},shroud={{")
+    # write_shroud_outline(mirror_vertices(vertices_right_triangle[0]), (0.0, 0.0))
+    write_shroud_outline(mirror_vertices(vertices_right_triangle[0]), (0.59 - pwoomee, 0.0 + pwoomee))
+    blocks.write("}}")
     for scale in range(triangle_count - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
 
     # Rectangles
     new_extend_parent_id = new_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)}}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)},shroud={{")
+    pwoomee2 = 1.25
+    write_shroud_outline(vertices_rectangle[0], (pwoomee2, 0.0))
+    blocks.write("}}")
     for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
-        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+        blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{")
+        write_shroud_outline(vertices_rectangle[scale + 1], (pwoomee2, 0.0))
+        blocks.write("}}")
 
     # Adapter
     new_extend_parent_id = new_block_id()
@@ -295,7 +314,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"Background Component\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
     scale = 2
-    for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT + 1):
+    for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT):
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
             blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
             scale += 1

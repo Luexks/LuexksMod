@@ -1,10 +1,10 @@
 		name="Hull Alpha"
 		blurb="Structural definition"
-		features=PALETTE--|INVISIBLE
+		features=PALETTE|TURRET--|INVISIBLE
 		group=99
 		durability=2
 		density=0.05
 		growRate=10
-		fillColor=0xff99ee
-		fillColor1=0xff99ee
+		fillColor=0x01ff99ee
+		fillColor1=0xffff99ee
 		lineColor=0x0a0529
