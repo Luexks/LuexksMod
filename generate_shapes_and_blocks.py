@@ -11,6 +11,8 @@ SHAPE_ID_ROOT = "201923"
 SHAPE_ID_SERIAL_LENGTH = 4
 TOTAL_SCALE = 10
 
+SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER = 0.5 # big name
+
 SHROUD_CIRLCE_SIDE_COUNT = 32
 
 SHROUD_SCALE_X_OFFSET = 2.5
@@ -27,7 +29,7 @@ SHROUD_Z_OFFSET_FILL = "-0.02"
 # SHROUD_Z_OFFSET_OUTLINE = "-0.06"
 SHROUD_Z_OFFSET_OUTLINE = "-0.01"
 SHROUD_Z_OFFSET_BACKGROUND = "-1"
-if 1 == 1:
+if 0 == 1:
     SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
 else:
     SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
@@ -158,7 +160,6 @@ def generate_spaced_ports(vertex_1: tuple[float, float], vertex_2: tuple[float, 
         else:
             raise InvalidPortRelativeToOptionValue
 
-
 with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w", encoding="utf-8") as blocks:
     ### HULL SHAPES ###
     shapes.write("{")
@@ -287,12 +288,11 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     # Rectangles
     new_extend_parent_id = new_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)},shroud={{")
-    pwoomee2 = 1.25
-    write_shroud_outline(vertices_rectangle[0], (pwoomee2, 0.0))
+    write_shroud_outline(vertices_rectangle[0], (vertices_rectangle[0][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
     blocks.write("}}")
     for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
         blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{")
-        write_shroud_outline(vertices_rectangle[scale + 1], (pwoomee2, 0.0))
+        write_shroud_outline(vertices_rectangle[scale + 1], (vertices_rectangle[scale + 1][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
         blocks.write("}}")
 
     # Adapter
