@@ -5,6 +5,6 @@
 		durability=2
 		density=0.05
 		growRate=10
-		fillColor=0x01ff99ee
-		fillColor1=0xffff99ee
+		fillColor=0xff99ee
+		fillColor1=0xff99ee
 		lineColor=0x0a0529

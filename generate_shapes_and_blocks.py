@@ -272,7 +272,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     scale = 0
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
         for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
-            blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25)},{str((scale_y + 2) * TOTAL_SCALE * 0.25)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str((scale_y + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(1)},offset={{{str((scale + 2) * SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str((scale_x + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str((scale_y + 2) * TOTAL_SCALE * 0.25 + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}}}")
+            blocks.write(f"\n\t{{{str(new_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{}}}}")
             scale += 1
 
     # Mirrored Right Triangles
