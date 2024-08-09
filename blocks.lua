@@ -1369,5 +1369,5 @@
 	{18349,extends=18216,durability=2.00001,scale=134,blurb="2560,2240\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2560,2240},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18350,extends=18216,durability=2.00001,scale=135,blurb="2400,2400\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2400,2400},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18351,extends=18216,durability=2.00001,scale=136,blurb="2560,2400\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2560,2400},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
-	{18352,extends=17000,features=NOPALETTE|COMMAND|NOICON,sort=1,durability=2.00001}
+	{18352,extends=17000,name="Command",blurb="Crew retreat to this stronghold before the structures they control are destroyed."features=NOPALETTE|COMMAND|NOICON,sort=1,durability=2.00001}
 }

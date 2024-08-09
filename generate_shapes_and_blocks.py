@@ -356,7 +356,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             scale += 1
 
     # Command
-    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
+    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},name=\"Central Command\",blurb=\"Crew retreat to this stronghold before the structures they control are destroyed.\"features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
 
     with open("end_of_blocks.lua", "r") as end_of_blocks:
         blocks.write(end_of_blocks.read())
