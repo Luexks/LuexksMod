@@ -289,7 +289,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         # Squares
         # blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
         for scale in range(SQUARE_SCALE_COUNT - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_block_id_base)},durability=2.00001,scale={str(scale + 2)},shroud={{")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_block_id_base)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
             write_shroud_outline(vertices_square[scale + 1], (2.5 * (scale + 2), 0.0))
             blocks.write("}}")
 
@@ -305,7 +305,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         scale = 0
         for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
             for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
-                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{}}}}")
+                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{}}}}")
                 scale += 1
 
         # Mirrored Right Triangles
@@ -315,7 +315,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         write_shroud_outline(mirror_vertices(vertices_right_triangle[0]), (0.59 - pwoomee, 0.0 + pwoomee))
         blocks.write("}}")
         for scale in range(triangle_count - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)}}}")
 
         # Rectangles
         new_extend_parent_id = get_next_block_id()
@@ -323,7 +323,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         write_shroud_outline(vertices_rectangle[0], (vertices_rectangle[0][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
         blocks.write("}}")
         for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
             write_shroud_outline(vertices_rectangle[scale + 1], (vertices_rectangle[scale + 1][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
             blocks.write("}}")
 
@@ -333,7 +333,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         write_shroud_outline(vertices_adapter[0], (vertices_adapter[0][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
         blocks.write("}}")
         for scale in range(ADAPTER_SCALE_COUNT - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale + 2)},shroud={{")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
             write_shroud_outline(vertices_adapter[scale + 1], (vertices_adapter[scale + 1][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
             blocks.write("}}")
 
@@ -344,7 +344,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
                 if angle == ISOTRI_MIN_ANGLE and scale == 0:
                     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
                 else:
-                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
+                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
 
     # Shroud Background
     new_extend_parent_id = get_next_block_id()
