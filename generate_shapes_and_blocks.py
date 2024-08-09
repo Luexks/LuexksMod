@@ -11,6 +11,8 @@ SHAPE_ID_ROOT = "201923"
 SHAPE_ID_SERIAL_LENGTH = 4
 TOTAL_SCALE = 10
 
+MAXIMUM_SCALE_COUNT = 256
+
 SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER = 0.5 # big name
 
 SHROUD_CIRLCE_SIDE_COUNT = 32
@@ -27,8 +29,10 @@ SHROUD_BACKGROUND_Y_SCALE_FACTOR = TOTAL_SCALE * 16
 
 SHROUD_Z_OFFSET_FILL = "-0.02"
 # SHROUD_Z_OFFSET_OUTLINE = "-0.06"
-SHROUD_Z_OFFSET_OUTLINE = "-0.01"
+SHROUD_Z_OFFSET_OUTLINE = "-0.05"
 SHROUD_Z_OFFSET_BACKGROUND = "-1"
+SHROUD_Z_OFFSET_OUTLINE_NEGATIVE = SHROUD_Z_OFFSET_OUTLINE[1:]
+SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE = "0.08"
 if 0 == 1:
     SHROUD_OUTLINE_CIRCLE_DIAMETER = 0
 else:
@@ -60,6 +64,8 @@ ISOTRI_MIN_ANGLE = 10 # Anything below roughly 10 can cause corruption through t
 ISOTRI_MAX_ANGLE = 90
 ISOTRI_SCALE_INTERVAL_ANGLE = 1
 ISOTRI_SCALE_COUNT = 3
+
+NEGATIVE_CIRCLE_COUNT = 255
 
 if (ISOTRI_MAX_ANGLE - ISOTRI_MIN_ANGLE) % ISOTRI_SCALE_INTERVAL_ANGLE != 0:
     print("Isotri fuckup, pls revise.")
@@ -254,6 +260,13 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             write_scale_format(vertices_square[0], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((1) * 2)}") for port in range(1)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}\n\t")
 
+    # Multiple Squares
+    shroud_background_block_data = []
+    shapes.write(f"\n\t{{{shape_id(9002)}\n\t\t{{")
+    for scale in range(1, MAXIMUM_SCALE_COUNT):
+        write_scale_format(vertices_square[0], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((1) * 2)}") for port in range(1)] for side in range(4)]))
+    shapes.write("\n\t\t}\n\t}\n\t")
+
     shapes.write("\n}")
 
     ### BLOCKS ###
@@ -354,6 +367,15 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
             scale += 1
+
+    # Negative Circle
+    for scale in range(1, NEGATIVE_CIRCLE_COUNT):
+        if scale == 1:
+            new_extend_parent_id = get_next_block_id()
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9002)},shroud={{")
+        else:
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Command
     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},name=\"Central Command\",blurb=\"Crew retreat to this stronghold before the structures they control are destroyed.\"features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
