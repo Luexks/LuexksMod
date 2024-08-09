@@ -321,7 +321,7 @@
 	{17301,extends=17064,durability=2.00001,scale=238,blurb="89°\nStructural definition"}
 	{17302,extends=17064,durability=2.00001,scale=239,blurb="89°\nStructural definition"}
 	{17303,extends=17064,durability=2.00001,scale=240,blurb="89°\nStructural definition"}
-	{17304,extends=17000,sort=106durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{shape=2019239000,offset={-2.5,-5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-2.5,0.0,-0.01},size={2.5,5.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-2.5,5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,5.0,-0.01},size={2.5,5.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,0.0,-0.01},size={2.5,5.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,-5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,-5.0,-0.01},size={2.5,5.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
+	{17304,extends=17000,name="Hull Beta",sort=106durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{shape=2019239000,offset={-2.5,-5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-2.5,0.0,-0.01},size={2.5,5.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-2.5,5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,5.0,-0.01},size={2.5,5.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,0.0,-0.01},size={2.5,5.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={7.5,-5.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={2.5,-5.0,-0.01},size={2.5,5.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17305,extends=17304,durability=2.00001,scale=2,shroud={{shape=2019239000,offset={-5.0,-10.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-5.0,0.0,-0.01},size={2.5,10.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-5.0,10.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={5.0,10.0,-0.01},size={2.5,10.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={15.0,10.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={15.0,0.0,-0.01},size={2.5,10.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={15.0,-10.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={5.0,-10.0,-0.01},size={2.5,10.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17306,extends=17304,durability=2.00001,scale=3,shroud={{shape=2019239000,offset={-7.5,-15.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-7.5,0.0,-0.01},size={2.5,15.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-7.5,15.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,15.0,-0.01},size={2.5,15.0},angle=1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={22.5,15.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={22.5,0.0,-0.01},size={2.5,15.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={22.5,-15.0,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={7.5,-15.0,-0.01},size={2.5,15.0},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17307,extends=17304,sort=107,durability=2.00001,shape=2019230001,shroud={{shape=2019239000,offset={-1.0766666666666667,-1.6666666666666665,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.0766666666666667,0.8333333333333335,-0.01},size={2.5,2.5},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.0766666666666667,3.3333333333333335,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.4233333333333333,0.8333333333333335,-0.01},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.9233333333333333,-1.6666666666666665,-0.01},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.4233333333333333,-1.6666666666666665,-0.01},size={2.5,2.5},angle=-1.5707963267948966,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
@@ -625,7 +625,7 @@
 	{17605,extends=17368,durability=2.00001,scale=238,blurb="89°\nStructural definition"}
 	{17606,extends=17368,durability=2.00001,scale=239,blurb="89°\nStructural definition"}
 	{17607,extends=17368,durability=2.00001,scale=240,blurb="89°\nStructural definition"}
-	{17608,extends=17000,sort=112,durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={}}
+	{17608,extends=17000,name="Hull Outline",sort=112,durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={}}
 	{17609,extends=17608,durability=2.00001,scale=2,shroud={}}
 	{17610,extends=17608,durability=2.00001,scale=3,shroud={}}
 	{17611,extends=17608,sort=113,durability=2.00001,shape=2019230001,shroud={}}
@@ -929,310 +929,310 @@
 	{17909,extends=17672,durability=2.00001,scale=238,blurb="89°\nStructural definition"}
 	{17910,extends=17672,durability=2.00001,scale=239,blurb="89°\nStructural definition"}
 	{17911,extends=17672,durability=2.00001,scale=240,blurb="89°\nStructural definition"}
-	{17912,extends=17000,features=INVISIBLE,sort=118,durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={}}
-	{17913,extends=17912,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2,shroud={}}
-	{17914,extends=17912,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3,shroud={}}
+	{17912,extends=17000,name="Hull Invisible",features=PALETTE|INVISIBLE,sort=118,durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={}}
+	{17913,extends=17912,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
+	{17914,extends=17912,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
 	{17915,extends=17912,sort=119,durability=2.00001,shape=2019230001,shroud={}}
-	{17916,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2,shroud={}}
-	{17917,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3,shroud={}}
-	{17918,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=4,shroud={}}
-	{17919,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=5,shroud={}}
-	{17920,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=6,shroud={}}
-	{17921,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=7,shroud={}}
-	{17922,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=8,shroud={}}
-	{17923,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=9,shroud={}}
-	{17924,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=10,shroud={}}
-	{17925,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=11,shroud={}}
-	{17926,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=12,shroud={}}
-	{17927,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=13,shroud={}}
-	{17928,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=14,shroud={}}
-	{17929,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=15,shroud={}}
-	{17930,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=16,shroud={}}
-	{17931,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=17,shroud={}}
-	{17932,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=18,shroud={}}
-	{17933,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=19,shroud={}}
-	{17934,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=20,shroud={}}
-	{17935,extends=17915,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=21,shroud={}}
+	{17916,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
+	{17917,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
+	{17918,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
+	{17919,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
+	{17920,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,shroud={}}
+	{17921,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,shroud={}}
+	{17922,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,shroud={}}
+	{17923,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,shroud={}}
+	{17924,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,shroud={}}
+	{17925,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,shroud={}}
+	{17926,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,shroud={}}
+	{17927,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,shroud={}}
+	{17928,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,shroud={}}
+	{17929,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,shroud={}}
+	{17930,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,shroud={}}
+	{17931,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17,shroud={}}
+	{17932,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18,shroud={}}
+	{17933,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19,shroud={}}
+	{17934,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20,shroud={}}
+	{17935,extends=17915,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21,shroud={}}
 	{17936,extends=17912,sort=120,durability=2.00001,shape=2019230002,shroud={}}
-	{17937,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2}
-	{17938,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3}
-	{17939,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=4}
-	{17940,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=5}
-	{17941,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=6}
-	{17942,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=7}
-	{17943,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=8}
-	{17944,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=9}
-	{17945,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=10}
-	{17946,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=11}
-	{17947,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=12}
-	{17948,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=13}
-	{17949,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=14}
-	{17950,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=15}
-	{17951,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=16}
-	{17952,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=17}
-	{17953,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=18}
-	{17954,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=19}
-	{17955,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=20}
-	{17956,extends=17936,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=21}
+	{17937,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2}
+	{17938,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3}
+	{17939,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4}
+	{17940,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5}
+	{17941,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6}
+	{17942,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7}
+	{17943,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8}
+	{17944,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9}
+	{17945,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10}
+	{17946,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11}
+	{17947,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12}
+	{17948,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13}
+	{17949,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14}
+	{17950,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15}
+	{17951,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16}
+	{17952,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17}
+	{17953,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18}
+	{17954,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19}
+	{17955,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20}
+	{17956,extends=17936,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21}
 	{17957,extends=17912,sort=121,durability=2.00001,shape=2019230003,shroud={}}
-	{17958,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2,shroud={}}
-	{17959,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3,shroud={}}
-	{17960,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=4,shroud={}}
-	{17961,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=5,shroud={}}
-	{17962,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=6,shroud={}}
-	{17963,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=7,shroud={}}
-	{17964,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=8,shroud={}}
-	{17965,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=9,shroud={}}
-	{17966,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=10,shroud={}}
-	{17967,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=11,shroud={}}
-	{17968,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=12,shroud={}}
-	{17969,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=13,shroud={}}
-	{17970,extends=17957,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=14,shroud={}}
+	{17958,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
+	{17959,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
+	{17960,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
+	{17961,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
+	{17962,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,shroud={}}
+	{17963,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,shroud={}}
+	{17964,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,shroud={}}
+	{17965,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,shroud={}}
+	{17966,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,shroud={}}
+	{17967,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,shroud={}}
+	{17968,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,shroud={}}
+	{17969,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,shroud={}}
+	{17970,extends=17957,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,shroud={}}
 	{17971,extends=17912,sort=122,durability=2.00001,shape=2019230004,shroud={}}
-	{17972,extends=17971,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2,shroud={}}
-	{17973,extends=17971,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3,shroud={}}
-	{17974,extends=17971,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=4,shroud={}}
-	{17975,extends=17971,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=5,shroud={}}
+	{17972,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
+	{17973,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
+	{17974,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
+	{17975,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
 	{17976,extends=17912,sort=123,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition"}
-	{17977,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
-	{17978,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
-	{17979,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
-	{17980,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=5,blurb="11°\nStructural definition"}
-	{17981,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=6,blurb="11°\nStructural definition"}
-	{17982,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=7,blurb="12°\nStructural definition"}
-	{17983,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=8,blurb="12°\nStructural definition"}
-	{17984,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=9,blurb="12°\nStructural definition"}
-	{17985,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=10,blurb="13°\nStructural definition"}
-	{17986,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=11,blurb="13°\nStructural definition"}
-	{17987,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=12,blurb="13°\nStructural definition"}
-	{17988,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=13,blurb="14°\nStructural definition"}
-	{17989,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=14,blurb="14°\nStructural definition"}
-	{17990,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=15,blurb="14°\nStructural definition"}
-	{17991,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=16,blurb="15°\nStructural definition"}
-	{17992,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=17,blurb="15°\nStructural definition"}
-	{17993,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=18,blurb="15°\nStructural definition"}
-	{17994,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=19,blurb="16°\nStructural definition"}
-	{17995,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=20,blurb="16°\nStructural definition"}
-	{17996,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=21,blurb="16°\nStructural definition"}
-	{17997,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=22,blurb="17°\nStructural definition"}
-	{17998,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=23,blurb="17°\nStructural definition"}
-	{17999,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=24,blurb="17°\nStructural definition"}
-	{18000,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=25,blurb="18°\nStructural definition"}
-	{18001,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=26,blurb="18°\nStructural definition"}
-	{18002,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=27,blurb="18°\nStructural definition"}
-	{18003,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=28,blurb="19°\nStructural definition"}
-	{18004,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=29,blurb="19°\nStructural definition"}
-	{18005,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=30,blurb="19°\nStructural definition"}
-	{18006,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=31,blurb="20°\nStructural definition"}
-	{18007,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=32,blurb="20°\nStructural definition"}
-	{18008,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=33,blurb="20°\nStructural definition"}
-	{18009,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=34,blurb="21°\nStructural definition"}
-	{18010,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=35,blurb="21°\nStructural definition"}
-	{18011,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=36,blurb="21°\nStructural definition"}
-	{18012,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=37,blurb="22°\nStructural definition"}
-	{18013,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=38,blurb="22°\nStructural definition"}
-	{18014,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=39,blurb="22°\nStructural definition"}
-	{18015,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=40,blurb="23°\nStructural definition"}
-	{18016,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=41,blurb="23°\nStructural definition"}
-	{18017,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=42,blurb="23°\nStructural definition"}
-	{18018,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=43,blurb="24°\nStructural definition"}
-	{18019,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=44,blurb="24°\nStructural definition"}
-	{18020,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=45,blurb="24°\nStructural definition"}
-	{18021,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=46,blurb="25°\nStructural definition"}
-	{18022,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=47,blurb="25°\nStructural definition"}
-	{18023,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=48,blurb="25°\nStructural definition"}
-	{18024,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=49,blurb="26°\nStructural definition"}
-	{18025,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=50,blurb="26°\nStructural definition"}
-	{18026,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=51,blurb="26°\nStructural definition"}
-	{18027,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=52,blurb="27°\nStructural definition"}
-	{18028,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=53,blurb="27°\nStructural definition"}
-	{18029,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=54,blurb="27°\nStructural definition"}
-	{18030,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=55,blurb="28°\nStructural definition"}
-	{18031,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=56,blurb="28°\nStructural definition"}
-	{18032,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=57,blurb="28°\nStructural definition"}
-	{18033,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=58,blurb="29°\nStructural definition"}
-	{18034,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=59,blurb="29°\nStructural definition"}
-	{18035,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=60,blurb="29°\nStructural definition"}
-	{18036,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=61,blurb="30°\nStructural definition"}
-	{18037,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=62,blurb="30°\nStructural definition"}
-	{18038,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=63,blurb="30°\nStructural definition"}
-	{18039,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=64,blurb="31°\nStructural definition"}
-	{18040,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=65,blurb="31°\nStructural definition"}
-	{18041,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=66,blurb="31°\nStructural definition"}
-	{18042,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=67,blurb="32°\nStructural definition"}
-	{18043,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=68,blurb="32°\nStructural definition"}
-	{18044,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=69,blurb="32°\nStructural definition"}
-	{18045,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=70,blurb="33°\nStructural definition"}
-	{18046,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=71,blurb="33°\nStructural definition"}
-	{18047,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=72,blurb="33°\nStructural definition"}
-	{18048,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=73,blurb="34°\nStructural definition"}
-	{18049,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=74,blurb="34°\nStructural definition"}
-	{18050,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=75,blurb="34°\nStructural definition"}
-	{18051,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=76,blurb="35°\nStructural definition"}
-	{18052,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=77,blurb="35°\nStructural definition"}
-	{18053,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=78,blurb="35°\nStructural definition"}
-	{18054,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=79,blurb="36°\nStructural definition"}
-	{18055,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=80,blurb="36°\nStructural definition"}
-	{18056,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=81,blurb="36°\nStructural definition"}
-	{18057,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=82,blurb="37°\nStructural definition"}
-	{18058,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=83,blurb="37°\nStructural definition"}
-	{18059,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=84,blurb="37°\nStructural definition"}
-	{18060,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=85,blurb="38°\nStructural definition"}
-	{18061,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=86,blurb="38°\nStructural definition"}
-	{18062,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=87,blurb="38°\nStructural definition"}
-	{18063,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=88,blurb="39°\nStructural definition"}
-	{18064,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=89,blurb="39°\nStructural definition"}
-	{18065,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=90,blurb="39°\nStructural definition"}
-	{18066,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=91,blurb="40°\nStructural definition"}
-	{18067,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=92,blurb="40°\nStructural definition"}
-	{18068,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=93,blurb="40°\nStructural definition"}
-	{18069,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=94,blurb="41°\nStructural definition"}
-	{18070,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=95,blurb="41°\nStructural definition"}
-	{18071,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=96,blurb="41°\nStructural definition"}
-	{18072,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=97,blurb="42°\nStructural definition"}
-	{18073,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=98,blurb="42°\nStructural definition"}
-	{18074,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=99,blurb="42°\nStructural definition"}
-	{18075,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=100,blurb="43°\nStructural definition"}
-	{18076,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=101,blurb="43°\nStructural definition"}
-	{18077,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=102,blurb="43°\nStructural definition"}
-	{18078,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=103,blurb="44°\nStructural definition"}
-	{18079,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=104,blurb="44°\nStructural definition"}
-	{18080,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=105,blurb="44°\nStructural definition"}
-	{18081,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=106,blurb="45°\nStructural definition"}
-	{18082,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=107,blurb="45°\nStructural definition"}
-	{18083,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=108,blurb="45°\nStructural definition"}
-	{18084,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=109,blurb="46°\nStructural definition"}
-	{18085,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=110,blurb="46°\nStructural definition"}
-	{18086,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=111,blurb="46°\nStructural definition"}
-	{18087,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=112,blurb="47°\nStructural definition"}
-	{18088,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=113,blurb="47°\nStructural definition"}
-	{18089,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=114,blurb="47°\nStructural definition"}
-	{18090,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=115,blurb="48°\nStructural definition"}
-	{18091,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=116,blurb="48°\nStructural definition"}
-	{18092,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=117,blurb="48°\nStructural definition"}
-	{18093,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=118,blurb="49°\nStructural definition"}
-	{18094,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=119,blurb="49°\nStructural definition"}
-	{18095,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=120,blurb="49°\nStructural definition"}
-	{18096,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=121,blurb="50°\nStructural definition"}
-	{18097,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=122,blurb="50°\nStructural definition"}
-	{18098,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=123,blurb="50°\nStructural definition"}
-	{18099,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=124,blurb="51°\nStructural definition"}
-	{18100,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=125,blurb="51°\nStructural definition"}
-	{18101,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=126,blurb="51°\nStructural definition"}
-	{18102,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=127,blurb="52°\nStructural definition"}
-	{18103,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=128,blurb="52°\nStructural definition"}
-	{18104,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=129,blurb="52°\nStructural definition"}
-	{18105,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=130,blurb="53°\nStructural definition"}
-	{18106,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=131,blurb="53°\nStructural definition"}
-	{18107,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=132,blurb="53°\nStructural definition"}
-	{18108,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=133,blurb="54°\nStructural definition"}
-	{18109,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=134,blurb="54°\nStructural definition"}
-	{18110,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=135,blurb="54°\nStructural definition"}
-	{18111,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=136,blurb="55°\nStructural definition"}
-	{18112,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=137,blurb="55°\nStructural definition"}
-	{18113,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=138,blurb="55°\nStructural definition"}
-	{18114,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=139,blurb="56°\nStructural definition"}
-	{18115,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=140,blurb="56°\nStructural definition"}
-	{18116,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=141,blurb="56°\nStructural definition"}
-	{18117,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=142,blurb="57°\nStructural definition"}
-	{18118,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=143,blurb="57°\nStructural definition"}
-	{18119,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=144,blurb="57°\nStructural definition"}
-	{18120,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=145,blurb="58°\nStructural definition"}
-	{18121,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=146,blurb="58°\nStructural definition"}
-	{18122,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=147,blurb="58°\nStructural definition"}
-	{18123,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=148,blurb="59°\nStructural definition"}
-	{18124,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=149,blurb="59°\nStructural definition"}
-	{18125,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=150,blurb="59°\nStructural definition"}
-	{18126,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=151,blurb="60°\nStructural definition"}
-	{18127,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=152,blurb="60°\nStructural definition"}
-	{18128,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=153,blurb="60°\nStructural definition"}
-	{18129,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=154,blurb="61°\nStructural definition"}
-	{18130,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=155,blurb="61°\nStructural definition"}
-	{18131,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=156,blurb="61°\nStructural definition"}
-	{18132,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=157,blurb="62°\nStructural definition"}
-	{18133,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=158,blurb="62°\nStructural definition"}
-	{18134,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=159,blurb="62°\nStructural definition"}
-	{18135,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=160,blurb="63°\nStructural definition"}
-	{18136,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=161,blurb="63°\nStructural definition"}
-	{18137,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=162,blurb="63°\nStructural definition"}
-	{18138,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=163,blurb="64°\nStructural definition"}
-	{18139,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=164,blurb="64°\nStructural definition"}
-	{18140,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=165,blurb="64°\nStructural definition"}
-	{18141,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=166,blurb="65°\nStructural definition"}
-	{18142,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=167,blurb="65°\nStructural definition"}
-	{18143,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=168,blurb="65°\nStructural definition"}
-	{18144,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=169,blurb="66°\nStructural definition"}
-	{18145,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=170,blurb="66°\nStructural definition"}
-	{18146,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=171,blurb="66°\nStructural definition"}
-	{18147,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=172,blurb="67°\nStructural definition"}
-	{18148,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=173,blurb="67°\nStructural definition"}
-	{18149,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=174,blurb="67°\nStructural definition"}
-	{18150,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=175,blurb="68°\nStructural definition"}
-	{18151,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=176,blurb="68°\nStructural definition"}
-	{18152,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=177,blurb="68°\nStructural definition"}
-	{18153,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=178,blurb="69°\nStructural definition"}
-	{18154,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=179,blurb="69°\nStructural definition"}
-	{18155,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=180,blurb="69°\nStructural definition"}
-	{18156,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=181,blurb="70°\nStructural definition"}
-	{18157,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=182,blurb="70°\nStructural definition"}
-	{18158,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=183,blurb="70°\nStructural definition"}
-	{18159,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=184,blurb="71°\nStructural definition"}
-	{18160,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=185,blurb="71°\nStructural definition"}
-	{18161,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=186,blurb="71°\nStructural definition"}
-	{18162,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=187,blurb="72°\nStructural definition"}
-	{18163,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=188,blurb="72°\nStructural definition"}
-	{18164,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=189,blurb="72°\nStructural definition"}
-	{18165,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=190,blurb="73°\nStructural definition"}
-	{18166,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=191,blurb="73°\nStructural definition"}
-	{18167,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=192,blurb="73°\nStructural definition"}
-	{18168,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=193,blurb="74°\nStructural definition"}
-	{18169,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=194,blurb="74°\nStructural definition"}
-	{18170,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=195,blurb="74°\nStructural definition"}
-	{18171,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=196,blurb="75°\nStructural definition"}
-	{18172,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=197,blurb="75°\nStructural definition"}
-	{18173,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=198,blurb="75°\nStructural definition"}
-	{18174,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=199,blurb="76°\nStructural definition"}
-	{18175,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=200,blurb="76°\nStructural definition"}
-	{18176,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=201,blurb="76°\nStructural definition"}
-	{18177,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=202,blurb="77°\nStructural definition"}
-	{18178,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=203,blurb="77°\nStructural definition"}
-	{18179,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=204,blurb="77°\nStructural definition"}
-	{18180,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=205,blurb="78°\nStructural definition"}
-	{18181,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=206,blurb="78°\nStructural definition"}
-	{18182,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=207,blurb="78°\nStructural definition"}
-	{18183,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=208,blurb="79°\nStructural definition"}
-	{18184,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=209,blurb="79°\nStructural definition"}
-	{18185,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=210,blurb="79°\nStructural definition"}
-	{18186,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=211,blurb="80°\nStructural definition"}
-	{18187,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=212,blurb="80°\nStructural definition"}
-	{18188,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=213,blurb="80°\nStructural definition"}
-	{18189,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=214,blurb="81°\nStructural definition"}
-	{18190,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=215,blurb="81°\nStructural definition"}
-	{18191,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=216,blurb="81°\nStructural definition"}
-	{18192,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=217,blurb="82°\nStructural definition"}
-	{18193,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=218,blurb="82°\nStructural definition"}
-	{18194,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=219,blurb="82°\nStructural definition"}
-	{18195,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=220,blurb="83°\nStructural definition"}
-	{18196,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=221,blurb="83°\nStructural definition"}
-	{18197,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=222,blurb="83°\nStructural definition"}
-	{18198,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=223,blurb="84°\nStructural definition"}
-	{18199,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=224,blurb="84°\nStructural definition"}
-	{18200,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=225,blurb="84°\nStructural definition"}
-	{18201,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=226,blurb="85°\nStructural definition"}
-	{18202,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=227,blurb="85°\nStructural definition"}
-	{18203,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=228,blurb="85°\nStructural definition"}
-	{18204,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=229,blurb="86°\nStructural definition"}
-	{18205,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=230,blurb="86°\nStructural definition"}
-	{18206,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=231,blurb="86°\nStructural definition"}
-	{18207,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=232,blurb="87°\nStructural definition"}
-	{18208,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=233,blurb="87°\nStructural definition"}
-	{18209,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=234,blurb="87°\nStructural definition"}
-	{18210,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=235,blurb="88°\nStructural definition"}
-	{18211,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=236,blurb="88°\nStructural definition"}
-	{18212,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=237,blurb="88°\nStructural definition"}
-	{18213,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=238,blurb="89°\nStructural definition"}
-	{18214,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=239,blurb="89°\nStructural definition"}
-	{18215,extends=17976,features=INVISIBLE|NOPALETTE,durability=2.00001,scale=240,blurb="89°\nStructural definition"}
+	{17977,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
+	{17978,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
+	{17979,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
+	{17980,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,blurb="11°\nStructural definition"}
+	{17981,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,blurb="11°\nStructural definition"}
+	{17982,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,blurb="12°\nStructural definition"}
+	{17983,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,blurb="12°\nStructural definition"}
+	{17984,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,blurb="12°\nStructural definition"}
+	{17985,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,blurb="13°\nStructural definition"}
+	{17986,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,blurb="13°\nStructural definition"}
+	{17987,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,blurb="13°\nStructural definition"}
+	{17988,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,blurb="14°\nStructural definition"}
+	{17989,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,blurb="14°\nStructural definition"}
+	{17990,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,blurb="14°\nStructural definition"}
+	{17991,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,blurb="15°\nStructural definition"}
+	{17992,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17,blurb="15°\nStructural definition"}
+	{17993,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18,blurb="15°\nStructural definition"}
+	{17994,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19,blurb="16°\nStructural definition"}
+	{17995,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20,blurb="16°\nStructural definition"}
+	{17996,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21,blurb="16°\nStructural definition"}
+	{17997,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=22,blurb="17°\nStructural definition"}
+	{17998,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=23,blurb="17°\nStructural definition"}
+	{17999,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=24,blurb="17°\nStructural definition"}
+	{18000,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=25,blurb="18°\nStructural definition"}
+	{18001,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=26,blurb="18°\nStructural definition"}
+	{18002,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=27,blurb="18°\nStructural definition"}
+	{18003,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=28,blurb="19°\nStructural definition"}
+	{18004,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=29,blurb="19°\nStructural definition"}
+	{18005,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=30,blurb="19°\nStructural definition"}
+	{18006,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=31,blurb="20°\nStructural definition"}
+	{18007,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=32,blurb="20°\nStructural definition"}
+	{18008,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=33,blurb="20°\nStructural definition"}
+	{18009,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=34,blurb="21°\nStructural definition"}
+	{18010,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=35,blurb="21°\nStructural definition"}
+	{18011,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=36,blurb="21°\nStructural definition"}
+	{18012,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=37,blurb="22°\nStructural definition"}
+	{18013,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=38,blurb="22°\nStructural definition"}
+	{18014,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=39,blurb="22°\nStructural definition"}
+	{18015,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=40,blurb="23°\nStructural definition"}
+	{18016,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=41,blurb="23°\nStructural definition"}
+	{18017,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=42,blurb="23°\nStructural definition"}
+	{18018,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=43,blurb="24°\nStructural definition"}
+	{18019,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=44,blurb="24°\nStructural definition"}
+	{18020,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=45,blurb="24°\nStructural definition"}
+	{18021,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=46,blurb="25°\nStructural definition"}
+	{18022,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=47,blurb="25°\nStructural definition"}
+	{18023,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=48,blurb="25°\nStructural definition"}
+	{18024,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=49,blurb="26°\nStructural definition"}
+	{18025,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=50,blurb="26°\nStructural definition"}
+	{18026,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=51,blurb="26°\nStructural definition"}
+	{18027,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=52,blurb="27°\nStructural definition"}
+	{18028,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=53,blurb="27°\nStructural definition"}
+	{18029,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=54,blurb="27°\nStructural definition"}
+	{18030,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=55,blurb="28°\nStructural definition"}
+	{18031,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=56,blurb="28°\nStructural definition"}
+	{18032,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=57,blurb="28°\nStructural definition"}
+	{18033,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=58,blurb="29°\nStructural definition"}
+	{18034,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=59,blurb="29°\nStructural definition"}
+	{18035,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=60,blurb="29°\nStructural definition"}
+	{18036,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=61,blurb="30°\nStructural definition"}
+	{18037,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=62,blurb="30°\nStructural definition"}
+	{18038,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=63,blurb="30°\nStructural definition"}
+	{18039,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=64,blurb="31°\nStructural definition"}
+	{18040,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=65,blurb="31°\nStructural definition"}
+	{18041,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=66,blurb="31°\nStructural definition"}
+	{18042,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=67,blurb="32°\nStructural definition"}
+	{18043,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=68,blurb="32°\nStructural definition"}
+	{18044,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=69,blurb="32°\nStructural definition"}
+	{18045,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=70,blurb="33°\nStructural definition"}
+	{18046,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=71,blurb="33°\nStructural definition"}
+	{18047,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=72,blurb="33°\nStructural definition"}
+	{18048,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=73,blurb="34°\nStructural definition"}
+	{18049,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=74,blurb="34°\nStructural definition"}
+	{18050,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=75,blurb="34°\nStructural definition"}
+	{18051,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=76,blurb="35°\nStructural definition"}
+	{18052,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=77,blurb="35°\nStructural definition"}
+	{18053,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=78,blurb="35°\nStructural definition"}
+	{18054,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=79,blurb="36°\nStructural definition"}
+	{18055,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=80,blurb="36°\nStructural definition"}
+	{18056,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=81,blurb="36°\nStructural definition"}
+	{18057,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=82,blurb="37°\nStructural definition"}
+	{18058,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=83,blurb="37°\nStructural definition"}
+	{18059,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=84,blurb="37°\nStructural definition"}
+	{18060,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=85,blurb="38°\nStructural definition"}
+	{18061,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=86,blurb="38°\nStructural definition"}
+	{18062,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=87,blurb="38°\nStructural definition"}
+	{18063,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=88,blurb="39°\nStructural definition"}
+	{18064,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=89,blurb="39°\nStructural definition"}
+	{18065,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=90,blurb="39°\nStructural definition"}
+	{18066,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=91,blurb="40°\nStructural definition"}
+	{18067,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=92,blurb="40°\nStructural definition"}
+	{18068,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=93,blurb="40°\nStructural definition"}
+	{18069,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=94,blurb="41°\nStructural definition"}
+	{18070,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=95,blurb="41°\nStructural definition"}
+	{18071,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=96,blurb="41°\nStructural definition"}
+	{18072,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=97,blurb="42°\nStructural definition"}
+	{18073,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=98,blurb="42°\nStructural definition"}
+	{18074,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=99,blurb="42°\nStructural definition"}
+	{18075,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=100,blurb="43°\nStructural definition"}
+	{18076,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=101,blurb="43°\nStructural definition"}
+	{18077,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=102,blurb="43°\nStructural definition"}
+	{18078,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=103,blurb="44°\nStructural definition"}
+	{18079,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=104,blurb="44°\nStructural definition"}
+	{18080,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=105,blurb="44°\nStructural definition"}
+	{18081,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=106,blurb="45°\nStructural definition"}
+	{18082,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=107,blurb="45°\nStructural definition"}
+	{18083,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=108,blurb="45°\nStructural definition"}
+	{18084,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=109,blurb="46°\nStructural definition"}
+	{18085,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=110,blurb="46°\nStructural definition"}
+	{18086,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=111,blurb="46°\nStructural definition"}
+	{18087,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=112,blurb="47°\nStructural definition"}
+	{18088,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=113,blurb="47°\nStructural definition"}
+	{18089,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=114,blurb="47°\nStructural definition"}
+	{18090,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=115,blurb="48°\nStructural definition"}
+	{18091,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=116,blurb="48°\nStructural definition"}
+	{18092,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=117,blurb="48°\nStructural definition"}
+	{18093,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=118,blurb="49°\nStructural definition"}
+	{18094,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=119,blurb="49°\nStructural definition"}
+	{18095,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=120,blurb="49°\nStructural definition"}
+	{18096,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=121,blurb="50°\nStructural definition"}
+	{18097,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=122,blurb="50°\nStructural definition"}
+	{18098,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=123,blurb="50°\nStructural definition"}
+	{18099,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=124,blurb="51°\nStructural definition"}
+	{18100,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=125,blurb="51°\nStructural definition"}
+	{18101,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=126,blurb="51°\nStructural definition"}
+	{18102,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=127,blurb="52°\nStructural definition"}
+	{18103,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=128,blurb="52°\nStructural definition"}
+	{18104,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=129,blurb="52°\nStructural definition"}
+	{18105,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=130,blurb="53°\nStructural definition"}
+	{18106,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=131,blurb="53°\nStructural definition"}
+	{18107,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=132,blurb="53°\nStructural definition"}
+	{18108,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=133,blurb="54°\nStructural definition"}
+	{18109,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=134,blurb="54°\nStructural definition"}
+	{18110,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=135,blurb="54°\nStructural definition"}
+	{18111,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=136,blurb="55°\nStructural definition"}
+	{18112,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=137,blurb="55°\nStructural definition"}
+	{18113,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=138,blurb="55°\nStructural definition"}
+	{18114,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=139,blurb="56°\nStructural definition"}
+	{18115,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=140,blurb="56°\nStructural definition"}
+	{18116,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=141,blurb="56°\nStructural definition"}
+	{18117,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=142,blurb="57°\nStructural definition"}
+	{18118,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=143,blurb="57°\nStructural definition"}
+	{18119,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=144,blurb="57°\nStructural definition"}
+	{18120,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=145,blurb="58°\nStructural definition"}
+	{18121,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=146,blurb="58°\nStructural definition"}
+	{18122,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=147,blurb="58°\nStructural definition"}
+	{18123,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=148,blurb="59°\nStructural definition"}
+	{18124,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=149,blurb="59°\nStructural definition"}
+	{18125,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=150,blurb="59°\nStructural definition"}
+	{18126,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=151,blurb="60°\nStructural definition"}
+	{18127,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=152,blurb="60°\nStructural definition"}
+	{18128,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=153,blurb="60°\nStructural definition"}
+	{18129,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=154,blurb="61°\nStructural definition"}
+	{18130,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=155,blurb="61°\nStructural definition"}
+	{18131,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=156,blurb="61°\nStructural definition"}
+	{18132,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=157,blurb="62°\nStructural definition"}
+	{18133,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=158,blurb="62°\nStructural definition"}
+	{18134,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=159,blurb="62°\nStructural definition"}
+	{18135,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=160,blurb="63°\nStructural definition"}
+	{18136,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=161,blurb="63°\nStructural definition"}
+	{18137,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=162,blurb="63°\nStructural definition"}
+	{18138,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=163,blurb="64°\nStructural definition"}
+	{18139,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=164,blurb="64°\nStructural definition"}
+	{18140,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=165,blurb="64°\nStructural definition"}
+	{18141,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=166,blurb="65°\nStructural definition"}
+	{18142,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=167,blurb="65°\nStructural definition"}
+	{18143,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=168,blurb="65°\nStructural definition"}
+	{18144,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=169,blurb="66°\nStructural definition"}
+	{18145,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=170,blurb="66°\nStructural definition"}
+	{18146,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=171,blurb="66°\nStructural definition"}
+	{18147,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=172,blurb="67°\nStructural definition"}
+	{18148,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=173,blurb="67°\nStructural definition"}
+	{18149,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=174,blurb="67°\nStructural definition"}
+	{18150,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=175,blurb="68°\nStructural definition"}
+	{18151,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=176,blurb="68°\nStructural definition"}
+	{18152,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=177,blurb="68°\nStructural definition"}
+	{18153,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=178,blurb="69°\nStructural definition"}
+	{18154,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=179,blurb="69°\nStructural definition"}
+	{18155,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=180,blurb="69°\nStructural definition"}
+	{18156,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=181,blurb="70°\nStructural definition"}
+	{18157,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=182,blurb="70°\nStructural definition"}
+	{18158,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=183,blurb="70°\nStructural definition"}
+	{18159,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=184,blurb="71°\nStructural definition"}
+	{18160,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=185,blurb="71°\nStructural definition"}
+	{18161,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=186,blurb="71°\nStructural definition"}
+	{18162,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=187,blurb="72°\nStructural definition"}
+	{18163,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=188,blurb="72°\nStructural definition"}
+	{18164,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=189,blurb="72°\nStructural definition"}
+	{18165,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=190,blurb="73°\nStructural definition"}
+	{18166,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=191,blurb="73°\nStructural definition"}
+	{18167,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=192,blurb="73°\nStructural definition"}
+	{18168,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=193,blurb="74°\nStructural definition"}
+	{18169,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=194,blurb="74°\nStructural definition"}
+	{18170,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=195,blurb="74°\nStructural definition"}
+	{18171,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=196,blurb="75°\nStructural definition"}
+	{18172,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=197,blurb="75°\nStructural definition"}
+	{18173,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=198,blurb="75°\nStructural definition"}
+	{18174,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=199,blurb="76°\nStructural definition"}
+	{18175,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=200,blurb="76°\nStructural definition"}
+	{18176,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=201,blurb="76°\nStructural definition"}
+	{18177,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=202,blurb="77°\nStructural definition"}
+	{18178,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=203,blurb="77°\nStructural definition"}
+	{18179,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=204,blurb="77°\nStructural definition"}
+	{18180,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=205,blurb="78°\nStructural definition"}
+	{18181,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=206,blurb="78°\nStructural definition"}
+	{18182,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=207,blurb="78°\nStructural definition"}
+	{18183,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=208,blurb="79°\nStructural definition"}
+	{18184,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=209,blurb="79°\nStructural definition"}
+	{18185,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=210,blurb="79°\nStructural definition"}
+	{18186,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=211,blurb="80°\nStructural definition"}
+	{18187,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=212,blurb="80°\nStructural definition"}
+	{18188,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=213,blurb="80°\nStructural definition"}
+	{18189,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=214,blurb="81°\nStructural definition"}
+	{18190,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=215,blurb="81°\nStructural definition"}
+	{18191,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=216,blurb="81°\nStructural definition"}
+	{18192,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=217,blurb="82°\nStructural definition"}
+	{18193,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=218,blurb="82°\nStructural definition"}
+	{18194,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=219,blurb="82°\nStructural definition"}
+	{18195,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=220,blurb="83°\nStructural definition"}
+	{18196,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=221,blurb="83°\nStructural definition"}
+	{18197,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=222,blurb="83°\nStructural definition"}
+	{18198,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=223,blurb="84°\nStructural definition"}
+	{18199,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=224,blurb="84°\nStructural definition"}
+	{18200,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=225,blurb="84°\nStructural definition"}
+	{18201,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=226,blurb="85°\nStructural definition"}
+	{18202,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=227,blurb="85°\nStructural definition"}
+	{18203,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=228,blurb="85°\nStructural definition"}
+	{18204,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=229,blurb="86°\nStructural definition"}
+	{18205,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=230,blurb="86°\nStructural definition"}
+	{18206,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=231,blurb="86°\nStructural definition"}
+	{18207,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=232,blurb="87°\nStructural definition"}
+	{18208,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=233,blurb="87°\nStructural definition"}
+	{18209,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=234,blurb="87°\nStructural definition"}
+	{18210,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=235,blurb="88°\nStructural definition"}
+	{18211,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=236,blurb="88°\nStructural definition"}
+	{18212,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=237,blurb="88°\nStructural definition"}
+	{18213,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=238,blurb="89°\nStructural definition"}
+	{18214,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=239,blurb="89°\nStructural definition"}
+	{18215,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=240,blurb="89°\nStructural definition"}
 	{18216,extends=17000,sort=124,durability=2.00001,lineColor=0xFFFFFF,shape=2019239001,name="Background Component",blurb="Scaled for different sizes of aesthetic backgrounds"}
 	{18217,extends=18216,durability=2.00001,scale=2,blurb="160,160\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={160,160},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18218,extends=18216,durability=2.00001,scale=3,blurb="320,160\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={320,160},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
@@ -1369,4 +1369,5 @@
 	{18349,extends=18216,durability=2.00001,scale=134,blurb="2560,2240\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2560,2240},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18350,extends=18216,durability=2.00001,scale=135,blurb="2400,2400\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2400,2400},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18351,extends=18216,durability=2.00001,scale=136,blurb="2560,2400\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={2560,2400},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
+	{18352,extends=17000,features=NOPALETTE|COMMAND|NOICON,sort=1,durability=2.00001}
 }
