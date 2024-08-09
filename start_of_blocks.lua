@@ -6,5 +6,5 @@
 		density=0.05
 		growRate=10
 		fillColor=0xff99ee
-		fillColor1=0xff99ee
+		fillColor1=0xb6ccdb
 		lineColor=0x0a0529
