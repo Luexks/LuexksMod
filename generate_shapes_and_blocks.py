@@ -12,6 +12,7 @@ SHAPE_ID_SERIAL_LENGTH = 4
 TOTAL_SCALE = 10
 
 MAXIMUM_SCALE_COUNT = 256
+MAXIMUM_SIDE_COUNT = 32
 
 SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER = 0.5 # big name
 
@@ -253,7 +254,6 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     shapes.write("\n\t\t}\n\t}")
 
     # Shroud Background
-    shroud_background_block_data = []
     shapes.write(f"\n\t{{{shape_id(9001)}\n\t\t{{")
     for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT + 1):
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
@@ -261,13 +261,30 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     shapes.write("\n\t\t}\n\t}\n\t")
 
     # Multiple Squares
-    shroud_background_block_data = []
     shapes.write(f"\n\t{{{shape_id(9002)}\n\t\t{{")
     for scale in range(1, MAXIMUM_SCALE_COUNT):
         write_scale_format(vertices_square[0], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((1) * 2)}") for port in range(1)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}\n\t")
 
-    shapes.write("\n}")
+    # Hull Circles
+    shapes.write(f"\n\t{{{shape_id(9003)}\n\t\t{{")
+    radius = (TOTAL_SCALE / 2) / math.cos(math.pi / MAXIMUM_SIDE_COUNT)
+    angle_step = 2 * math.pi / MAXIMUM_SIDE_COUNT
+    rotation_angle = math.pi / MAXIMUM_SIDE_COUNT
+
+    hull_circle_vertices = []
+    for scale_index in range(1, MAXIMUM_SIDE_COUNT):
+        angle = scale_index * angle_step + rotation_angle
+        x = radius * math.cos(angle)
+        y = radius * math.sin(angle)
+        hull_circle_vertices.append((x, y))
+    
+    hull_circle_vertices.reverse()
+    
+    for scale in range(MAXIMUM_SCALE_COUNT):
+        write_scale_format(hull_circle_vertices, [(side, 0.5) for side in range(1, MAXIMUM_SIDE_COUNT - 1, 2)])
+
+    shapes.write("\n\t\t}\n\t}\n\t\n}")
 
     ### BLOCKS ###
 
@@ -372,10 +389,27 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     for scale in range(1, NEGATIVE_CIRCLE_COUNT):
         if scale == 1:
             new_extend_parent_id = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9002)},shroud={{")
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
         blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+
+    # Negative Pipes
+    for scale in range(1, MAXIMUM_SCALE_COUNT):
+        if scale == 1:
+            new_extend_parent_id = get_next_block_id()
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
+        else:
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+
+    for scale in range(1, MAXIMUM_SCALE_COUNT):
+        if scale == 1:
+            new_extend_parent_id = get_next_block_id()
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
+        else:
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Command
     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},name=\"Central Command\",blurb=\"Crew retreat to this stronghold before the structures they control are destroyed.\"features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
