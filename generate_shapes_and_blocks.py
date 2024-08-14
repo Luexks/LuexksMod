@@ -53,6 +53,11 @@ TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE / 2
 
 RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
     [
+        (lambda x: x * 0.25, lambda y: y * 0.25),
+        (lambda x: x * 0.5, lambda y: y * 0.25),
+        (lambda x: x * 0.75, lambda y: y * 0.25),
+        (lambda x: x, lambda y: y * 0.25),
+
         (lambda x: x * 0.5, lambda y: y * 0.5),
         (lambda x: x, lambda y: y * 0.5)
     ],
@@ -147,14 +152,15 @@ def turret_icon_radius(vertices: list[(float, float)]) -> (float, float):
         center_to_vertex_distance = math.dist(center, vertices[vertex_index])
         maximum_radius = max(maximum_radius, center_to_vertex_distance)
 
-        mininum_radius = min(mininum_radius, math.dist(center, lerp_2(vertices[vertex_index], vertices[(vertex_index + 1) % len(vertices)], 0.5)))
+        mininum_radius = min(mininum_radius, math.dist(center, center_from_vertices([vertices[vertex_index], vertices[(vertex_index + 1) % len(vertices)]])))
     
     return min(mininum_radius, maximum_radius)
 
 def write_shroud_outline(vertices: list[(float, float)], offset: (float, float) = None) -> None:
     if offset is None:
         offset = center_from_vertices(vertices)
-        offset = (-offset[0] + 0.25 * turret_icon_radius(vertices), -offset[1])
+        offset = (-offset[0] + 0.5 * turret_icon_radius(vertices), -offset[1])
+        
     global hull_type
     if hull_type < 2:
         global blocks
