@@ -372,7 +372,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
             for scale in range(ISOTRI_SCALE_COUNT):
                 if angle == ISOTRI_MIN_ANGLE and scale == 0:
-                    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
+                    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{}}}}")
                 else:
                     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
 

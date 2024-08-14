@@ -3,7 +3,7 @@
 	{17000
 		name="Hull Alpha"
 		blurb="Structural definition"
-		features=PALETTE--|INVISIBLE
+		features=PALETTE|TURRET--|INVISIBLE
 		group=99
 		durability=2
 		density=0.05
@@ -81,7 +81,7 @@
 	{17061,extends=17059,durability=2.00001,scale=3,shroud={{shape=2019239000,offset={-1.25,-15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,15.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,12.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,10.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,10.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-10.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-12.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17062,extends=17059,durability=2.00001,scale=4,shroud={{shape=2019239000,offset={-1.25,-20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,20.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,17.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,15.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-17.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17063,extends=17059,durability=2.00001,scale=5,shroud={{shape=2019239000,offset={-1.25,-25.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,25.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,25.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,22.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,20.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-22.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
-	{17064,extends=17000,sort=105,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition"}
+	{17064,extends=17000,sort=105,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition",shroud={}}
 	{17065,extends=17064,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
 	{17066,extends=17064,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
 	{17067,extends=17064,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
@@ -385,7 +385,7 @@
 	{17365,extends=17363,durability=2.00001,scale=3,shroud={{shape=2019239000,offset={-1.25,-15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,15.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,12.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,10.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,10.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-10.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-12.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17366,extends=17363,durability=2.00001,scale=4,shroud={{shape=2019239000,offset={-1.25,-20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,20.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,17.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,15.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-15.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-17.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{17367,extends=17363,durability=2.00001,scale=5,shroud={{shape=2019239000,offset={-1.25,-25.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={-1.25,0.0,-0.05},size={2.5,25.0},angle=-3.141592653589793,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={-1.25,25.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,22.5,-0.05},size={2.5,3.5355339059327378},angle=0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={3.75,0.0,-0.05},size={2.5,20.0},angle=0.0,tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=2019239000,offset={3.75,-20.0,-0.05},size={5.0,5.0},tri_color_id=2,tri_color1_id=2,line_color_id=2}{shape=SQUARE,offset={1.25,-22.5,-0.05},size={2.5,3.5355339059327378},angle=-0.7853981633974483,tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
-	{17368,extends=17304,sort=111,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition"}
+	{17368,extends=17304,sort=111,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition",shroud={}}
 	{17369,extends=17368,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
 	{17370,extends=17368,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
 	{17371,extends=17368,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
@@ -689,7 +689,7 @@
 	{17669,extends=17667,durability=2.00001,scale=3,shroud={}}
 	{17670,extends=17667,durability=2.00001,scale=4,shroud={}}
 	{17671,extends=17667,durability=2.00001,scale=5,shroud={}}
-	{17672,extends=17608,sort=117,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition"}
+	{17672,extends=17608,sort=117,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition",shroud={}}
 	{17673,extends=17672,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
 	{17674,extends=17672,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
 	{17675,extends=17672,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
@@ -993,7 +993,7 @@
 	{17973,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
 	{17974,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
 	{17975,extends=17971,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
-	{17976,extends=17912,sort=123,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition"}
+	{17976,extends=17912,sort=123,durability=2.00001,shape=2019230005,blurb="10°\nStructural definition",shroud={}}
 	{17977,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,blurb="10°\nStructural definition"}
 	{17978,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,blurb="10°\nStructural definition"}
 	{17979,extends=17976,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,blurb="11°\nStructural definition"}
