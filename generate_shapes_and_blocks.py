@@ -132,7 +132,29 @@ class InvalidPortRelativeToOptionValue(Exception):
     def __init__(self) -> None:
         super().__init__("Invalid port_relative_to_option value. It's sort of meant to be an enum, it should only ever be either 0, 1, or 2; if you were using Rust, then this wouldn't be an issue >:(")
 
-def write_shroud_outline(vertices: list[(float, float)], offset: (float, float)) -> None:
+def lerp_2(vertex_1: (float, float), vertex_2: (float, float), distance_multiplier: float) -> (float, float): # o this is just center_from_vertices xd
+    return (vertex_1[0] + distance_multiplier * (vertex_1[0] - vertex_2[0]), vertex_1[1] + distance_multiplier * (vertex_1[0] - vertex_2[1]))
+
+def center_from_vertices(vertices: list[(float, float)]) -> (float, float):
+    return (sum(vertex[0] for vertex in vertices) / len(vertices), sum(vertex[1] for vertex in vertices) / len(vertices))
+
+def turret_icon_radius(vertices: list[(float, float)]) -> (float, float):
+    center = center_from_vertices(vertices)
+    mininum_radius = math.dist(center, vertices[0])
+    maximum_radius = mininum_radius
+
+    for vertex_index in range(len(vertices)):
+        center_to_vertex_distance = math.dist(center, vertices[vertex_index])
+        maximum_radius = max(maximum_radius, center_to_vertex_distance)
+
+        mininum_radius = min(mininum_radius, math.dist(center, lerp_2(vertices[vertex_index], vertices[(vertex_index + 1) % len(vertices)], 0.5)))
+    
+    return min(mininum_radius, maximum_radius)
+
+def write_shroud_outline(vertices: list[(float, float)], offset: (float, float) = None) -> None:
+    if offset is None:
+        offset = center_from_vertices(vertices)
+        offset = (-offset[0] + 0.25 * turret_icon_radius(vertices), -offset[1])
     global hull_type
     if hull_type < 2:
         global blocks
@@ -182,10 +204,10 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     # Squares
     vertices_square = []
     shapes.write(f"\n\t{{{shape_id(0)}\n\t\t{{")
-    for scale in range(1, SQUARE_SCALE_COUNT + 1):
-        new_vertices = [(scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
+    for per_angle_scale in range(1, SQUARE_SCALE_COUNT + 1):
+        new_vertices = [(per_angle_scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], per_angle_scale * SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
         vertices_square.append(new_vertices)
-        write_scale_format(new_vertices, combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(4)]))
+        write_scale_format(new_vertices, combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((per_angle_scale) * 2)}") for port in range(per_angle_scale)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}")
 
     # Right Triangles
@@ -221,18 +243,20 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     new_vertices = [(SQUARE_SCALE_FACTOR / -2, SQUARE_SCALE_FACTOR * -1), (SQUARE_SCALE_FACTOR / -2, SQUARE_SCALE_FACTOR), (SQUARE_SCALE_FACTOR / 2, 0)]
     vertices_adapter.append(new_vertices)
     write_scale_format(new_vertices, [(0, 0.5), (1, 0.5), (2, 0.5)])
-    for scale in range(1, ADAPTER_SCALE_COUNT + 1 - 1):
-        new_vertices = [((SQUARE_SCALE_FACTOR / 2) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], (scale * SQUARE_SCALE_FACTOR + SQUARE_SCALE_FACTOR / 2 - SQUARE_SCALE_FACTOR * (0.5 if vertex_orientation in [0, 2] else -0.5) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
+    for per_angle_scale in range(1, ADAPTER_SCALE_COUNT + 1 - 1):
+        new_vertices = [((SQUARE_SCALE_FACTOR / 2) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0], (per_angle_scale * SQUARE_SCALE_FACTOR + SQUARE_SCALE_FACTOR / 2 - SQUARE_SCALE_FACTOR * (0.5 if vertex_orientation in [0, 2] else -0.5) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1]) for vertex_orientation in range(4)]
         vertices_adapter.append(new_vertices)
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
     # Isotris
+    vertices_isotri = []
     shapes.write(f"\n\t{{{shape_id(5)}\n\t\t{{")
     for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
-        for scale in range(1, ISOTRI_SCALE_COUNT + 1):
-            new_vertices = [(-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, -math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (-math.cos(math.radians(angle / 2)) * scale * TOTAL_SCALE, math.sin(math.radians(angle / 2)) * scale * TOTAL_SCALE), (0, 0)]
-            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[(1)], TOTAL_SCALE, 0, 0)] + [[(side, f"{str(port * 2 + 1)}/{str((scale) * 2)}") for port in range(scale)] for side in range(1, 3)]))
+        for per_angle_scale in range(1, ISOTRI_SCALE_COUNT + 1):
+            new_vertices = [(-math.cos(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE, -math.sin(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE), (-math.cos(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE, math.sin(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE), (0, 0)]
+            vertices_isotri.append(new_vertices)
+            write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[(1)], TOTAL_SCALE, 0, 0)] + [[(side, f"{str(port * 2 + 1)}/{str((per_angle_scale) * 2)}") for port in range(per_angle_scale)] for side in range(1, 3)]))
     shapes.write("\n\t\t}\n\t}")
 
 
@@ -262,7 +286,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
     # Multiple Squares
     shapes.write(f"\n\t{{{shape_id(9002)}\n\t\t{{")
-    for scale in range(1, MAXIMUM_SCALE_COUNT):
+    for per_angle_scale in range(1, MAXIMUM_SCALE_COUNT):
         write_scale_format(vertices_square[0], combine_list_of_lists([[(side, f"{str(port * 2 + 1)}/{str((1) * 2)}") for port in range(1)] for side in range(4)]))
     shapes.write("\n\t\t}\n\t}\n\t")
 
@@ -281,7 +305,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     
     hull_circle_vertices.reverse()
     
-    for scale in range(MAXIMUM_SCALE_COUNT):
+    for per_angle_scale in range(MAXIMUM_SCALE_COUNT):
         write_scale_format(hull_circle_vertices, [(side, 0.5) for side in range(1, MAXIMUM_SIDE_COUNT - 1, 2)])
 
     shapes.write("\n\t\t}\n\t}\n\t\n}")
@@ -318,98 +342,101 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
         # Squares
         # blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
-        for scale in range(SQUARE_SCALE_COUNT - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_block_id_base)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-            write_shroud_outline(vertices_square[scale + 1], (2.5 * (scale + 2), 0.0))
+        for per_angle_scale in range(SQUARE_SCALE_COUNT - 1):
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_block_id_base)},{invisible_nopalette_check()}durability=2.00001,scale={str(per_angle_scale + 2)},shroud={{")
+            write_shroud_outline(vertices_square[per_angle_scale + 1], (2.5 * (per_angle_scale + 2), 0.0))
             blocks.write("}}")
 
         # Right Triangles
         new_extend_parent_id = get_next_block_id()
         blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
-        pwoomee = 5.0 * (1 / 3)
-        # write_shroud_outline(vertices_right_triangle[0], (0.0, 0.0))
-        write_shroud_outline(vertices_right_triangle[0], (0.59 - pwoomee, 0.0 - pwoomee))
-        # write_shroud_outline(vertices_right_triangle[0], (math.cos(45) * (1 / 3), math.sin(45) * (1 / 3)))
-        # write_shroud_outline(vertices_right_triangle[0], (-4 * math.sin(45) * (1 / 3), -6 * math.sin(45) * (1 / 3)))
+        write_shroud_outline(vertices_right_triangle[0])
         blocks.write("}}")
-        scale = 0
+        per_angle_scale = 0
         for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
             for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
-                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{}}}}")
-                scale += 1
+                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(per_angle_scale + 2)},shroud={{")
+                write_shroud_outline(vertices_right_triangle[per_angle_scale + 1])
+                blocks.write("}}")
+                per_angle_scale += 1
 
         # Mirrored Right Triangles
         new_extend_parent_id = get_next_block_id()
         blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(2)},shroud={{")
-        # write_shroud_outline(mirror_vertices(vertices_right_triangle[0]), (0.0, 0.0))
-        write_shroud_outline(mirror_vertices(vertices_right_triangle[0]), (0.59 - pwoomee, 0.0 + pwoomee))
+        write_shroud_outline(mirror_vertices(vertices_right_triangle[0]))
         blocks.write("}}")
-        for scale in range(triangle_count - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)}}}")
+        for per_angle_scale in range(triangle_count - 1):
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(per_angle_scale + 2)},shroud={{")
+            write_shroud_outline(mirror_vertices(vertices_right_triangle[per_angle_scale + 1]))
+            blocks.write("}}")
 
         # Rectangles
         new_extend_parent_id = get_next_block_id()
         blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)},shroud={{")
         write_shroud_outline(vertices_rectangle[0], (vertices_rectangle[0][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
         blocks.write("}}")
-        for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-            write_shroud_outline(vertices_rectangle[scale + 1], (vertices_rectangle[scale + 1][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
+        for per_angle_scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(per_angle_scale + 2)},shroud={{")
+            write_shroud_outline(vertices_rectangle[per_angle_scale + 1], (vertices_rectangle[per_angle_scale + 1][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
             blocks.write("}}")
 
         # Adapter
         new_extend_parent_id = get_next_block_id()
         blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(4)},shroud={{")
-        write_shroud_outline(vertices_adapter[0], (vertices_adapter[0][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
+        write_shroud_outline(vertices_adapter[0])
         blocks.write("}}")
-        for scale in range(ADAPTER_SCALE_COUNT - 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-            write_shroud_outline(vertices_adapter[scale + 1], (vertices_adapter[scale + 1][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
+        for per_angle_scale in range(ADAPTER_SCALE_COUNT - 1):
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(per_angle_scale + 2)},shroud={{")
+            write_shroud_outline(vertices_adapter[per_angle_scale + 1], (vertices_adapter[per_angle_scale + 1][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
             blocks.write("}}")
 
         # Isotris
+        scale = 0
         new_extend_parent_id = get_next_block_id()
         for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
-            for scale in range(ISOTRI_SCALE_COUNT):
-                if angle == ISOTRI_MIN_ANGLE and scale == 0:
-                    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{}}}}")
+            for per_angle_scale in range(ISOTRI_SCALE_COUNT):
+                if angle == ISOTRI_MIN_ANGLE and per_angle_scale == 0:
+                    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
                 else:
-                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\"}}")
+                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + per_angle_scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
+                write_shroud_outline(vertices_isotri[scale])
+                scale += 1
+                blocks.write("}}")
 
     # Shroud Backgrounad
     new_extend_parent_id = get_next_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"Background Component\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
-    scale = 2
+    per_angle_scale = 2
     for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT):
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
-            scale += 1
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
+            per_angle_scale += 1
 
     # Negative Circle
-    for scale in range(1, NEGATIVE_CIRCLE_COUNT):
-        if scale == 1:
+    for per_angle_scale in range(1, NEGATIVE_CIRCLE_COUNT):
+        if per_angle_scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(per_angle_scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Negative Pipes
-    for scale in range(1, MAXIMUM_SCALE_COUNT):
-        if scale == 1:
+    for per_angle_scale in range(1, MAXIMUM_SCALE_COUNT):
+        if per_angle_scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
-    for scale in range(1, MAXIMUM_SCALE_COUNT):
-        if scale == 1:
+    for per_angle_scale in range(1, MAXIMUM_SCALE_COUNT):
+        if per_angle_scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Command
     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},name=\"Central Command\",blurb=\"Crew retreat to this stronghold before the structures they control are destroyed.\"features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
