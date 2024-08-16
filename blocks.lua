@@ -1549,311 +1549,311 @@
 	{18528,extends=18290,durability=2.00001,scale=239,blurb="89°\nStructural definition",shroud={}}
 	{18529,extends=18290,durability=2.00001,scale=240,blurb="89°\nStructural definition",shroud={}}
 	{18530,extends=17000,name="Hull Invisible",features=PALETTE|INVISIBLE,sort=130,durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={}}
-	{18531,extends=18530,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
-	{18532,extends=18530,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
+	{18531,extends=18530,features=PALETTE|INVISIBLE,sort=25000,durability=2.00001,scale=2,shroud={}}
+	{18532,extends=18530,features=PALETTE|INVISIBLE,sort=25001,durability=2.00001,scale=3,shroud={}}
 	{18533,extends=18530,sort=131,durability=2.00001,shape=2019230001,shroud={}}
-	{18534,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
-	{18535,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
-	{18536,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
-	{18537,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
-	{18538,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,shroud={}}
-	{18539,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,shroud={}}
-	{18540,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,shroud={}}
-	{18541,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,shroud={}}
-	{18542,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,shroud={}}
-	{18543,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,shroud={}}
-	{18544,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,shroud={}}
-	{18545,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,shroud={}}
-	{18546,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,shroud={}}
-	{18547,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,shroud={}}
-	{18548,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,shroud={}}
-	{18549,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17,shroud={}}
-	{18550,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18,shroud={}}
-	{18551,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19,shroud={}}
-	{18552,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20,shroud={}}
-	{18553,extends=18533,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21,shroud={}}
+	{18534,extends=18533,features=PALETTE|INVISIBLE,sort=25002,durability=2.00001,scale=2,shroud={}}
+	{18535,extends=18533,features=PALETTE|INVISIBLE,sort=25003,durability=2.00001,scale=3,shroud={}}
+	{18536,extends=18533,features=PALETTE|INVISIBLE,sort=25004,durability=2.00001,scale=4,shroud={}}
+	{18537,extends=18533,features=PALETTE|INVISIBLE,sort=25005,durability=2.00001,scale=5,shroud={}}
+	{18538,extends=18533,features=PALETTE|INVISIBLE,sort=25006,durability=2.00001,scale=6,shroud={}}
+	{18539,extends=18533,features=PALETTE|INVISIBLE,sort=25007,durability=2.00001,scale=7,shroud={}}
+	{18540,extends=18533,features=PALETTE|INVISIBLE,sort=25008,durability=2.00001,scale=8,shroud={}}
+	{18541,extends=18533,features=PALETTE|INVISIBLE,sort=25009,durability=2.00001,scale=9,shroud={}}
+	{18542,extends=18533,features=PALETTE|INVISIBLE,sort=25010,durability=2.00001,scale=10,shroud={}}
+	{18543,extends=18533,features=PALETTE|INVISIBLE,sort=25011,durability=2.00001,scale=11,shroud={}}
+	{18544,extends=18533,features=PALETTE|INVISIBLE,sort=25012,durability=2.00001,scale=12,shroud={}}
+	{18545,extends=18533,features=PALETTE|INVISIBLE,sort=25013,durability=2.00001,scale=13,shroud={}}
+	{18546,extends=18533,features=PALETTE|INVISIBLE,sort=25014,durability=2.00001,scale=14,shroud={}}
+	{18547,extends=18533,features=PALETTE|INVISIBLE,sort=25015,durability=2.00001,scale=15,shroud={}}
+	{18548,extends=18533,features=PALETTE|INVISIBLE,sort=25016,durability=2.00001,scale=16,shroud={}}
+	{18549,extends=18533,features=PALETTE|INVISIBLE,sort=25017,durability=2.00001,scale=17,shroud={}}
+	{18550,extends=18533,features=PALETTE|INVISIBLE,sort=25018,durability=2.00001,scale=18,shroud={}}
+	{18551,extends=18533,features=PALETTE|INVISIBLE,sort=25019,durability=2.00001,scale=19,shroud={}}
+	{18552,extends=18533,features=PALETTE|INVISIBLE,sort=25020,durability=2.00001,scale=20,shroud={}}
+	{18553,extends=18533,features=PALETTE|INVISIBLE,sort=25021,durability=2.00001,scale=21,shroud={}}
 	{18554,extends=18530,sort=132,durability=2.00001,shape=2019230002,shroud={}}
-	{18555,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
-	{18556,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
-	{18557,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
-	{18558,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
-	{18559,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,shroud={}}
-	{18560,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,shroud={}}
-	{18561,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,shroud={}}
-	{18562,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,shroud={}}
-	{18563,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,shroud={}}
-	{18564,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,shroud={}}
-	{18565,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,shroud={}}
-	{18566,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,shroud={}}
-	{18567,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,shroud={}}
-	{18568,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,shroud={}}
-	{18569,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,shroud={}}
-	{18570,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17,shroud={}}
-	{18571,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18,shroud={}}
-	{18572,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19,shroud={}}
-	{18573,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20,shroud={}}
-	{18574,extends=18554,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21,shroud={}}
+	{18555,extends=18554,features=PALETTE|INVISIBLE,sort=25022,durability=2.00001,scale=2,shroud={}}
+	{18556,extends=18554,features=PALETTE|INVISIBLE,sort=25023,durability=2.00001,scale=3,shroud={}}
+	{18557,extends=18554,features=PALETTE|INVISIBLE,sort=25024,durability=2.00001,scale=4,shroud={}}
+	{18558,extends=18554,features=PALETTE|INVISIBLE,sort=25025,durability=2.00001,scale=5,shroud={}}
+	{18559,extends=18554,features=PALETTE|INVISIBLE,sort=25026,durability=2.00001,scale=6,shroud={}}
+	{18560,extends=18554,features=PALETTE|INVISIBLE,sort=25027,durability=2.00001,scale=7,shroud={}}
+	{18561,extends=18554,features=PALETTE|INVISIBLE,sort=25028,durability=2.00001,scale=8,shroud={}}
+	{18562,extends=18554,features=PALETTE|INVISIBLE,sort=25029,durability=2.00001,scale=9,shroud={}}
+	{18563,extends=18554,features=PALETTE|INVISIBLE,sort=25030,durability=2.00001,scale=10,shroud={}}
+	{18564,extends=18554,features=PALETTE|INVISIBLE,sort=25031,durability=2.00001,scale=11,shroud={}}
+	{18565,extends=18554,features=PALETTE|INVISIBLE,sort=25032,durability=2.00001,scale=12,shroud={}}
+	{18566,extends=18554,features=PALETTE|INVISIBLE,sort=25033,durability=2.00001,scale=13,shroud={}}
+	{18567,extends=18554,features=PALETTE|INVISIBLE,sort=25034,durability=2.00001,scale=14,shroud={}}
+	{18568,extends=18554,features=PALETTE|INVISIBLE,sort=25035,durability=2.00001,scale=15,shroud={}}
+	{18569,extends=18554,features=PALETTE|INVISIBLE,sort=25036,durability=2.00001,scale=16,shroud={}}
+	{18570,extends=18554,features=PALETTE|INVISIBLE,sort=25037,durability=2.00001,scale=17,shroud={}}
+	{18571,extends=18554,features=PALETTE|INVISIBLE,sort=25038,durability=2.00001,scale=18,shroud={}}
+	{18572,extends=18554,features=PALETTE|INVISIBLE,sort=25039,durability=2.00001,scale=19,shroud={}}
+	{18573,extends=18554,features=PALETTE|INVISIBLE,sort=25040,durability=2.00001,scale=20,shroud={}}
+	{18574,extends=18554,features=PALETTE|INVISIBLE,sort=25041,durability=2.00001,scale=21,shroud={}}
 	{18575,extends=18530,sort=133,durability=2.00001,shape=2019230003,shroud={}}
-	{18576,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
-	{18577,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
-	{18578,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
-	{18579,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
-	{18580,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,shroud={}}
-	{18581,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,shroud={}}
-	{18582,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,shroud={}}
-	{18583,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,shroud={}}
-	{18584,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,shroud={}}
-	{18585,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,shroud={}}
-	{18586,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,shroud={}}
-	{18587,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,shroud={}}
-	{18588,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,shroud={}}
-	{18589,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,shroud={}}
-	{18590,extends=18575,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,shroud={}}
+	{18576,extends=18575,features=PALETTE|INVISIBLE,sort=25042,durability=2.00001,scale=2,shroud={}}
+	{18577,extends=18575,features=PALETTE|INVISIBLE,sort=25043,durability=2.00001,scale=3,shroud={}}
+	{18578,extends=18575,features=PALETTE|INVISIBLE,sort=25044,durability=2.00001,scale=4,shroud={}}
+	{18579,extends=18575,features=PALETTE|INVISIBLE,sort=25045,durability=2.00001,scale=5,shroud={}}
+	{18580,extends=18575,features=PALETTE|INVISIBLE,sort=25046,durability=2.00001,scale=6,shroud={}}
+	{18581,extends=18575,features=PALETTE|INVISIBLE,sort=25047,durability=2.00001,scale=7,shroud={}}
+	{18582,extends=18575,features=PALETTE|INVISIBLE,sort=25048,durability=2.00001,scale=8,shroud={}}
+	{18583,extends=18575,features=PALETTE|INVISIBLE,sort=25049,durability=2.00001,scale=9,shroud={}}
+	{18584,extends=18575,features=PALETTE|INVISIBLE,sort=25050,durability=2.00001,scale=10,shroud={}}
+	{18585,extends=18575,features=PALETTE|INVISIBLE,sort=25051,durability=2.00001,scale=11,shroud={}}
+	{18586,extends=18575,features=PALETTE|INVISIBLE,sort=25052,durability=2.00001,scale=12,shroud={}}
+	{18587,extends=18575,features=PALETTE|INVISIBLE,sort=25053,durability=2.00001,scale=13,shroud={}}
+	{18588,extends=18575,features=PALETTE|INVISIBLE,sort=25054,durability=2.00001,scale=14,shroud={}}
+	{18589,extends=18575,features=PALETTE|INVISIBLE,sort=25055,durability=2.00001,scale=15,shroud={}}
+	{18590,extends=18575,features=PALETTE|INVISIBLE,sort=25056,durability=2.00001,scale=16,shroud={}}
 	{18591,extends=18530,sort=134,durability=2.00001,shape=2019230004,shroud={}}
-	{18592,extends=18591,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,shroud={}}
-	{18593,extends=18591,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,shroud={}}
-	{18594,extends=18591,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,shroud={}}
-	{18595,extends=18591,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,shroud={}}
+	{18592,extends=18591,features=PALETTE|INVISIBLE,sort=25057,durability=2.00001,scale=2,shroud={}}
+	{18593,extends=18591,features=PALETTE|INVISIBLE,sort=25058,durability=2.00001,scale=3,shroud={}}
+	{18594,extends=18591,features=PALETTE|INVISIBLE,sort=25059,durability=2.00001,scale=4,shroud={}}
+	{18595,extends=18591,features=PALETTE|INVISIBLE,sort=25060,durability=2.00001,scale=5,shroud={}}
 	{18596,extends=18530,sort=135,durability=2.00001,shape=2019230006,blurb="10°\nStructural definition",shroud={}}
-	{18597,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=2,blurb="10°\nStructural definition",shroud={}}
-	{18598,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=3,blurb="10°\nStructural definition",shroud={}}
-	{18599,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=4,blurb="11°\nStructural definition",shroud={}}
-	{18600,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=5,blurb="11°\nStructural definition",shroud={}}
-	{18601,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=6,blurb="11°\nStructural definition",shroud={}}
-	{18602,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=7,blurb="12°\nStructural definition",shroud={}}
-	{18603,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=8,blurb="12°\nStructural definition",shroud={}}
-	{18604,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=9,blurb="12°\nStructural definition",shroud={}}
-	{18605,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=10,blurb="13°\nStructural definition",shroud={}}
-	{18606,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=11,blurb="13°\nStructural definition",shroud={}}
-	{18607,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=12,blurb="13°\nStructural definition",shroud={}}
-	{18608,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=13,blurb="14°\nStructural definition",shroud={}}
-	{18609,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=14,blurb="14°\nStructural definition",shroud={}}
-	{18610,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=15,blurb="14°\nStructural definition",shroud={}}
-	{18611,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=16,blurb="15°\nStructural definition",shroud={}}
-	{18612,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=17,blurb="15°\nStructural definition",shroud={}}
-	{18613,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=18,blurb="15°\nStructural definition",shroud={}}
-	{18614,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=19,blurb="16°\nStructural definition",shroud={}}
-	{18615,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=20,blurb="16°\nStructural definition",shroud={}}
-	{18616,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=21,blurb="16°\nStructural definition",shroud={}}
-	{18617,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=22,blurb="17°\nStructural definition",shroud={}}
-	{18618,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=23,blurb="17°\nStructural definition",shroud={}}
-	{18619,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=24,blurb="17°\nStructural definition",shroud={}}
-	{18620,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=25,blurb="18°\nStructural definition",shroud={}}
-	{18621,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=26,blurb="18°\nStructural definition",shroud={}}
-	{18622,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=27,blurb="18°\nStructural definition",shroud={}}
-	{18623,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=28,blurb="19°\nStructural definition",shroud={}}
-	{18624,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=29,blurb="19°\nStructural definition",shroud={}}
-	{18625,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=30,blurb="19°\nStructural definition",shroud={}}
-	{18626,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=31,blurb="20°\nStructural definition",shroud={}}
-	{18627,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=32,blurb="20°\nStructural definition",shroud={}}
-	{18628,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=33,blurb="20°\nStructural definition",shroud={}}
-	{18629,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=34,blurb="21°\nStructural definition",shroud={}}
-	{18630,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=35,blurb="21°\nStructural definition",shroud={}}
-	{18631,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=36,blurb="21°\nStructural definition",shroud={}}
-	{18632,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=37,blurb="22°\nStructural definition",shroud={}}
-	{18633,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=38,blurb="22°\nStructural definition",shroud={}}
-	{18634,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=39,blurb="22°\nStructural definition",shroud={}}
-	{18635,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=40,blurb="23°\nStructural definition",shroud={}}
-	{18636,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=41,blurb="23°\nStructural definition",shroud={}}
-	{18637,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=42,blurb="23°\nStructural definition",shroud={}}
-	{18638,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=43,blurb="24°\nStructural definition",shroud={}}
-	{18639,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=44,blurb="24°\nStructural definition",shroud={}}
-	{18640,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=45,blurb="24°\nStructural definition",shroud={}}
-	{18641,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=46,blurb="25°\nStructural definition",shroud={}}
-	{18642,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=47,blurb="25°\nStructural definition",shroud={}}
-	{18643,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=48,blurb="25°\nStructural definition",shroud={}}
-	{18644,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=49,blurb="26°\nStructural definition",shroud={}}
-	{18645,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=50,blurb="26°\nStructural definition",shroud={}}
-	{18646,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=51,blurb="26°\nStructural definition",shroud={}}
-	{18647,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=52,blurb="27°\nStructural definition",shroud={}}
-	{18648,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=53,blurb="27°\nStructural definition",shroud={}}
-	{18649,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=54,blurb="27°\nStructural definition",shroud={}}
-	{18650,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=55,blurb="28°\nStructural definition",shroud={}}
-	{18651,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=56,blurb="28°\nStructural definition",shroud={}}
-	{18652,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=57,blurb="28°\nStructural definition",shroud={}}
-	{18653,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=58,blurb="29°\nStructural definition",shroud={}}
-	{18654,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=59,blurb="29°\nStructural definition",shroud={}}
-	{18655,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=60,blurb="29°\nStructural definition",shroud={}}
-	{18656,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=61,blurb="30°\nStructural definition",shroud={}}
-	{18657,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=62,blurb="30°\nStructural definition",shroud={}}
-	{18658,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=63,blurb="30°\nStructural definition",shroud={}}
-	{18659,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=64,blurb="31°\nStructural definition",shroud={}}
-	{18660,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=65,blurb="31°\nStructural definition",shroud={}}
-	{18661,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=66,blurb="31°\nStructural definition",shroud={}}
-	{18662,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=67,blurb="32°\nStructural definition",shroud={}}
-	{18663,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=68,blurb="32°\nStructural definition",shroud={}}
-	{18664,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=69,blurb="32°\nStructural definition",shroud={}}
-	{18665,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=70,blurb="33°\nStructural definition",shroud={}}
-	{18666,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=71,blurb="33°\nStructural definition",shroud={}}
-	{18667,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=72,blurb="33°\nStructural definition",shroud={}}
-	{18668,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=73,blurb="34°\nStructural definition",shroud={}}
-	{18669,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=74,blurb="34°\nStructural definition",shroud={}}
-	{18670,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=75,blurb="34°\nStructural definition",shroud={}}
-	{18671,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=76,blurb="35°\nStructural definition",shroud={}}
-	{18672,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=77,blurb="35°\nStructural definition",shroud={}}
-	{18673,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=78,blurb="35°\nStructural definition",shroud={}}
-	{18674,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=79,blurb="36°\nStructural definition",shroud={}}
-	{18675,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=80,blurb="36°\nStructural definition",shroud={}}
-	{18676,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=81,blurb="36°\nStructural definition",shroud={}}
-	{18677,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=82,blurb="37°\nStructural definition",shroud={}}
-	{18678,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=83,blurb="37°\nStructural definition",shroud={}}
-	{18679,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=84,blurb="37°\nStructural definition",shroud={}}
-	{18680,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=85,blurb="38°\nStructural definition",shroud={}}
-	{18681,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=86,blurb="38°\nStructural definition",shroud={}}
-	{18682,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=87,blurb="38°\nStructural definition",shroud={}}
-	{18683,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=88,blurb="39°\nStructural definition",shroud={}}
-	{18684,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=89,blurb="39°\nStructural definition",shroud={}}
-	{18685,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=90,blurb="39°\nStructural definition",shroud={}}
-	{18686,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=91,blurb="40°\nStructural definition",shroud={}}
-	{18687,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=92,blurb="40°\nStructural definition",shroud={}}
-	{18688,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=93,blurb="40°\nStructural definition",shroud={}}
-	{18689,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=94,blurb="41°\nStructural definition",shroud={}}
-	{18690,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=95,blurb="41°\nStructural definition",shroud={}}
-	{18691,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=96,blurb="41°\nStructural definition",shroud={}}
-	{18692,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=97,blurb="42°\nStructural definition",shroud={}}
-	{18693,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=98,blurb="42°\nStructural definition",shroud={}}
-	{18694,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=99,blurb="42°\nStructural definition",shroud={}}
-	{18695,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=100,blurb="43°\nStructural definition",shroud={}}
-	{18696,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=101,blurb="43°\nStructural definition",shroud={}}
-	{18697,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=102,blurb="43°\nStructural definition",shroud={}}
-	{18698,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=103,blurb="44°\nStructural definition",shroud={}}
-	{18699,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=104,blurb="44°\nStructural definition",shroud={}}
-	{18700,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=105,blurb="44°\nStructural definition",shroud={}}
-	{18701,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=106,blurb="45°\nStructural definition",shroud={}}
-	{18702,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=107,blurb="45°\nStructural definition",shroud={}}
-	{18703,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=108,blurb="45°\nStructural definition",shroud={}}
-	{18704,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=109,blurb="46°\nStructural definition",shroud={}}
-	{18705,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=110,blurb="46°\nStructural definition",shroud={}}
-	{18706,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=111,blurb="46°\nStructural definition",shroud={}}
-	{18707,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=112,blurb="47°\nStructural definition",shroud={}}
-	{18708,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=113,blurb="47°\nStructural definition",shroud={}}
-	{18709,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=114,blurb="47°\nStructural definition",shroud={}}
-	{18710,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=115,blurb="48°\nStructural definition",shroud={}}
-	{18711,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=116,blurb="48°\nStructural definition",shroud={}}
-	{18712,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=117,blurb="48°\nStructural definition",shroud={}}
-	{18713,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=118,blurb="49°\nStructural definition",shroud={}}
-	{18714,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=119,blurb="49°\nStructural definition",shroud={}}
-	{18715,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=120,blurb="49°\nStructural definition",shroud={}}
-	{18716,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=121,blurb="50°\nStructural definition",shroud={}}
-	{18717,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=122,blurb="50°\nStructural definition",shroud={}}
-	{18718,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=123,blurb="50°\nStructural definition",shroud={}}
-	{18719,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=124,blurb="51°\nStructural definition",shroud={}}
-	{18720,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=125,blurb="51°\nStructural definition",shroud={}}
-	{18721,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=126,blurb="51°\nStructural definition",shroud={}}
-	{18722,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=127,blurb="52°\nStructural definition",shroud={}}
-	{18723,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=128,blurb="52°\nStructural definition",shroud={}}
-	{18724,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=129,blurb="52°\nStructural definition",shroud={}}
-	{18725,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=130,blurb="53°\nStructural definition",shroud={}}
-	{18726,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=131,blurb="53°\nStructural definition",shroud={}}
-	{18727,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=132,blurb="53°\nStructural definition",shroud={}}
-	{18728,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=133,blurb="54°\nStructural definition",shroud={}}
-	{18729,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=134,blurb="54°\nStructural definition",shroud={}}
-	{18730,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=135,blurb="54°\nStructural definition",shroud={}}
-	{18731,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=136,blurb="55°\nStructural definition",shroud={}}
-	{18732,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=137,blurb="55°\nStructural definition",shroud={}}
-	{18733,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=138,blurb="55°\nStructural definition",shroud={}}
-	{18734,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=139,blurb="56°\nStructural definition",shroud={}}
-	{18735,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=140,blurb="56°\nStructural definition",shroud={}}
-	{18736,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=141,blurb="56°\nStructural definition",shroud={}}
-	{18737,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=142,blurb="57°\nStructural definition",shroud={}}
-	{18738,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=143,blurb="57°\nStructural definition",shroud={}}
-	{18739,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=144,blurb="57°\nStructural definition",shroud={}}
-	{18740,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=145,blurb="58°\nStructural definition",shroud={}}
-	{18741,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=146,blurb="58°\nStructural definition",shroud={}}
-	{18742,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=147,blurb="58°\nStructural definition",shroud={}}
-	{18743,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=148,blurb="59°\nStructural definition",shroud={}}
-	{18744,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=149,blurb="59°\nStructural definition",shroud={}}
-	{18745,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=150,blurb="59°\nStructural definition",shroud={}}
-	{18746,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=151,blurb="60°\nStructural definition",shroud={}}
-	{18747,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=152,blurb="60°\nStructural definition",shroud={}}
-	{18748,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=153,blurb="60°\nStructural definition",shroud={}}
-	{18749,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=154,blurb="61°\nStructural definition",shroud={}}
-	{18750,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=155,blurb="61°\nStructural definition",shroud={}}
-	{18751,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=156,blurb="61°\nStructural definition",shroud={}}
-	{18752,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=157,blurb="62°\nStructural definition",shroud={}}
-	{18753,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=158,blurb="62°\nStructural definition",shroud={}}
-	{18754,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=159,blurb="62°\nStructural definition",shroud={}}
-	{18755,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=160,blurb="63°\nStructural definition",shroud={}}
-	{18756,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=161,blurb="63°\nStructural definition",shroud={}}
-	{18757,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=162,blurb="63°\nStructural definition",shroud={}}
-	{18758,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=163,blurb="64°\nStructural definition",shroud={}}
-	{18759,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=164,blurb="64°\nStructural definition",shroud={}}
-	{18760,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=165,blurb="64°\nStructural definition",shroud={}}
-	{18761,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=166,blurb="65°\nStructural definition",shroud={}}
-	{18762,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=167,blurb="65°\nStructural definition",shroud={}}
-	{18763,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=168,blurb="65°\nStructural definition",shroud={}}
-	{18764,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=169,blurb="66°\nStructural definition",shroud={}}
-	{18765,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=170,blurb="66°\nStructural definition",shroud={}}
-	{18766,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=171,blurb="66°\nStructural definition",shroud={}}
-	{18767,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=172,blurb="67°\nStructural definition",shroud={}}
-	{18768,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=173,blurb="67°\nStructural definition",shroud={}}
-	{18769,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=174,blurb="67°\nStructural definition",shroud={}}
-	{18770,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=175,blurb="68°\nStructural definition",shroud={}}
-	{18771,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=176,blurb="68°\nStructural definition",shroud={}}
-	{18772,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=177,blurb="68°\nStructural definition",shroud={}}
-	{18773,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=178,blurb="69°\nStructural definition",shroud={}}
-	{18774,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=179,blurb="69°\nStructural definition",shroud={}}
-	{18775,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=180,blurb="69°\nStructural definition",shroud={}}
-	{18776,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=181,blurb="70°\nStructural definition",shroud={}}
-	{18777,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=182,blurb="70°\nStructural definition",shroud={}}
-	{18778,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=183,blurb="70°\nStructural definition",shroud={}}
-	{18779,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=184,blurb="71°\nStructural definition",shroud={}}
-	{18780,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=185,blurb="71°\nStructural definition",shroud={}}
-	{18781,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=186,blurb="71°\nStructural definition",shroud={}}
-	{18782,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=187,blurb="72°\nStructural definition",shroud={}}
-	{18783,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=188,blurb="72°\nStructural definition",shroud={}}
-	{18784,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=189,blurb="72°\nStructural definition",shroud={}}
-	{18785,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=190,blurb="73°\nStructural definition",shroud={}}
-	{18786,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=191,blurb="73°\nStructural definition",shroud={}}
-	{18787,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=192,blurb="73°\nStructural definition",shroud={}}
-	{18788,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=193,blurb="74°\nStructural definition",shroud={}}
-	{18789,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=194,blurb="74°\nStructural definition",shroud={}}
-	{18790,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=195,blurb="74°\nStructural definition",shroud={}}
-	{18791,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=196,blurb="75°\nStructural definition",shroud={}}
-	{18792,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=197,blurb="75°\nStructural definition",shroud={}}
-	{18793,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=198,blurb="75°\nStructural definition",shroud={}}
-	{18794,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=199,blurb="76°\nStructural definition",shroud={}}
-	{18795,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=200,blurb="76°\nStructural definition",shroud={}}
-	{18796,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=201,blurb="76°\nStructural definition",shroud={}}
-	{18797,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=202,blurb="77°\nStructural definition",shroud={}}
-	{18798,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=203,blurb="77°\nStructural definition",shroud={}}
-	{18799,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=204,blurb="77°\nStructural definition",shroud={}}
-	{18800,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=205,blurb="78°\nStructural definition",shroud={}}
-	{18801,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=206,blurb="78°\nStructural definition",shroud={}}
-	{18802,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=207,blurb="78°\nStructural definition",shroud={}}
-	{18803,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=208,blurb="79°\nStructural definition",shroud={}}
-	{18804,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=209,blurb="79°\nStructural definition",shroud={}}
-	{18805,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=210,blurb="79°\nStructural definition",shroud={}}
-	{18806,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=211,blurb="80°\nStructural definition",shroud={}}
-	{18807,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=212,blurb="80°\nStructural definition",shroud={}}
-	{18808,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=213,blurb="80°\nStructural definition",shroud={}}
-	{18809,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=214,blurb="81°\nStructural definition",shroud={}}
-	{18810,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=215,blurb="81°\nStructural definition",shroud={}}
-	{18811,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=216,blurb="81°\nStructural definition",shroud={}}
-	{18812,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=217,blurb="82°\nStructural definition",shroud={}}
-	{18813,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=218,blurb="82°\nStructural definition",shroud={}}
-	{18814,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=219,blurb="82°\nStructural definition",shroud={}}
-	{18815,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=220,blurb="83°\nStructural definition",shroud={}}
-	{18816,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=221,blurb="83°\nStructural definition",shroud={}}
-	{18817,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=222,blurb="83°\nStructural definition",shroud={}}
-	{18818,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=223,blurb="84°\nStructural definition",shroud={}}
-	{18819,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=224,blurb="84°\nStructural definition",shroud={}}
-	{18820,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=225,blurb="84°\nStructural definition",shroud={}}
-	{18821,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=226,blurb="85°\nStructural definition",shroud={}}
-	{18822,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=227,blurb="85°\nStructural definition",shroud={}}
-	{18823,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=228,blurb="85°\nStructural definition",shroud={}}
-	{18824,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=229,blurb="86°\nStructural definition",shroud={}}
-	{18825,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=230,blurb="86°\nStructural definition",shroud={}}
-	{18826,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=231,blurb="86°\nStructural definition",shroud={}}
-	{18827,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=232,blurb="87°\nStructural definition",shroud={}}
-	{18828,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=233,blurb="87°\nStructural definition",shroud={}}
-	{18829,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=234,blurb="87°\nStructural definition",shroud={}}
-	{18830,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=235,blurb="88°\nStructural definition",shroud={}}
-	{18831,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=236,blurb="88°\nStructural definition",shroud={}}
-	{18832,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=237,blurb="88°\nStructural definition",shroud={}}
-	{18833,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=238,blurb="89°\nStructural definition",shroud={}}
-	{18834,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=239,blurb="89°\nStructural definition",shroud={}}
-	{18835,extends=18596,features=NOPALETTE|INVISIBLE,durability=2.00001,scale=240,blurb="89°\nStructural definition",shroud={}}
+	{18597,extends=18596,features=PALETTE|INVISIBLE,sort=25061,durability=2.00001,scale=2,blurb="10°\nStructural definition",shroud={}}
+	{18598,extends=18596,features=PALETTE|INVISIBLE,sort=25062,durability=2.00001,scale=3,blurb="10°\nStructural definition",shroud={}}
+	{18599,extends=18596,features=PALETTE|INVISIBLE,sort=25063,durability=2.00001,scale=4,blurb="11°\nStructural definition",shroud={}}
+	{18600,extends=18596,features=PALETTE|INVISIBLE,sort=25064,durability=2.00001,scale=5,blurb="11°\nStructural definition",shroud={}}
+	{18601,extends=18596,features=PALETTE|INVISIBLE,sort=25065,durability=2.00001,scale=6,blurb="11°\nStructural definition",shroud={}}
+	{18602,extends=18596,features=PALETTE|INVISIBLE,sort=25066,durability=2.00001,scale=7,blurb="12°\nStructural definition",shroud={}}
+	{18603,extends=18596,features=PALETTE|INVISIBLE,sort=25067,durability=2.00001,scale=8,blurb="12°\nStructural definition",shroud={}}
+	{18604,extends=18596,features=PALETTE|INVISIBLE,sort=25068,durability=2.00001,scale=9,blurb="12°\nStructural definition",shroud={}}
+	{18605,extends=18596,features=PALETTE|INVISIBLE,sort=25069,durability=2.00001,scale=10,blurb="13°\nStructural definition",shroud={}}
+	{18606,extends=18596,features=PALETTE|INVISIBLE,sort=25070,durability=2.00001,scale=11,blurb="13°\nStructural definition",shroud={}}
+	{18607,extends=18596,features=PALETTE|INVISIBLE,sort=25071,durability=2.00001,scale=12,blurb="13°\nStructural definition",shroud={}}
+	{18608,extends=18596,features=PALETTE|INVISIBLE,sort=25072,durability=2.00001,scale=13,blurb="14°\nStructural definition",shroud={}}
+	{18609,extends=18596,features=PALETTE|INVISIBLE,sort=25073,durability=2.00001,scale=14,blurb="14°\nStructural definition",shroud={}}
+	{18610,extends=18596,features=PALETTE|INVISIBLE,sort=25074,durability=2.00001,scale=15,blurb="14°\nStructural definition",shroud={}}
+	{18611,extends=18596,features=PALETTE|INVISIBLE,sort=25075,durability=2.00001,scale=16,blurb="15°\nStructural definition",shroud={}}
+	{18612,extends=18596,features=PALETTE|INVISIBLE,sort=25076,durability=2.00001,scale=17,blurb="15°\nStructural definition",shroud={}}
+	{18613,extends=18596,features=PALETTE|INVISIBLE,sort=25077,durability=2.00001,scale=18,blurb="15°\nStructural definition",shroud={}}
+	{18614,extends=18596,features=PALETTE|INVISIBLE,sort=25078,durability=2.00001,scale=19,blurb="16°\nStructural definition",shroud={}}
+	{18615,extends=18596,features=PALETTE|INVISIBLE,sort=25079,durability=2.00001,scale=20,blurb="16°\nStructural definition",shroud={}}
+	{18616,extends=18596,features=PALETTE|INVISIBLE,sort=25080,durability=2.00001,scale=21,blurb="16°\nStructural definition",shroud={}}
+	{18617,extends=18596,features=PALETTE|INVISIBLE,sort=25081,durability=2.00001,scale=22,blurb="17°\nStructural definition",shroud={}}
+	{18618,extends=18596,features=PALETTE|INVISIBLE,sort=25082,durability=2.00001,scale=23,blurb="17°\nStructural definition",shroud={}}
+	{18619,extends=18596,features=PALETTE|INVISIBLE,sort=25083,durability=2.00001,scale=24,blurb="17°\nStructural definition",shroud={}}
+	{18620,extends=18596,features=PALETTE|INVISIBLE,sort=25084,durability=2.00001,scale=25,blurb="18°\nStructural definition",shroud={}}
+	{18621,extends=18596,features=PALETTE|INVISIBLE,sort=25085,durability=2.00001,scale=26,blurb="18°\nStructural definition",shroud={}}
+	{18622,extends=18596,features=PALETTE|INVISIBLE,sort=25086,durability=2.00001,scale=27,blurb="18°\nStructural definition",shroud={}}
+	{18623,extends=18596,features=PALETTE|INVISIBLE,sort=25087,durability=2.00001,scale=28,blurb="19°\nStructural definition",shroud={}}
+	{18624,extends=18596,features=PALETTE|INVISIBLE,sort=25088,durability=2.00001,scale=29,blurb="19°\nStructural definition",shroud={}}
+	{18625,extends=18596,features=PALETTE|INVISIBLE,sort=25089,durability=2.00001,scale=30,blurb="19°\nStructural definition",shroud={}}
+	{18626,extends=18596,features=PALETTE|INVISIBLE,sort=25090,durability=2.00001,scale=31,blurb="20°\nStructural definition",shroud={}}
+	{18627,extends=18596,features=PALETTE|INVISIBLE,sort=25091,durability=2.00001,scale=32,blurb="20°\nStructural definition",shroud={}}
+	{18628,extends=18596,features=PALETTE|INVISIBLE,sort=25092,durability=2.00001,scale=33,blurb="20°\nStructural definition",shroud={}}
+	{18629,extends=18596,features=PALETTE|INVISIBLE,sort=25093,durability=2.00001,scale=34,blurb="21°\nStructural definition",shroud={}}
+	{18630,extends=18596,features=PALETTE|INVISIBLE,sort=25094,durability=2.00001,scale=35,blurb="21°\nStructural definition",shroud={}}
+	{18631,extends=18596,features=PALETTE|INVISIBLE,sort=25095,durability=2.00001,scale=36,blurb="21°\nStructural definition",shroud={}}
+	{18632,extends=18596,features=PALETTE|INVISIBLE,sort=25096,durability=2.00001,scale=37,blurb="22°\nStructural definition",shroud={}}
+	{18633,extends=18596,features=PALETTE|INVISIBLE,sort=25097,durability=2.00001,scale=38,blurb="22°\nStructural definition",shroud={}}
+	{18634,extends=18596,features=PALETTE|INVISIBLE,sort=25098,durability=2.00001,scale=39,blurb="22°\nStructural definition",shroud={}}
+	{18635,extends=18596,features=PALETTE|INVISIBLE,sort=25099,durability=2.00001,scale=40,blurb="23°\nStructural definition",shroud={}}
+	{18636,extends=18596,features=PALETTE|INVISIBLE,sort=25100,durability=2.00001,scale=41,blurb="23°\nStructural definition",shroud={}}
+	{18637,extends=18596,features=PALETTE|INVISIBLE,sort=25101,durability=2.00001,scale=42,blurb="23°\nStructural definition",shroud={}}
+	{18638,extends=18596,features=PALETTE|INVISIBLE,sort=25102,durability=2.00001,scale=43,blurb="24°\nStructural definition",shroud={}}
+	{18639,extends=18596,features=PALETTE|INVISIBLE,sort=25103,durability=2.00001,scale=44,blurb="24°\nStructural definition",shroud={}}
+	{18640,extends=18596,features=PALETTE|INVISIBLE,sort=25104,durability=2.00001,scale=45,blurb="24°\nStructural definition",shroud={}}
+	{18641,extends=18596,features=PALETTE|INVISIBLE,sort=25105,durability=2.00001,scale=46,blurb="25°\nStructural definition",shroud={}}
+	{18642,extends=18596,features=PALETTE|INVISIBLE,sort=25106,durability=2.00001,scale=47,blurb="25°\nStructural definition",shroud={}}
+	{18643,extends=18596,features=PALETTE|INVISIBLE,sort=25107,durability=2.00001,scale=48,blurb="25°\nStructural definition",shroud={}}
+	{18644,extends=18596,features=PALETTE|INVISIBLE,sort=25108,durability=2.00001,scale=49,blurb="26°\nStructural definition",shroud={}}
+	{18645,extends=18596,features=PALETTE|INVISIBLE,sort=25109,durability=2.00001,scale=50,blurb="26°\nStructural definition",shroud={}}
+	{18646,extends=18596,features=PALETTE|INVISIBLE,sort=25110,durability=2.00001,scale=51,blurb="26°\nStructural definition",shroud={}}
+	{18647,extends=18596,features=PALETTE|INVISIBLE,sort=25111,durability=2.00001,scale=52,blurb="27°\nStructural definition",shroud={}}
+	{18648,extends=18596,features=PALETTE|INVISIBLE,sort=25112,durability=2.00001,scale=53,blurb="27°\nStructural definition",shroud={}}
+	{18649,extends=18596,features=PALETTE|INVISIBLE,sort=25113,durability=2.00001,scale=54,blurb="27°\nStructural definition",shroud={}}
+	{18650,extends=18596,features=PALETTE|INVISIBLE,sort=25114,durability=2.00001,scale=55,blurb="28°\nStructural definition",shroud={}}
+	{18651,extends=18596,features=PALETTE|INVISIBLE,sort=25115,durability=2.00001,scale=56,blurb="28°\nStructural definition",shroud={}}
+	{18652,extends=18596,features=PALETTE|INVISIBLE,sort=25116,durability=2.00001,scale=57,blurb="28°\nStructural definition",shroud={}}
+	{18653,extends=18596,features=PALETTE|INVISIBLE,sort=25117,durability=2.00001,scale=58,blurb="29°\nStructural definition",shroud={}}
+	{18654,extends=18596,features=PALETTE|INVISIBLE,sort=25118,durability=2.00001,scale=59,blurb="29°\nStructural definition",shroud={}}
+	{18655,extends=18596,features=PALETTE|INVISIBLE,sort=25119,durability=2.00001,scale=60,blurb="29°\nStructural definition",shroud={}}
+	{18656,extends=18596,features=PALETTE|INVISIBLE,sort=25120,durability=2.00001,scale=61,blurb="30°\nStructural definition",shroud={}}
+	{18657,extends=18596,features=PALETTE|INVISIBLE,sort=25121,durability=2.00001,scale=62,blurb="30°\nStructural definition",shroud={}}
+	{18658,extends=18596,features=PALETTE|INVISIBLE,sort=25122,durability=2.00001,scale=63,blurb="30°\nStructural definition",shroud={}}
+	{18659,extends=18596,features=PALETTE|INVISIBLE,sort=25123,durability=2.00001,scale=64,blurb="31°\nStructural definition",shroud={}}
+	{18660,extends=18596,features=PALETTE|INVISIBLE,sort=25124,durability=2.00001,scale=65,blurb="31°\nStructural definition",shroud={}}
+	{18661,extends=18596,features=PALETTE|INVISIBLE,sort=25125,durability=2.00001,scale=66,blurb="31°\nStructural definition",shroud={}}
+	{18662,extends=18596,features=PALETTE|INVISIBLE,sort=25126,durability=2.00001,scale=67,blurb="32°\nStructural definition",shroud={}}
+	{18663,extends=18596,features=PALETTE|INVISIBLE,sort=25127,durability=2.00001,scale=68,blurb="32°\nStructural definition",shroud={}}
+	{18664,extends=18596,features=PALETTE|INVISIBLE,sort=25128,durability=2.00001,scale=69,blurb="32°\nStructural definition",shroud={}}
+	{18665,extends=18596,features=PALETTE|INVISIBLE,sort=25129,durability=2.00001,scale=70,blurb="33°\nStructural definition",shroud={}}
+	{18666,extends=18596,features=PALETTE|INVISIBLE,sort=25130,durability=2.00001,scale=71,blurb="33°\nStructural definition",shroud={}}
+	{18667,extends=18596,features=PALETTE|INVISIBLE,sort=25131,durability=2.00001,scale=72,blurb="33°\nStructural definition",shroud={}}
+	{18668,extends=18596,features=PALETTE|INVISIBLE,sort=25132,durability=2.00001,scale=73,blurb="34°\nStructural definition",shroud={}}
+	{18669,extends=18596,features=PALETTE|INVISIBLE,sort=25133,durability=2.00001,scale=74,blurb="34°\nStructural definition",shroud={}}
+	{18670,extends=18596,features=PALETTE|INVISIBLE,sort=25134,durability=2.00001,scale=75,blurb="34°\nStructural definition",shroud={}}
+	{18671,extends=18596,features=PALETTE|INVISIBLE,sort=25135,durability=2.00001,scale=76,blurb="35°\nStructural definition",shroud={}}
+	{18672,extends=18596,features=PALETTE|INVISIBLE,sort=25136,durability=2.00001,scale=77,blurb="35°\nStructural definition",shroud={}}
+	{18673,extends=18596,features=PALETTE|INVISIBLE,sort=25137,durability=2.00001,scale=78,blurb="35°\nStructural definition",shroud={}}
+	{18674,extends=18596,features=PALETTE|INVISIBLE,sort=25138,durability=2.00001,scale=79,blurb="36°\nStructural definition",shroud={}}
+	{18675,extends=18596,features=PALETTE|INVISIBLE,sort=25139,durability=2.00001,scale=80,blurb="36°\nStructural definition",shroud={}}
+	{18676,extends=18596,features=PALETTE|INVISIBLE,sort=25140,durability=2.00001,scale=81,blurb="36°\nStructural definition",shroud={}}
+	{18677,extends=18596,features=PALETTE|INVISIBLE,sort=25141,durability=2.00001,scale=82,blurb="37°\nStructural definition",shroud={}}
+	{18678,extends=18596,features=PALETTE|INVISIBLE,sort=25142,durability=2.00001,scale=83,blurb="37°\nStructural definition",shroud={}}
+	{18679,extends=18596,features=PALETTE|INVISIBLE,sort=25143,durability=2.00001,scale=84,blurb="37°\nStructural definition",shroud={}}
+	{18680,extends=18596,features=PALETTE|INVISIBLE,sort=25144,durability=2.00001,scale=85,blurb="38°\nStructural definition",shroud={}}
+	{18681,extends=18596,features=PALETTE|INVISIBLE,sort=25145,durability=2.00001,scale=86,blurb="38°\nStructural definition",shroud={}}
+	{18682,extends=18596,features=PALETTE|INVISIBLE,sort=25146,durability=2.00001,scale=87,blurb="38°\nStructural definition",shroud={}}
+	{18683,extends=18596,features=PALETTE|INVISIBLE,sort=25147,durability=2.00001,scale=88,blurb="39°\nStructural definition",shroud={}}
+	{18684,extends=18596,features=PALETTE|INVISIBLE,sort=25148,durability=2.00001,scale=89,blurb="39°\nStructural definition",shroud={}}
+	{18685,extends=18596,features=PALETTE|INVISIBLE,sort=25149,durability=2.00001,scale=90,blurb="39°\nStructural definition",shroud={}}
+	{18686,extends=18596,features=PALETTE|INVISIBLE,sort=25150,durability=2.00001,scale=91,blurb="40°\nStructural definition",shroud={}}
+	{18687,extends=18596,features=PALETTE|INVISIBLE,sort=25151,durability=2.00001,scale=92,blurb="40°\nStructural definition",shroud={}}
+	{18688,extends=18596,features=PALETTE|INVISIBLE,sort=25152,durability=2.00001,scale=93,blurb="40°\nStructural definition",shroud={}}
+	{18689,extends=18596,features=PALETTE|INVISIBLE,sort=25153,durability=2.00001,scale=94,blurb="41°\nStructural definition",shroud={}}
+	{18690,extends=18596,features=PALETTE|INVISIBLE,sort=25154,durability=2.00001,scale=95,blurb="41°\nStructural definition",shroud={}}
+	{18691,extends=18596,features=PALETTE|INVISIBLE,sort=25155,durability=2.00001,scale=96,blurb="41°\nStructural definition",shroud={}}
+	{18692,extends=18596,features=PALETTE|INVISIBLE,sort=25156,durability=2.00001,scale=97,blurb="42°\nStructural definition",shroud={}}
+	{18693,extends=18596,features=PALETTE|INVISIBLE,sort=25157,durability=2.00001,scale=98,blurb="42°\nStructural definition",shroud={}}
+	{18694,extends=18596,features=PALETTE|INVISIBLE,sort=25158,durability=2.00001,scale=99,blurb="42°\nStructural definition",shroud={}}
+	{18695,extends=18596,features=PALETTE|INVISIBLE,sort=25159,durability=2.00001,scale=100,blurb="43°\nStructural definition",shroud={}}
+	{18696,extends=18596,features=PALETTE|INVISIBLE,sort=25160,durability=2.00001,scale=101,blurb="43°\nStructural definition",shroud={}}
+	{18697,extends=18596,features=PALETTE|INVISIBLE,sort=25161,durability=2.00001,scale=102,blurb="43°\nStructural definition",shroud={}}
+	{18698,extends=18596,features=PALETTE|INVISIBLE,sort=25162,durability=2.00001,scale=103,blurb="44°\nStructural definition",shroud={}}
+	{18699,extends=18596,features=PALETTE|INVISIBLE,sort=25163,durability=2.00001,scale=104,blurb="44°\nStructural definition",shroud={}}
+	{18700,extends=18596,features=PALETTE|INVISIBLE,sort=25164,durability=2.00001,scale=105,blurb="44°\nStructural definition",shroud={}}
+	{18701,extends=18596,features=PALETTE|INVISIBLE,sort=25165,durability=2.00001,scale=106,blurb="45°\nStructural definition",shroud={}}
+	{18702,extends=18596,features=PALETTE|INVISIBLE,sort=25166,durability=2.00001,scale=107,blurb="45°\nStructural definition",shroud={}}
+	{18703,extends=18596,features=PALETTE|INVISIBLE,sort=25167,durability=2.00001,scale=108,blurb="45°\nStructural definition",shroud={}}
+	{18704,extends=18596,features=PALETTE|INVISIBLE,sort=25168,durability=2.00001,scale=109,blurb="46°\nStructural definition",shroud={}}
+	{18705,extends=18596,features=PALETTE|INVISIBLE,sort=25169,durability=2.00001,scale=110,blurb="46°\nStructural definition",shroud={}}
+	{18706,extends=18596,features=PALETTE|INVISIBLE,sort=25170,durability=2.00001,scale=111,blurb="46°\nStructural definition",shroud={}}
+	{18707,extends=18596,features=PALETTE|INVISIBLE,sort=25171,durability=2.00001,scale=112,blurb="47°\nStructural definition",shroud={}}
+	{18708,extends=18596,features=PALETTE|INVISIBLE,sort=25172,durability=2.00001,scale=113,blurb="47°\nStructural definition",shroud={}}
+	{18709,extends=18596,features=PALETTE|INVISIBLE,sort=25173,durability=2.00001,scale=114,blurb="47°\nStructural definition",shroud={}}
+	{18710,extends=18596,features=PALETTE|INVISIBLE,sort=25174,durability=2.00001,scale=115,blurb="48°\nStructural definition",shroud={}}
+	{18711,extends=18596,features=PALETTE|INVISIBLE,sort=25175,durability=2.00001,scale=116,blurb="48°\nStructural definition",shroud={}}
+	{18712,extends=18596,features=PALETTE|INVISIBLE,sort=25176,durability=2.00001,scale=117,blurb="48°\nStructural definition",shroud={}}
+	{18713,extends=18596,features=PALETTE|INVISIBLE,sort=25177,durability=2.00001,scale=118,blurb="49°\nStructural definition",shroud={}}
+	{18714,extends=18596,features=PALETTE|INVISIBLE,sort=25178,durability=2.00001,scale=119,blurb="49°\nStructural definition",shroud={}}
+	{18715,extends=18596,features=PALETTE|INVISIBLE,sort=25179,durability=2.00001,scale=120,blurb="49°\nStructural definition",shroud={}}
+	{18716,extends=18596,features=PALETTE|INVISIBLE,sort=25180,durability=2.00001,scale=121,blurb="50°\nStructural definition",shroud={}}
+	{18717,extends=18596,features=PALETTE|INVISIBLE,sort=25181,durability=2.00001,scale=122,blurb="50°\nStructural definition",shroud={}}
+	{18718,extends=18596,features=PALETTE|INVISIBLE,sort=25182,durability=2.00001,scale=123,blurb="50°\nStructural definition",shroud={}}
+	{18719,extends=18596,features=PALETTE|INVISIBLE,sort=25183,durability=2.00001,scale=124,blurb="51°\nStructural definition",shroud={}}
+	{18720,extends=18596,features=PALETTE|INVISIBLE,sort=25184,durability=2.00001,scale=125,blurb="51°\nStructural definition",shroud={}}
+	{18721,extends=18596,features=PALETTE|INVISIBLE,sort=25185,durability=2.00001,scale=126,blurb="51°\nStructural definition",shroud={}}
+	{18722,extends=18596,features=PALETTE|INVISIBLE,sort=25186,durability=2.00001,scale=127,blurb="52°\nStructural definition",shroud={}}
+	{18723,extends=18596,features=PALETTE|INVISIBLE,sort=25187,durability=2.00001,scale=128,blurb="52°\nStructural definition",shroud={}}
+	{18724,extends=18596,features=PALETTE|INVISIBLE,sort=25188,durability=2.00001,scale=129,blurb="52°\nStructural definition",shroud={}}
+	{18725,extends=18596,features=PALETTE|INVISIBLE,sort=25189,durability=2.00001,scale=130,blurb="53°\nStructural definition",shroud={}}
+	{18726,extends=18596,features=PALETTE|INVISIBLE,sort=25190,durability=2.00001,scale=131,blurb="53°\nStructural definition",shroud={}}
+	{18727,extends=18596,features=PALETTE|INVISIBLE,sort=25191,durability=2.00001,scale=132,blurb="53°\nStructural definition",shroud={}}
+	{18728,extends=18596,features=PALETTE|INVISIBLE,sort=25192,durability=2.00001,scale=133,blurb="54°\nStructural definition",shroud={}}
+	{18729,extends=18596,features=PALETTE|INVISIBLE,sort=25193,durability=2.00001,scale=134,blurb="54°\nStructural definition",shroud={}}
+	{18730,extends=18596,features=PALETTE|INVISIBLE,sort=25194,durability=2.00001,scale=135,blurb="54°\nStructural definition",shroud={}}
+	{18731,extends=18596,features=PALETTE|INVISIBLE,sort=25195,durability=2.00001,scale=136,blurb="55°\nStructural definition",shroud={}}
+	{18732,extends=18596,features=PALETTE|INVISIBLE,sort=25196,durability=2.00001,scale=137,blurb="55°\nStructural definition",shroud={}}
+	{18733,extends=18596,features=PALETTE|INVISIBLE,sort=25197,durability=2.00001,scale=138,blurb="55°\nStructural definition",shroud={}}
+	{18734,extends=18596,features=PALETTE|INVISIBLE,sort=25198,durability=2.00001,scale=139,blurb="56°\nStructural definition",shroud={}}
+	{18735,extends=18596,features=PALETTE|INVISIBLE,sort=25199,durability=2.00001,scale=140,blurb="56°\nStructural definition",shroud={}}
+	{18736,extends=18596,features=PALETTE|INVISIBLE,sort=25200,durability=2.00001,scale=141,blurb="56°\nStructural definition",shroud={}}
+	{18737,extends=18596,features=PALETTE|INVISIBLE,sort=25201,durability=2.00001,scale=142,blurb="57°\nStructural definition",shroud={}}
+	{18738,extends=18596,features=PALETTE|INVISIBLE,sort=25202,durability=2.00001,scale=143,blurb="57°\nStructural definition",shroud={}}
+	{18739,extends=18596,features=PALETTE|INVISIBLE,sort=25203,durability=2.00001,scale=144,blurb="57°\nStructural definition",shroud={}}
+	{18740,extends=18596,features=PALETTE|INVISIBLE,sort=25204,durability=2.00001,scale=145,blurb="58°\nStructural definition",shroud={}}
+	{18741,extends=18596,features=PALETTE|INVISIBLE,sort=25205,durability=2.00001,scale=146,blurb="58°\nStructural definition",shroud={}}
+	{18742,extends=18596,features=PALETTE|INVISIBLE,sort=25206,durability=2.00001,scale=147,blurb="58°\nStructural definition",shroud={}}
+	{18743,extends=18596,features=PALETTE|INVISIBLE,sort=25207,durability=2.00001,scale=148,blurb="59°\nStructural definition",shroud={}}
+	{18744,extends=18596,features=PALETTE|INVISIBLE,sort=25208,durability=2.00001,scale=149,blurb="59°\nStructural definition",shroud={}}
+	{18745,extends=18596,features=PALETTE|INVISIBLE,sort=25209,durability=2.00001,scale=150,blurb="59°\nStructural definition",shroud={}}
+	{18746,extends=18596,features=PALETTE|INVISIBLE,sort=25210,durability=2.00001,scale=151,blurb="60°\nStructural definition",shroud={}}
+	{18747,extends=18596,features=PALETTE|INVISIBLE,sort=25211,durability=2.00001,scale=152,blurb="60°\nStructural definition",shroud={}}
+	{18748,extends=18596,features=PALETTE|INVISIBLE,sort=25212,durability=2.00001,scale=153,blurb="60°\nStructural definition",shroud={}}
+	{18749,extends=18596,features=PALETTE|INVISIBLE,sort=25213,durability=2.00001,scale=154,blurb="61°\nStructural definition",shroud={}}
+	{18750,extends=18596,features=PALETTE|INVISIBLE,sort=25214,durability=2.00001,scale=155,blurb="61°\nStructural definition",shroud={}}
+	{18751,extends=18596,features=PALETTE|INVISIBLE,sort=25215,durability=2.00001,scale=156,blurb="61°\nStructural definition",shroud={}}
+	{18752,extends=18596,features=PALETTE|INVISIBLE,sort=25216,durability=2.00001,scale=157,blurb="62°\nStructural definition",shroud={}}
+	{18753,extends=18596,features=PALETTE|INVISIBLE,sort=25217,durability=2.00001,scale=158,blurb="62°\nStructural definition",shroud={}}
+	{18754,extends=18596,features=PALETTE|INVISIBLE,sort=25218,durability=2.00001,scale=159,blurb="62°\nStructural definition",shroud={}}
+	{18755,extends=18596,features=PALETTE|INVISIBLE,sort=25219,durability=2.00001,scale=160,blurb="63°\nStructural definition",shroud={}}
+	{18756,extends=18596,features=PALETTE|INVISIBLE,sort=25220,durability=2.00001,scale=161,blurb="63°\nStructural definition",shroud={}}
+	{18757,extends=18596,features=PALETTE|INVISIBLE,sort=25221,durability=2.00001,scale=162,blurb="63°\nStructural definition",shroud={}}
+	{18758,extends=18596,features=PALETTE|INVISIBLE,sort=25222,durability=2.00001,scale=163,blurb="64°\nStructural definition",shroud={}}
+	{18759,extends=18596,features=PALETTE|INVISIBLE,sort=25223,durability=2.00001,scale=164,blurb="64°\nStructural definition",shroud={}}
+	{18760,extends=18596,features=PALETTE|INVISIBLE,sort=25224,durability=2.00001,scale=165,blurb="64°\nStructural definition",shroud={}}
+	{18761,extends=18596,features=PALETTE|INVISIBLE,sort=25225,durability=2.00001,scale=166,blurb="65°\nStructural definition",shroud={}}
+	{18762,extends=18596,features=PALETTE|INVISIBLE,sort=25226,durability=2.00001,scale=167,blurb="65°\nStructural definition",shroud={}}
+	{18763,extends=18596,features=PALETTE|INVISIBLE,sort=25227,durability=2.00001,scale=168,blurb="65°\nStructural definition",shroud={}}
+	{18764,extends=18596,features=PALETTE|INVISIBLE,sort=25228,durability=2.00001,scale=169,blurb="66°\nStructural definition",shroud={}}
+	{18765,extends=18596,features=PALETTE|INVISIBLE,sort=25229,durability=2.00001,scale=170,blurb="66°\nStructural definition",shroud={}}
+	{18766,extends=18596,features=PALETTE|INVISIBLE,sort=25230,durability=2.00001,scale=171,blurb="66°\nStructural definition",shroud={}}
+	{18767,extends=18596,features=PALETTE|INVISIBLE,sort=25231,durability=2.00001,scale=172,blurb="67°\nStructural definition",shroud={}}
+	{18768,extends=18596,features=PALETTE|INVISIBLE,sort=25232,durability=2.00001,scale=173,blurb="67°\nStructural definition",shroud={}}
+	{18769,extends=18596,features=PALETTE|INVISIBLE,sort=25233,durability=2.00001,scale=174,blurb="67°\nStructural definition",shroud={}}
+	{18770,extends=18596,features=PALETTE|INVISIBLE,sort=25234,durability=2.00001,scale=175,blurb="68°\nStructural definition",shroud={}}
+	{18771,extends=18596,features=PALETTE|INVISIBLE,sort=25235,durability=2.00001,scale=176,blurb="68°\nStructural definition",shroud={}}
+	{18772,extends=18596,features=PALETTE|INVISIBLE,sort=25236,durability=2.00001,scale=177,blurb="68°\nStructural definition",shroud={}}
+	{18773,extends=18596,features=PALETTE|INVISIBLE,sort=25237,durability=2.00001,scale=178,blurb="69°\nStructural definition",shroud={}}
+	{18774,extends=18596,features=PALETTE|INVISIBLE,sort=25238,durability=2.00001,scale=179,blurb="69°\nStructural definition",shroud={}}
+	{18775,extends=18596,features=PALETTE|INVISIBLE,sort=25239,durability=2.00001,scale=180,blurb="69°\nStructural definition",shroud={}}
+	{18776,extends=18596,features=PALETTE|INVISIBLE,sort=25240,durability=2.00001,scale=181,blurb="70°\nStructural definition",shroud={}}
+	{18777,extends=18596,features=PALETTE|INVISIBLE,sort=25241,durability=2.00001,scale=182,blurb="70°\nStructural definition",shroud={}}
+	{18778,extends=18596,features=PALETTE|INVISIBLE,sort=25242,durability=2.00001,scale=183,blurb="70°\nStructural definition",shroud={}}
+	{18779,extends=18596,features=PALETTE|INVISIBLE,sort=25243,durability=2.00001,scale=184,blurb="71°\nStructural definition",shroud={}}
+	{18780,extends=18596,features=PALETTE|INVISIBLE,sort=25244,durability=2.00001,scale=185,blurb="71°\nStructural definition",shroud={}}
+	{18781,extends=18596,features=PALETTE|INVISIBLE,sort=25245,durability=2.00001,scale=186,blurb="71°\nStructural definition",shroud={}}
+	{18782,extends=18596,features=PALETTE|INVISIBLE,sort=25246,durability=2.00001,scale=187,blurb="72°\nStructural definition",shroud={}}
+	{18783,extends=18596,features=PALETTE|INVISIBLE,sort=25247,durability=2.00001,scale=188,blurb="72°\nStructural definition",shroud={}}
+	{18784,extends=18596,features=PALETTE|INVISIBLE,sort=25248,durability=2.00001,scale=189,blurb="72°\nStructural definition",shroud={}}
+	{18785,extends=18596,features=PALETTE|INVISIBLE,sort=25249,durability=2.00001,scale=190,blurb="73°\nStructural definition",shroud={}}
+	{18786,extends=18596,features=PALETTE|INVISIBLE,sort=25250,durability=2.00001,scale=191,blurb="73°\nStructural definition",shroud={}}
+	{18787,extends=18596,features=PALETTE|INVISIBLE,sort=25251,durability=2.00001,scale=192,blurb="73°\nStructural definition",shroud={}}
+	{18788,extends=18596,features=PALETTE|INVISIBLE,sort=25252,durability=2.00001,scale=193,blurb="74°\nStructural definition",shroud={}}
+	{18789,extends=18596,features=PALETTE|INVISIBLE,sort=25253,durability=2.00001,scale=194,blurb="74°\nStructural definition",shroud={}}
+	{18790,extends=18596,features=PALETTE|INVISIBLE,sort=25254,durability=2.00001,scale=195,blurb="74°\nStructural definition",shroud={}}
+	{18791,extends=18596,features=PALETTE|INVISIBLE,sort=25255,durability=2.00001,scale=196,blurb="75°\nStructural definition",shroud={}}
+	{18792,extends=18596,features=PALETTE|INVISIBLE,sort=25256,durability=2.00001,scale=197,blurb="75°\nStructural definition",shroud={}}
+	{18793,extends=18596,features=PALETTE|INVISIBLE,sort=25257,durability=2.00001,scale=198,blurb="75°\nStructural definition",shroud={}}
+	{18794,extends=18596,features=PALETTE|INVISIBLE,sort=25258,durability=2.00001,scale=199,blurb="76°\nStructural definition",shroud={}}
+	{18795,extends=18596,features=PALETTE|INVISIBLE,sort=25259,durability=2.00001,scale=200,blurb="76°\nStructural definition",shroud={}}
+	{18796,extends=18596,features=PALETTE|INVISIBLE,sort=25260,durability=2.00001,scale=201,blurb="76°\nStructural definition",shroud={}}
+	{18797,extends=18596,features=PALETTE|INVISIBLE,sort=25261,durability=2.00001,scale=202,blurb="77°\nStructural definition",shroud={}}
+	{18798,extends=18596,features=PALETTE|INVISIBLE,sort=25262,durability=2.00001,scale=203,blurb="77°\nStructural definition",shroud={}}
+	{18799,extends=18596,features=PALETTE|INVISIBLE,sort=25263,durability=2.00001,scale=204,blurb="77°\nStructural definition",shroud={}}
+	{18800,extends=18596,features=PALETTE|INVISIBLE,sort=25264,durability=2.00001,scale=205,blurb="78°\nStructural definition",shroud={}}
+	{18801,extends=18596,features=PALETTE|INVISIBLE,sort=25265,durability=2.00001,scale=206,blurb="78°\nStructural definition",shroud={}}
+	{18802,extends=18596,features=PALETTE|INVISIBLE,sort=25266,durability=2.00001,scale=207,blurb="78°\nStructural definition",shroud={}}
+	{18803,extends=18596,features=PALETTE|INVISIBLE,sort=25267,durability=2.00001,scale=208,blurb="79°\nStructural definition",shroud={}}
+	{18804,extends=18596,features=PALETTE|INVISIBLE,sort=25268,durability=2.00001,scale=209,blurb="79°\nStructural definition",shroud={}}
+	{18805,extends=18596,features=PALETTE|INVISIBLE,sort=25269,durability=2.00001,scale=210,blurb="79°\nStructural definition",shroud={}}
+	{18806,extends=18596,features=PALETTE|INVISIBLE,sort=25270,durability=2.00001,scale=211,blurb="80°\nStructural definition",shroud={}}
+	{18807,extends=18596,features=PALETTE|INVISIBLE,sort=25271,durability=2.00001,scale=212,blurb="80°\nStructural definition",shroud={}}
+	{18808,extends=18596,features=PALETTE|INVISIBLE,sort=25272,durability=2.00001,scale=213,blurb="80°\nStructural definition",shroud={}}
+	{18809,extends=18596,features=PALETTE|INVISIBLE,sort=25273,durability=2.00001,scale=214,blurb="81°\nStructural definition",shroud={}}
+	{18810,extends=18596,features=PALETTE|INVISIBLE,sort=25274,durability=2.00001,scale=215,blurb="81°\nStructural definition",shroud={}}
+	{18811,extends=18596,features=PALETTE|INVISIBLE,sort=25275,durability=2.00001,scale=216,blurb="81°\nStructural definition",shroud={}}
+	{18812,extends=18596,features=PALETTE|INVISIBLE,sort=25276,durability=2.00001,scale=217,blurb="82°\nStructural definition",shroud={}}
+	{18813,extends=18596,features=PALETTE|INVISIBLE,sort=25277,durability=2.00001,scale=218,blurb="82°\nStructural definition",shroud={}}
+	{18814,extends=18596,features=PALETTE|INVISIBLE,sort=25278,durability=2.00001,scale=219,blurb="82°\nStructural definition",shroud={}}
+	{18815,extends=18596,features=PALETTE|INVISIBLE,sort=25279,durability=2.00001,scale=220,blurb="83°\nStructural definition",shroud={}}
+	{18816,extends=18596,features=PALETTE|INVISIBLE,sort=25280,durability=2.00001,scale=221,blurb="83°\nStructural definition",shroud={}}
+	{18817,extends=18596,features=PALETTE|INVISIBLE,sort=25281,durability=2.00001,scale=222,blurb="83°\nStructural definition",shroud={}}
+	{18818,extends=18596,features=PALETTE|INVISIBLE,sort=25282,durability=2.00001,scale=223,blurb="84°\nStructural definition",shroud={}}
+	{18819,extends=18596,features=PALETTE|INVISIBLE,sort=25283,durability=2.00001,scale=224,blurb="84°\nStructural definition",shroud={}}
+	{18820,extends=18596,features=PALETTE|INVISIBLE,sort=25284,durability=2.00001,scale=225,blurb="84°\nStructural definition",shroud={}}
+	{18821,extends=18596,features=PALETTE|INVISIBLE,sort=25285,durability=2.00001,scale=226,blurb="85°\nStructural definition",shroud={}}
+	{18822,extends=18596,features=PALETTE|INVISIBLE,sort=25286,durability=2.00001,scale=227,blurb="85°\nStructural definition",shroud={}}
+	{18823,extends=18596,features=PALETTE|INVISIBLE,sort=25287,durability=2.00001,scale=228,blurb="85°\nStructural definition",shroud={}}
+	{18824,extends=18596,features=PALETTE|INVISIBLE,sort=25288,durability=2.00001,scale=229,blurb="86°\nStructural definition",shroud={}}
+	{18825,extends=18596,features=PALETTE|INVISIBLE,sort=25289,durability=2.00001,scale=230,blurb="86°\nStructural definition",shroud={}}
+	{18826,extends=18596,features=PALETTE|INVISIBLE,sort=25290,durability=2.00001,scale=231,blurb="86°\nStructural definition",shroud={}}
+	{18827,extends=18596,features=PALETTE|INVISIBLE,sort=25291,durability=2.00001,scale=232,blurb="87°\nStructural definition",shroud={}}
+	{18828,extends=18596,features=PALETTE|INVISIBLE,sort=25292,durability=2.00001,scale=233,blurb="87°\nStructural definition",shroud={}}
+	{18829,extends=18596,features=PALETTE|INVISIBLE,sort=25293,durability=2.00001,scale=234,blurb="87°\nStructural definition",shroud={}}
+	{18830,extends=18596,features=PALETTE|INVISIBLE,sort=25294,durability=2.00001,scale=235,blurb="88°\nStructural definition",shroud={}}
+	{18831,extends=18596,features=PALETTE|INVISIBLE,sort=25295,durability=2.00001,scale=236,blurb="88°\nStructural definition",shroud={}}
+	{18832,extends=18596,features=PALETTE|INVISIBLE,sort=25296,durability=2.00001,scale=237,blurb="88°\nStructural definition",shroud={}}
+	{18833,extends=18596,features=PALETTE|INVISIBLE,sort=25297,durability=2.00001,scale=238,blurb="89°\nStructural definition",shroud={}}
+	{18834,extends=18596,features=PALETTE|INVISIBLE,sort=25298,durability=2.00001,scale=239,blurb="89°\nStructural definition",shroud={}}
+	{18835,extends=18596,features=PALETTE|INVISIBLE,sort=25299,durability=2.00001,scale=240,blurb="89°\nStructural definition",shroud={}}
 	{18836,extends=17000,sort=136,durability=2.00001,lineColor=0xFFFFFF,shape=2019239001,name="Background Component",blurb="Scaled for different sizes of aesthetic backgrounds"}
 	{18837,extends=18836,durability=2.00001,scale=2,blurb="160,160\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={160,160},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
 	{18838,extends=18836,durability=2.00001,scale=3,blurb="320,160\nScaled for different sizes of aesthetic backgrounds",shroud={{shape=2019230000,offset={2.5,0.0,-1},size={320,160},tri_color_id=2,tri_color1_id=2,line_color_id=2}}}
