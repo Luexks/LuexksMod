@@ -1,4 +1,3 @@
-		name="Hull Alpha"
 		blurb="Structural definition"
 		features=PALETTE--|INVISIBLE
 		group=99

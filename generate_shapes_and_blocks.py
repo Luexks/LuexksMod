@@ -38,8 +38,8 @@ if 0 == 1:
 else:
     SHROUD_OUTLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 2
 SHROUD_OUTLINE_THICKNESS = SHROUD_OUTLINE_CIRCLE_DIAMETER / 2
-SHROUD_CHADLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 3
-SHROUD_CHADLINE_THICKNESS = TOTAL_SCALE / 6
+SHROUD_CHADLINE_CIRCLE_DIAMETER = TOTAL_SCALE / 6
+SHROUD_CHADLINE_THICKNESS = TOTAL_SCALE / 12
 
 BLOCK_ID_BASE = 17000
 BLOCK_SORT_BASE = 100
@@ -73,6 +73,8 @@ ISOTRI_SCALE_INTERVAL_ANGLE = 1
 ISOTRI_SCALE_COUNT = 3
 
 NEGATIVE_CIRCLE_COUNT = 255
+
+hull_type_names = ["Hull Alpha", "Hull Beta", "Hull Outline", "Hull Invisible"]
 
 if (ISOTRI_MAX_ANGLE - ISOTRI_MIN_ANGLE) % ISOTRI_SCALE_INTERVAL_ANGLE != 0:
     print("Isotri fuckup, pls revise.")
@@ -168,17 +170,17 @@ def write_shroud_outline(vertices: list[(float, float)], offset: (float, float) 
         for vertex_index in range(len(vertices)):
             blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertices[vertex_index][0] + offset[0])},{str(vertices[vertex_index][1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_CIRCLE_DIAMETER},{SHROUD_OUTLINE_CIRCLE_DIAMETER}}},{unison_shroud_colors(2)}}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_index][0] + vertices[(vertex_index + 1) % len(vertices)][0]) + offset[0])},{str(0.5 * (vertices[vertex_index][1] + vertices[(vertex_index + 1) % len(vertices)][1]) + offset[1])},{SHROUD_Z_OFFSET_OUTLINE}}},size={{{SHROUD_OUTLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]) ** 2 + (vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertices[vertex_index][1] - vertices[(vertex_index + 1) % len(vertices)][1], vertices[vertex_index][0] - vertices[(vertex_index + 1) % len(vertices)][0]))},{unison_shroud_colors(2)}}}")
 
-def write_shroud_chadline(vertex_1: (float, float), vertex_2: (float, float), offset: (float, float) = None) -> None:
+def write_shroud_chadline(vertices: [(float, float)], vertex_1: int, vertex_2: int, offset: (float, float) = None) -> None:
     if offset is None:
-        offset = center_from_vertices([vertex_1, vertex_2])
-        offset = (-offset[0] + 0.5 * turret_icon_radius([vertex_1, vertex_2]), -offset[1])
+        offset = center_from_vertices(vertices)
+        offset = (-offset[0] + 0.5 * turret_icon_radius(vertices), -offset[1])
     global blocks
-    blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertex_2[0] + offset[0])},{str(vertex_2[1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_CIRCLE_DIAMETER},{SHROUD_CHADLINE_CIRCLE_DIAMETER}}},{unison_shroud_colors(2)}}}{{shape={shape_id(9000)},offset={{{str(vertex_1[0] + offset[0])},{str(vertex_1[1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_CIRCLE_DIAMETER},{SHROUD_CHADLINE_CIRCLE_DIAMETER}}},{unison_shroud_colors(2)}}}{{shape=SQUARE,offset={{{str(0.5 * (vertex_1[0] + vertex_2[0]) + offset[0])},{str(0.5 * (vertex_1[1] + vertex_2[1]) + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_THICKNESS},{0.5 * math.sqrt((vertex_1[0] - vertex_2[0]) ** 2 + (vertex_1[1] - vertex_2[1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertex_1[1] - vertex_2[1], vertex_1[0] - vertex_2[0]))},{unison_shroud_colors(2)}}}")
+    blocks.write(f"{{shape={shape_id(9000)},offset={{{str(vertices[vertex_2][0] + offset[0])},{str(vertices[vertex_2][1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_CIRCLE_DIAMETER},{SHROUD_CHADLINE_CIRCLE_DIAMETER}}},{unison_shroud_colors(2)}}}{{shape={shape_id(9000)},offset={{{str(vertices[vertex_1][0] + offset[0])},{str(vertices[vertex_1][1] + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_CIRCLE_DIAMETER},{SHROUD_CHADLINE_CIRCLE_DIAMETER}}},{unison_shroud_colors(2)}}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_1][0] + vertices[vertex_2][0]) + offset[0])},{str(0.5 * (vertices[vertex_1][1] + vertices[vertex_2][1]) + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_1][0] - vertices[vertex_2][0]) ** 2 + (vertices[vertex_1][1] - vertices[vertex_2][1]) ** 2)}}},angle={str(-90 * (math.pi / 180) + math.atan2(vertices[vertex_1][1] - vertices[vertex_2][1], vertices[vertex_1][0] - vertices[vertex_2][0]))},{unison_shroud_colors(2)}}}{{shape=SQUARE,offset={{{str(0.5 * (vertices[vertex_1][0] + vertices[vertex_2][0]) + offset[0])},{str(0.5 * (vertices[vertex_1][1] + vertices[vertex_2][1]) + offset[1])},{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{SHROUD_CHADLINE_THICKNESS},{0.5 * math.sqrt((vertices[vertex_1][0] - vertices[vertex_2][0]) ** 2 + (vertices[vertex_1][1] - vertices[vertex_2][1]) ** 2)}}},angle={str(90 * (math.pi / 180) + math.atan2(vertices[vertex_1][1] - vertices[vertex_2][1], vertices[vertex_1][0] - vertices[vertex_2][0]))},{unison_shroud_colors(2)}}}")
 
-def write_shroud_chadline_check(vertex_1: (float, float), vertex_2: (float, float), offset: (float, float) = None) -> None:
+def write_shroud_chadline_check(vertices: [(float, float)], vertex_1: int, vertex_2: int, offset: (float, float) = None) -> None:
     global chadline_check
     if chadline_check == 1:
-        write_shroud_chadline(vertex_1, vertex_2, offset)
+        write_shroud_chadline(vertices, vertex_1, vertex_2, offset)
 
 
 # port_relative_to_option describes whether the ports should be positioned relative to the middle of the shape (0), or relative to vertex_1 (1), or relative to vertex_2 (2)
@@ -252,7 +254,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     vertices_rectangle = []
     shapes.write(f"\n\t{{{shape_id(3)}\n\t\t{{")
     for rectangle_scale_function in RECTANGLE_SCALE_FUNCTIONS:
-        new_vertices = [(rectangle_scale_function[0](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0]), rectangle_scale_function[1](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1])) for vertex_orientation in range(4)]
+        new_vertices = [(rectangle_scale_function[1](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][0]), rectangle_scale_function[0](SQUARE_SCALE_FACTOR * VERTEX_ORIENTATION_MULTIPLIERS[vertex_orientation][1])) for vertex_orientation in range(4)]
         vertices_rectangle.append(new_vertices)
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
@@ -269,9 +271,11 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[side], new_vertices[(side + 1) % len(new_vertices)], TOTAL_SCALE, side, 0) for side in range(0, 4, 1)]))
     shapes.write("\n\t\t}\n\t}")
 
+    shapes.write(f"\n\t{{{shape_id(5)}{{}}mirror_of={shape_id(4)}}}")
+
     # Isotris
     vertices_isotri = []
-    shapes.write(f"\n\t{{{shape_id(5)}\n\t\t{{")
+    shapes.write(f"\n\t{{{shape_id(6)}\n\t\t{{")
     for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
         for per_angle_scale in range(1, ISOTRI_SCALE_COUNT + 1):
             new_vertices = [(-math.cos(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE, -math.sin(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE), (-math.cos(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE, math.sin(math.radians(angle / 2)) * per_angle_scale * TOTAL_SCALE), (0, 0)]
@@ -336,7 +340,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
         if hull_type == 0:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n{{\n\t{{{str(new_block_id_base)}\n")
+            blocks.write(f"\n{{\n\t{{{str(new_block_id_base)}\n\t\tname=\"{hull_type_names[hull_type]}\"\n")
             with open("start_of_blocks.lua", "r") as start_of_blocks:
                 blocks.write(start_of_blocks.read())
             blocks.write(f"\n\n\t\tsort={str(new_block_sort())}\n\t\tshape={shape_id(0)}\n\t\tscale=1\n\t")
@@ -344,21 +348,22 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         
         elif hull_type == 1:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"Hull Beta\",sort={str(new_block_sort())}durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",sort={str(new_block_sort())}durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{")
         
         elif hull_type == 2:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"Hull Outline\",sort={str(new_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",sort={str(new_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
         
         elif hull_type == 3:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"Hull Invisible\",features=PALETTE|INVISIBLE,sort={str(new_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",features=PALETTE|INVISIBLE,sort={str(new_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
 
         for chadline_check in range(2 if hull_type < 2 else 1):
             if chadline_check == 1:
                 last_block_id_base = new_block_id_base
                 new_block_id_base = get_next_block_id()
-                blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(last_block_id_base)},sort={str(new_block_sort())}durability=2.00001,shroud={{")
+                blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(last_block_id_base)},name=\"DECAL LINE \\\\\ {hull_type_names[hull_type]}\"sort={str(new_block_sort())}durability=2.00001,shroud={{")
+                write_shroud_chadline(vertices_square[0], 2, 3)
             if hull_type < 2:
                 write_shroud_outline(vertices_square[0], (2.5, 0.0))
             if hull_type == 0:
@@ -369,7 +374,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             # blocks.write(f"\t\n\t\tshroud={{{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_FILL}}},size={{{str(TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_OUTLINE}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_OUTLINE_MULTIPLIER)}}},{unison_shroud_colors(2)}}}{{shape={shape_id(0)},offset={{{str(SHROUD_SCALE_X_OFFSET)},0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)},{str(TOTAL_SCALE + TOTAL_SCALE * SHROUD_BACKGROUND_MULTIPLIER)}}},{unison_shroud_colors(1)}}}}}\n\t}}")
             for scale in range(SQUARE_SCALE_COUNT - 1):
                 blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_block_id_base)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-                write_shroud_chadline_check(vertices_square[scale + 1][2], vertices_square[scale + 1][3])
+                write_shroud_chadline_check(vertices_square[scale + 1], 2, 3)
                 write_shroud_outline(vertices_square[scale + 1], (2.5 * (scale + 2), 0.0))
                 blocks.write("}}")
 
@@ -377,14 +382,14 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             scale = 0
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
-            write_shroud_chadline_check(vertices_right_triangle[scale][1], vertices_right_triangle[scale][2])
+            write_shroud_chadline_check(vertices_right_triangle[scale], 1, 2)
             write_shroud_outline(vertices_right_triangle[0])
             blocks.write("}}")
             scale += 1
             for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
                 for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
                     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
-                    write_shroud_chadline_check(vertices_right_triangle[scale][1], vertices_right_triangle[scale][2])
+                    write_shroud_chadline_check(vertices_right_triangle[scale], 1, 2)
                     write_shroud_outline(vertices_right_triangle[scale])
                     blocks.write("}}")
                     scale += 1
@@ -392,88 +397,94 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             # Mirrored Right Triangles
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(2)},shroud={{")
-            write_shroud_chadline_check(vertices_right_triangle[0][2], vertices_right_triangle[0][0])
+            write_shroud_chadline_check(mirror_vertices(vertices_right_triangle[0]), 0, 1)
             write_shroud_outline(mirror_vertices(vertices_right_triangle[0]))
             blocks.write("}}")
             for scale in range(1, triangle_count):
                 blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
-                write_shroud_chadline_check(mirror_vertices(vertices_right_triangle[scale])[2], mirror_vertices(vertices_right_triangle[scale])[0])
+                write_shroud_chadline_check(mirror_vertices(vertices_right_triangle[scale]), 0, 1)
                 write_shroud_outline(mirror_vertices(vertices_right_triangle[scale]))
                 blocks.write("}}")
 
-            if chadline_check == 0:
-                # Rectangles
-                new_extend_parent_id = get_next_block_id()
-                blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)},shroud={{")
-                write_shroud_outline(vertices_rectangle[0], (vertices_rectangle[0][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
+            # Rectangles
+            new_extend_parent_id = get_next_block_id()
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(3)},shroud={{")
+            write_shroud_chadline_check(vertices_rectangle[0], 2, 3)
+            write_shroud_outline(vertices_rectangle[0])
+            blocks.write("}}")
+            for scale in range(1, len(RECTANGLE_SCALE_FUNCTIONS) - 2):
+                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
+                write_shroud_chadline_check(vertices_rectangle[scale], 2, 3)
+                write_shroud_outline(vertices_rectangle[scale])
                 blocks.write("}}")
-                for scale in range(len(RECTANGLE_SCALE_FUNCTIONS) - 1):
-                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-                    write_shroud_outline(vertices_rectangle[scale + 1], (vertices_rectangle[scale + 1][1][1] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
-                    blocks.write("}}")
 
             # for adapter_chadline_check in range(1) if chadline_check == 0 else range(1, 3):
-                # # Adapter
-                # if adapter_chadline_check
-                # new_extend_parent_id = get_next_block_id()
-                # blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(4)},shroud={{")
-                # if adapter_chadline_check == 1:
-                    # write_shroud_chadline(vertices_adapter[0])
-                # write_shroud_outline(vertices_adapter[0])
-                # blocks.write("}}")
-                # for scale in range(ADAPTER_SCALE_COUNT - 1):
-                    # blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 2)},shroud={{")
-                    # write_shroud_outline(vertices_adapter[per_angle_scale + 1], (vertices_adapter[scale + 1][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
-                    # blocks.write("}}")
+            for adapter_chadline_check in range(1) if chadline_check == 0 else range(1, 2):
+                # Adapter
+                if adapter_chadline_check in [0, 1]:
+                    new_extend_parent_id = get_next_block_id()
+                    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(4)},shroud={{")
+                    if adapter_chadline_check == 1:
+                        write_shroud_chadline(vertices_adapter[0], 0, 1)
+                    write_shroud_outline(vertices_adapter[0])
+                blocks.write("}}")
+                for scale in range(1, ADAPTER_SCALE_COUNT):
+                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
+                    if adapter_chadline_check == 1:
+                        write_shroud_chadline(vertices_adapter[scale], 0, 1)
+                    elif adapter_chadline_check == 2:
+                        pass
+                    write_shroud_outline(vertices_adapter[scale], (vertices_adapter[scale][2][0] * SHROUD_TURRET_RADIUS_OFFSET_MULTIPLIER, 0.0))
+                    blocks.write("}}")
 
-            if chadline_check == 0:
-                # Isotris
-                scale = 0
-                new_extend_parent_id = get_next_block_id()
-                for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
-                    for per_angle_scale in range(ISOTRI_SCALE_COUNT):
-                        if angle == ISOTRI_MIN_ANGLE and per_angle_scale == 0:
-                            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(5)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
-                        else:
-                            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + per_angle_scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
-                        write_shroud_outline(vertices_isotri[scale])
-                        scale += 1
-                        blocks.write("}}")
+            # Isotris
+            scale = 0
+            new_extend_parent_id = get_next_block_id()
+            for angle in range(ISOTRI_MIN_ANGLE, ISOTRI_MAX_ANGLE, ISOTRI_SCALE_INTERVAL_ANGLE):
+                for per_angle_scale in range(ISOTRI_SCALE_COUNT):
+                    if angle == ISOTRI_MIN_ANGLE and per_angle_scale == 0:
+                        blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(new_block_sort())},durability=2.00001,shape={shape_id(6)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
+                    else:
+                        blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(((angle - ISOTRI_MIN_ANGLE) // ISOTRI_SCALE_INTERVAL_ANGLE) * ISOTRI_SCALE_COUNT + per_angle_scale + 1)},blurb=\"{f'{str(angle)}'}°\\nStructural definition\",shroud={{")
+                    write_shroud_chadline_check(vertices_isotri[scale], 0, 1)
+                    write_shroud_outline(vertices_isotri[scale])
+                    scale += 1
+                    blocks.write("}}")
         
     # Shroud Backgrounad
     new_extend_parent_id = get_next_block_id()
     blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(new_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"Background Component\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
-    per_angle_scale = 2
+    scale = 2
     for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT):
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
-            per_angle_scale += 1
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},blurb=\"{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}\\nScaled for different sizes of aesthetic backgrounds\",shroud={{{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND}}},size={{{str(scale_x * SHROUD_BACKGROUND_X_SCALE_FACTOR)},{str(scale_y * SHROUD_BACKGROUND_Y_SCALE_FACTOR)}}},{unison_shroud_colors(2)}}}}}}}")
+            scale += 1
 
     # Negative Circle
-    for per_angle_scale in range(1, NEGATIVE_CIRCLE_COUNT):
-        if per_angle_scale == 1:
+    for scale in range(1, NEGATIVE_CIRCLE_COUNT):
+        if scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(per_angle_scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Negative Pipes
-    for per_angle_scale in range(1, MAXIMUM_SCALE_COUNT):
-        if per_angle_scale == 1:
+    for scale in range(1, MAXIMUM_SCALE_COUNT):
+        if scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
-    for per_angle_scale in range(1, MAXIMUM_SCALE_COUNT):
-        if per_angle_scale == 1:
+    for scale in range(1, MAXIMUM_SCALE_COUNT):
+        if scale == 1:
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(new_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
-            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(per_angle_scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(per_angle_scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+            blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
+        blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Command
     blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(BLOCK_ID_BASE)},name=\"Central Command\",blurb=\"Crew retreat to this stronghold before the structures they control are destroyed.\"features=NOPALETTE|COMMAND|NOICON,sort={str(1)},durability=2.00001}}")
