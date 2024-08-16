@@ -348,7 +348,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
         if hull_type == 0:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n{{\n\t{{{str(new_block_id_base)}\n\t\tname=\"{hull_type_names[hull_type]}\"\n")
+            blocks.write(f"\n{{\n\t{{{str(new_block_id_base)}\n\t\tname=\"^4{hull_type_names[hull_type]}^7\"\n")
             with open("start_of_blocks.lua", "r") as start_of_blocks:
                 blocks.write(start_of_blocks.read())
             blocks.write(f"\n\n\t\tsort={str(get_next_block_sort())}\n\t\tshape={shape_id(0)}\n\t\tscale=1\n\t")
@@ -356,21 +356,21 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         
         elif hull_type == 1:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",sort={str(get_next_block_sort())}durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())}durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{")
         
         elif hull_type == 2:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
         
         elif hull_type == 3:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"{hull_type_names[hull_type]}\",features=PALETTE|INVISIBLE,sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",features=PALETTE|INVISIBLE,sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
 
         for chadline_check in range(2 if hull_type < 2 else 1):
             if chadline_check == 1:
                 last_block_id_base = new_block_id_base
                 new_block_id_base = get_next_block_id()
-                blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(last_block_id_base)},name=\"DECAL LINE \\\\\ {hull_type_names[hull_type]}\"sort={str(get_next_block_sort())}durability=2.00001,shroud={{")
+                blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(last_block_id_base)},name=\"^1DECAL LINE ^7\\\\\ ^4{hull_type_names[hull_type]}^7\"sort={str(get_next_block_sort())}durability=2.00001,shroud={{")
                 write_shroud_chadline(vertices_square[0], 2, 3)
             if hull_type < 2:
                 write_shroud_outline(vertices_square[0], (2.5, 0.0))
@@ -461,7 +461,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
         
     # Shroud Backgrounad
     new_extend_parent_id = get_next_block_id()
-    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(get_next_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"Background Component\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
+    blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},sort={str(get_next_block_sort())},durability=2.00001,lineColor=0x{SHROUD_BACKGROUND_COLOR},shape={shape_id(9001)},name=\"^6Background Component^7\",blurb=\"Scaled for different sizes of aesthetic backgrounds\"}}")
     scale = 2
     for scale_y in range(1, SHROUD_BACKGROUND_Y_SCALE_COUNT):
         for scale_x in range(scale_y, SHROUD_BACKGROUND_X_SCALE_COUNT + 1):
@@ -472,7 +472,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     for scale in range(1, NEGATIVE_CIRCLE_COUNT):
         if scale == 1:
             new_extend_parent_id = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Circle\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"^6Negative Circle^7\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
         blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
@@ -481,7 +481,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     for scale in range(1, MAXIMUM_SCALE_COUNT):
         if scale == 1:
             new_extend_parent_id = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"^6Negative Pipe Circle Base^7\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
         blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
@@ -489,7 +489,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
     for scale in range(1, MAXIMUM_SCALE_COUNT):
         if scale == 1:
             new_extend_parent_id = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"Negative Pipe Circle Base\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
+            blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"^6Negative Pipe Circle Base^7\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
         blocks.write(f"{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(0)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
