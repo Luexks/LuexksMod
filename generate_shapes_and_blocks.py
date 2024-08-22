@@ -1,8 +1,16 @@
 import math
 
-COLOR_ALPHA_0 = "0xff99ee"
+# COLOR_ALPHA_0 = "0xff99ee"
+# COLOR_ALPHA_1 = "0xb6ccdb"
+# COLOR_BETA_0 = "0xff4278"
+# COLOR_BETA_1 = "0x5962ff"
+# COLOR_ALPHA_0 = "0xEC4E7B"
+# COLOR_ALPHA_1 = "0xb6ccdb"
+# COLOR_BETA_0 = "0x5962ff"
+# COLOR_BETA_1 = "0x5962ff"
+COLOR_ALPHA_0 = "0xDB513D"
 COLOR_ALPHA_1 = "0xb6ccdb"
-COLOR_BETA_0 = "0xff4278"
+COLOR_BETA_0 = "0xDBA83D"
 COLOR_BETA_1 = "0x5962ff"
 COLOR_OUTLINE = "0x0a0529"
 COLOR_BACKGROUND = "0xffffff"
@@ -487,7 +495,7 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(BLOCK_ID_BASE)},name=\"^6Negative Circle^7\",sort={str(get_next_block_sort())},durability=2.00001,fillColor=0x{SHROUD_BACKGROUND_COLOR}shape={shape_id(9003)},shroud={{")
         else:
             blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},durability=2.00001,scale={str(scale)},shroud={{")
-        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE)},{str(scale * TOTAL_SCALE)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str(scale * TOTAL_SCALE + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
+        blocks.write(f"{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_BACKGROUND_NEGATIVE}}},size={{{str((scale + 1) * TOTAL_SCALE * 0.5)},{str((scale + 1) * TOTAL_SCALE * 0.5)}}},{unison_shroud_colors(0)}}}{{shape={shape_id(9000)},offset={{2.5,0.0,{SHROUD_Z_OFFSET_OUTLINE_NEGATIVE}}},size={{{str((scale + 1) * TOTAL_SCALE * 0.5 + SHROUD_OUTLINE_CIRCLE_DIAMETER)},{str((scale + 1) * TOTAL_SCALE * 0.5 + SHROUD_OUTLINE_CIRCLE_DIAMETER)}}},{unison_shroud_colors(2)}}}}}}}")
 
     # Negative Pipes
     for scale in range(1, MAXIMUM_SCALE_COUNT):
