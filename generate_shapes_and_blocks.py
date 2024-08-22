@@ -1,5 +1,17 @@
 import math
 
+COLOR_ALPHA_0 = "0xff99ee"
+COLOR_ALPHA_1 = "0xb6ccdb"
+COLOR_BETA_0 = "0xff4278"
+COLOR_BETA_1 = "0x5962ff"
+COLOR_OUTLINE = "0x0a0529"
+COLOR_BACKGROUND = "0xffffff"
+
+if 1 == 1:
+    COLOR_ALPHA_1 = COLOR_ALPHA_0
+    COLOR_BETA_1 = COLOR_BETA_0
+
+
 def combine_list_of_lists(list_of_lists: list) -> list:
     output = []
     for list in list_of_lists:
@@ -351,20 +363,20 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
             blocks.write(f"\n{{\n\t{{{str(new_block_id_base)}\n\t\tname=\"^4{hull_type_names[hull_type]}^7\"\n")
             with open("start_of_blocks.lua", "r") as start_of_blocks:
                 blocks.write(start_of_blocks.read())
-            blocks.write(f"\n\n\t\tsort={str(get_next_block_sort())}\n\t\tshape={shape_id(0)}\n\t\tscale=1\n\t")
+            blocks.write(f"\n\t\tfillColor={COLOR_ALPHA_0}\n\t\tfillColor1={COLOR_ALPHA_1}\n\t\tlineColor={COLOR_OUTLINE}\n\n\t\tsort={str(get_next_block_sort())}\n\t\tshape={shape_id(0)}\n\t\tscale=1\n\t")
             blocks.write(f"\t\n\t\tshroud={{")
         
         elif hull_type == 1:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())}durability=2.00001,scale=1,fillColor=0xff4278,fillColor1=0x5962ff,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())}durability=2.00001,scale=1,fillColor={COLOR_BETA_0},fillColor1={COLOR_BETA_1},shroud={{")
         
         elif hull_type == 2:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor={COLOR_OUTLINE},fillColor1={COLOR_OUTLINE},shroud={{")
         
         elif hull_type == 3:
             new_block_id_base = get_next_block_id()
-            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",features=PALETTE|INVISIBLE,sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor=0x0a0529,fillColor1=0x0a0529,lineColor=0x0a0529,shroud={{")
+            blocks.write(f"\n\t{{{str(new_block_id_base)},extends={str(BLOCK_ID_BASE)},name=\"^4{hull_type_names[hull_type]}^7\",features=PALETTE|INVISIBLE,sort={str(get_next_block_sort())},durability=2.00001,scale=1,fillColor={COLOR_OUTLINE},fillColor1={COLOR_OUTLINE},shroud={{")
 
         for chadline_check in range(2 if hull_type < 2 else 1):
             if chadline_check == 1:
