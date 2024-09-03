@@ -73,10 +73,14 @@ BLOCK_SORT_BASE = 100
 SQUARE_SCALE_COUNT = 3
 SQUARE_SCALE_FACTOR = TOTAL_SCALE / 2
 
-TRIANGLE_X_SCALE_COUNT = 3 * 2
-TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE / 2
-TRIANGLE_Y_SCALE_COUNT = 3 * 2
-TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE / 2
+TRIANGLE_X_SCALE_COUNT = 11
+TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE
+TRIANGLE_Y_SCALE_COUNT = 3
+TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE
+# TRIANGLE_X_SCALE_COUNT = 3 * 2
+# TRIANGLE_X_SCALE_FACTOR = TOTAL_SCALE / 2
+# TRIANGLE_Y_SCALE_COUNT = 3 * 2
+# TRIANGLE_Y_SCALE_FACTOR = TOTAL_SCALE / 2
 
 RECTANGLE_SCALE_FUNCTIONS = combine_list_of_lists([
     [
@@ -270,9 +274,13 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
 
     # Right Triangles
     vertices_right_triangle = []
-    triangle_count = 0
+    triangle_count = 1
     triangle_block_data = []
     shapes.write(f"\n\t{{{shape_id(1)}\n\t\t{{")
+    new_vertices = [(0, 0), (0, 0.5 * TRIANGLE_Y_SCALE_FACTOR), (0.5 * TRIANGLE_X_SCALE_FACTOR, 0)]
+    vertices_right_triangle.append(new_vertices)
+    triangle_block_data.append((new_vertices[1][1], new_vertices[2][0]))
+    write_scale_format(new_vertices, combine_list_of_lists([generate_spaced_ports(new_vertices[0], new_vertices[1], TOTAL_SCALE, 0, 1, TOTAL_SCALE / 2), generate_spaced_ports(new_vertices[1], new_vertices[2], TOTAL_SCALE, 1, 0), generate_spaced_ports(new_vertices[2], new_vertices[0], TOTAL_SCALE, 2, 2, TOTAL_SCALE / 2)]))
     for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
         for scale_x in range(scale_y, TRIANGLE_X_SCALE_COUNT + 1):
             new_vertices = [(0, 0), (0, scale_y * TRIANGLE_Y_SCALE_FACTOR), (scale_x * TRIANGLE_X_SCALE_FACTOR, 0)]
@@ -419,20 +427,16 @@ with open("shapes.lua", "w", encoding="utf-8") as shapes, open("blocks.lua", "w"
                 blocks.write("}}")
 
             # Right Triangles
-            scale = 0
             new_extend_parent_id = get_next_block_id()
             blocks.write(f"\n\t{{{str(new_extend_parent_id)},extends={str(new_block_id_base)},sort={str(get_next_block_sort())},durability=2.00001,shape={shape_id(1)},shroud={{")
             write_shroud_chadline_check(vertices_right_triangle[scale], 1, 2)
             write_shroud_outline(vertices_right_triangle[0])
             blocks.write("}}")
-            scale += 1
-            for scale_y in range(1, TRIANGLE_Y_SCALE_COUNT + 1):
-                for scale_x in range(scale_y + (1 if scale_y == 1 else 0), TRIANGLE_X_SCALE_COUNT + 1):
-                    blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
-                    write_shroud_chadline_check(vertices_right_triangle[scale], 1, 2)
-                    write_shroud_outline(vertices_right_triangle[scale])
-                    blocks.write("}}")
-                    scale += 1
+            for scale in range(1, triangle_count):
+                blocks.write(f"\n\t{{{str(get_next_block_id())},extends={str(new_extend_parent_id)},{invisible_nopalette_check()}durability=2.00001,scale={str(scale + 1)},shroud={{")
+                write_shroud_chadline_check(vertices_right_triangle[scale], 0, 1)
+                write_shroud_outline(vertices_right_triangle[scale])
+                blocks.write("}}")
 
             # Mirrored Right Triangles
             new_extend_parent_id = get_next_block_id()
